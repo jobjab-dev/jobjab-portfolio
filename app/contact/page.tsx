@@ -36,8 +36,16 @@ export default function Contact() {
     return (
         <>
             <Header />
-            <main className="min-h-screen pt-16">
-                <section className="py-20 sm:py-32">
+            <main className="min-h-screen pt-20 bg-background relative">
+
+                {/* Background Elements */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+                    <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-[100px] animate-pulse" />
+                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] animate-pulse delay-700" />
+                </div>
+
+                <section className="py-20 sm:py-32 relative z-10">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         {/* Header */}
                         <div className="text-center mb-16">

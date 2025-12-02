@@ -22,20 +22,21 @@ export function Header() {
         <motion.header
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border"
+            className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50"
         >
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-16">
+                <div className="flex items-center justify-between h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center space-x-2 font-heading font-bold text-2xl gradient-text">
-                        <Image 
-                            src="/apple-touch-icon.png" 
-                            alt="Logo" 
-                            width={32} 
-                            height={32} 
-                            className="w-8 h-8 rounded-full"
-                        />
-                        <span>jobjab-portfolio</span>
+                    <Link href="/" className="flex items-center space-x-3 font-heading font-bold text-2xl group">
+                        <div className="relative w-12 h-12 rounded-full overflow-hidden border border-border group-hover:border-[#F5E147] transition-colors">
+                            <Image
+                                src="/apple-touch-icon.png"
+                                alt="Logo"
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+                        <span className="group-hover:text-[#F5E147] transition-colors">jobjab-portfolio</span>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -44,7 +45,7 @@ export function Header() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-foreground/70 hover:text-foreground transition-colors font-medium"
+                                className="text-muted-foreground hover:text-[#F5E147] transition-colors font-medium text-sm font-mono uppercase tracking-wide"
                             >
                                 {link.label}
                             </Link>
