@@ -1,4 +1,4 @@
-# Web3 Portfolio
+# Jobjab Portfolio
 
 A modern, responsive portfolio website built with Next.js and Tailwind CSS to showcase Web3 projects, skills, and achievements.
 
