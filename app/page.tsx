@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { PriceTicker } from "@/components/ui/PriceTicker";
+import { HomeChatInput } from "@/components/ai/HomeChatInput";
 
 export default function Home() {
   return (
@@ -53,17 +54,8 @@ export default function Home() {
                 </span>
               </motion.h1>
 
-              {/* Description */}
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto font-mono"
-              >
-                // Architechting secure smart contracts & privacy-first dApps.
-                <br />
-                Specialized in Zama FHEVM, Monad, and EVM ecosystems.
-              </motion.p>
+              {/* AI Chat Input */}
+              <HomeChatInput />
 
               {/* CTA Buttons */}
               <motion.div

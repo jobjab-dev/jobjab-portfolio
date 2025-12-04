@@ -6,10 +6,9 @@ import { MessageCircle, X, Send, Sparkles, Bot } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-interface Message {
-    role: "user" | "assistant";
-    content: string;
-}
+
+
+import { useChat } from "@/context/ChatContext";
 
 const SUGGESTED_PROMPTS = [
     "What are your main skills?",
@@ -19,12 +18,8 @@ const SUGGESTED_PROMPTS = [
 ];
 
 const ChatWidget: React.FC = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [messages, setMessages] = useState<Message[]>([
-        { role: "assistant", content: "Greetings! I am the AI assistant for this portfolio. I can tell you about Jobjab's projects, skills, and experience. How can I help?" },
-    ]);
+    const { isOpen, setIsOpen, messages, isLoading, sendMessage } = useChat();
     const [input, setInput] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     const scrollToBottom = () => {
@@ -35,39 +30,14 @@ const ChatWidget: React.FC = () => {
         scrollToBottom();
     }, [messages, isOpen]);
 
-    const handleSend = async (text: string) => {
-        if (!text.trim() || isLoading) return;
-
-        const userMessage = text.trim();
-        setInput("");
-        setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
-        setIsLoading(true);
-
-        try {
-            const response = await fetch("/api/chat", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ message: userMessage }),
-            });
-
-            if (!response.ok) throw new Error("Failed to fetch response");
-
-            const data = await response.json();
-            setMessages((prev) => [...prev, { role: "assistant", content: data.reply }]);
-        } catch (error) {
-            console.error("Chat error:", error);
-            setMessages((prev) => [
-                ...prev,
-                { role: "assistant", content: "I seem to have lost connection with the mothership. Please try again later." },
-            ]);
-        } finally {
-            setIsLoading(false);
-        }
-    };
-
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        handleSend(input);
+        sendMessage(input);
+        setInput("");
+    };
+
+    const handlePromptClick = (prompt: string) => {
+        sendMessage(prompt);
     };
 
     return (
@@ -115,8 +85,8 @@ const ChatWidget: React.FC = () => {
                                 >
                                     <div
                                         className={`max-w-[80%] p-3 rounded-2xl ${msg.role === "user"
-                                                ? "bg-purple-600 text-white rounded-br-none"
-                                                : "bg-white/10 text-gray-200 border border-white/10 rounded-bl-none"
+                                            ? "bg-purple-600 text-white rounded-br-none"
+                                            : "bg-white/10 text-gray-200 border border-white/10 rounded-bl-none"
                                             }`}
                                     >
                                         <ReactMarkdown
@@ -157,7 +127,7 @@ const ChatWidget: React.FC = () => {
                                         {SUGGESTED_PROMPTS.map((prompt) => (
                                             <button
                                                 key={prompt}
-                                                onClick={() => handleSend(prompt)}
+                                                onClick={() => handlePromptClick(prompt)}
                                                 className="text-xs bg-white/5 hover:bg-white/10 border border-white/10 text-gray-300 px-3 py-1.5 rounded-full transition-colors"
                                             >
                                                 {prompt}

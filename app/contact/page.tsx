@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Github, Twitter, MessageCircle, Send } from "lucide-react";
+import { Mail, Github, Twitter, MessageCircle, Send, } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Card } from "@/components/ui/Card";

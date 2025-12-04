@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import "./globals.css";
 import StarBackground from "@/components/ui/StarBackground";
 import ChatWidget from "@/components/ai/ChatWidget";
+import { ChatProvider } from "@/context/ChatContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -58,8 +59,10 @@ export default function RootLayout({
       >
         <StarBackground />
         <ThemeProvider>
-          {children}
-          <ChatWidget />
+          <ChatProvider>
+            {children}
+            <ChatWidget />
+          </ChatProvider>
         </ThemeProvider>
       </body>
     </html>
