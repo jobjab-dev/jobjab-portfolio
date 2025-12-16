@@ -72,6 +72,22 @@ const projects = [
         demo: "https://zameme-fun.vercel.app/",
         logo: "https://bafybeig3agemxeyv3alyk4jgjieecnl2qtj54kgnxsbm22oosyxxojmeyy.ipfs.w3s.link/Zameme_logo.png",
     },
+    {
+        title: "FHEVM Example Hub",
+        description: "A CLI tool and web app for generating ready-to-use FHEVM smart contract examples. Quickly scaffold confidential voting, private auctions, and more.",
+        tags: ["FHEVM (Zama)", "CLI", "TypeScript", "Solidity", "Hardhat", "Developer Tools"],
+        github: "https://github.com/jobjab-dev/fhevm-example-hub",
+        demo: "https://fhevm-example-hub-rho.vercel.app/",
+        logo: "https://fhevm-example-hub-rho.vercel.app/android-chrome-192x192.png",
+    },
+    {
+        title: "ZipherLaunch",
+        description: "Confidential Token Launchpad & Private Auctions powered by Fully Homomorphic Encryption. Sealed-bid Dutch auctions with hidden bids and fair price discovery.",
+        tags: ["FHEVM (Zama)", "Next.js", "Solidity", "Dutch Auction", "Private Bidding", "Token Launchpad"],
+        github: "https://github.com/jobjab-dev/ZipherLaunch",
+        demo: "https://zipher-launch.vercel.app/",
+        logo: "https://zipher-launch.vercel.app/icon.png",
+    },
 ];
 
 export default function Projects() {
