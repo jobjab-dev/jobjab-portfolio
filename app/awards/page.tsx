@@ -8,15 +8,15 @@ import { awardsData } from "@/lib/portfolio-data";
 
 export default function AwardsPage() {
   return (
-    <div className="flex min-h-screen flex-col proofing-wall-ground text-[#121110]">
+    <div className="flex min-h-screen flex-col bg-[#050a07] text-[#c9eed6]">
       <Header />
 
       <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="mb-10 border-b border-[#141311]/35 pb-8">
-          <h1 className="text-4xl font-normal tracking-tight text-[#0a0a0a] sm:text-5xl lg:text-6xl">
+        <div className="mb-10 border-b border-[#193826] pb-8">
+          <h1 className="text-3xl font-semibold tracking-tight text-[#ebfff2] sm:text-4xl lg:text-5xl">
             Awards &amp; Recognition
           </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#2f2b26]">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#6ca380] sm:text-base">
             Open-source cryptographic tooling and production dApp architecture recognized across the Ethereum and Zama FHEVM ecosystem.
           </p>
         </div>
@@ -25,41 +25,36 @@ export default function AwardsPage() {
           {awardsData.map((award) => (
             <article
               key={award.id}
-              className="proof-shadow relative bg-[#f2eee6] p-6 sm:p-10"
+              className="border border-[#ffb000]/55 bg-[#08120c] p-6 sm:p-10"
             >
-              <span className="pointer-events-none absolute left-3 top-3 h-3 w-3 border-l border-t border-[#141311]/30" />
-              <span className="pointer-events-none absolute right-3 top-3 h-3 w-3 border-r border-t border-[#141311]/30" />
-              <span className="pointer-events-none absolute bottom-3 left-3 h-3 w-3 border-b border-l border-[#141311]/30" />
-              <span className="pointer-events-none absolute bottom-3 right-3 h-3 w-3 border-b border-r border-[#141311]/30" />
-
-              <div className="flex flex-col justify-between gap-4 border-b border-[#141311]/15 pb-6 sm:flex-row sm:items-start">
+              <div className="flex flex-col justify-between gap-4 border-b border-[#193826] pb-6 sm:flex-row sm:items-start">
                 <div>
-                  <h2 className="text-3xl font-normal tracking-tight text-[#0a0a0a] sm:text-4xl">
+                  <h2 className="text-2xl font-semibold tracking-tight text-[#ebfff2] sm:text-3xl">
                     {award.title}
                   </h2>
-                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.14em] text-[#5a544d]">
+                  <p className="mt-2 text-xs uppercase tracking-[0.14em] text-[#6ca380]">
                     {award.index} · {award.date}
                   </p>
                 </div>
 
-                <div className="inline-flex items-center gap-2 self-start bg-[#171837] px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] text-[#f6f2eb]">
-                  <Award className="h-4 w-4 text-[#ea681d]" />
+                <div className="inline-flex items-center gap-2 self-start bg-[#ffb000] px-4 py-2 text-xs font-semibold uppercase tracking-[0.1em] text-[#041108]">
+                  <Award className="h-4 w-4" />
                   <span>{award.placement}</span>
                 </div>
               </div>
 
-              <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#26231f] sm:text-lg">
+              <p className="mt-6 max-w-3xl text-sm leading-relaxed text-[#c9eed6] sm:text-base">
                 {award.description}
               </p>
 
-              <div className="mt-6 grid gap-3 border-t border-[#141311]/10 pt-6 sm:grid-cols-3">
+              <div className="mt-6 grid gap-3 border-t border-[#193826] pt-6 sm:grid-cols-3">
                 {award.highlights.map((item, idx) => (
                   <div
                     key={item}
-                    className="border border-[#141311]/12 bg-[#e8e3dd]/65 p-4 text-sm leading-relaxed text-[#1a1815]"
+                    className="border border-[#193826] bg-[#050a07] p-4 text-xs leading-relaxed text-[#c9eed6]"
                   >
-                    <span className="mb-1 block font-mono text-[11px] uppercase tracking-[0.12em] text-[#5a544d]">
-                      0{idx + 1} · Deliverable
+                    <span className="mb-1.5 block text-[11px] uppercase tracking-[0.12em] text-[#39ff7a]">
+                      0{idx + 1} // DELIVERABLE
                     </span>
                     {item}
                   </div>
@@ -71,7 +66,7 @@ export default function AwardsPage() {
                   href={award.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-[4px] bg-[#ea681d] px-5 py-2.5 text-sm font-normal text-[#120e0a] transition-colors hover:bg-[#d85a12]"
+                  className="inline-flex items-center gap-2 bg-[#39ff7a] px-5 py-2.5 text-xs font-semibold text-[#041108] transition-colors hover:bg-[#22e563]"
                 >
                   <span>Launch {award.projectTitle}</span>
                   <ArrowUpRight className="h-4 w-4" />
@@ -81,7 +76,7 @@ export default function AwardsPage() {
                   href={award.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-[#141311]/30 bg-white/50 px-5 py-2.5 text-sm text-[#121110] transition-colors hover:border-[#121110] hover:bg-white/80"
+                  className="inline-flex items-center gap-2 border border-[#2f7d4d] bg-[#050a07] px-5 py-2.5 text-xs text-[#c9eed6] transition-colors hover:border-[#39ff7a] hover:text-[#39ff7a]"
                 >
                   <Github className="h-4 w-4" />
                   <span>Inspect Repository</span>
@@ -89,7 +84,7 @@ export default function AwardsPage() {
 
                 <Link
                   href="/projects"
-                  className="ml-auto font-mono text-xs uppercase tracking-[0.12em] text-[#171837] underline underline-offset-4 hover:text-[#ea681d]"
+                  className="ml-auto text-xs uppercase tracking-[0.12em] text-[#39ff7a] underline underline-offset-4 hover:text-[#ffb000]"
                 >
                   View all 37 shipped systems →
                 </Link>

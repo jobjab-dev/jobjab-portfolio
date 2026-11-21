@@ -55,17 +55,17 @@ const ChatWidget: React.FC = () => {
             transition={{ duration: 0.2 }}
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close studio AI assistant" : "Open studio AI assistant"}
-            className="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 border border-[#121110]/25 bg-[#171837] px-4 py-3 text-sm font-medium text-[#eeeef5] shadow-lg transition-colors hover:bg-[#1e2049]"
+            className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 border border-[#2f7d4d] bg-[#08120c] px-4 py-2.5 text-xs font-semibold text-[#39ff7a] transition-colors hover:border-[#39ff7a] hover:bg-[#0d1c13]"
           >
             {isOpen ? (
               <>
                 <X className="h-4 w-4" />
-                <span>Close Desk</span>
+                <span>[CLOSE_DESK]</span>
               </>
             ) : (
               <>
-                <MessageSquare className="h-4 w-4 text-[#ea681d]" />
-                <span>Ask Jobjab AI</span>
+                <MessageSquare className="h-4 w-4 text-[#ffb000]" />
+                <span>ai&gt; ASK JOBJAB AI</span>
               </>
             )}
           </motion.button>
@@ -79,36 +79,36 @@ const ChatWidget: React.FC = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 18, scale: 0.98 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed bottom-20 right-6 z-50 flex h-[540px] w-[min(92vw,400px)] flex-col border border-[#121110]/25 bg-[#f4f0e8] text-[#121110] proof-shadow"
+            className="fixed bottom-20 right-6 z-40 flex h-[540px] w-[min(92vw,420px)] flex-col border border-[#2f7d4d] bg-[#08120c] text-[#c9eed6]"
           >
-            <div className="flex items-center justify-between border-b border-[#e8e3dd]/20 bg-[#171837] px-4 py-3.5 text-[#eeeef5]">
+            <div className="flex items-center justify-between border-b border-[#193826] bg-[#0c1911] px-4 py-3">
               <div>
-                <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#e6d4b6]">
-                  STUDIO DESK ASSISTANT · GEMINI 2.5
+                <p className="text-[11px] uppercase tracking-[0.14em] text-[#39ff7a]">
+                  GEMINI-2.5 // STUDIO_DESK_DAEMON
                 </p>
-                <p className="text-sm font-medium">37 Shipped Systems Indexed</p>
+                <p className="text-xs font-medium text-[#ebfff2]">37 Shipped Systems Indexed</p>
               </div>
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
                 aria-label="Dismiss AI assistant"
-                className="p-1.5 text-[#e8e3dd]/75 transition-colors hover:text-white"
+                className="p-1.5 text-[#6ca380] transition-colors hover:text-[#39ff7a]"
               >
                 <X className="h-4 w-4" />
               </button>
             </div>
 
-            <div className="custom-scrollbar flex-1 space-y-3.5 overflow-y-auto p-4 text-sm">
+            <div className="custom-scrollbar flex-1 space-y-3.5 overflow-y-auto p-4 text-xs leading-relaxed">
               {messages.map((msg, idx) => (
                 <div
                   key={idx}
                   className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-[85%] px-3.5 py-2.5 leading-relaxed ${
+                    className={`max-w-[88%] border px-3.5 py-2.5 leading-relaxed ${
                       msg.role === "user"
-                        ? "bg-[#171837] text-[#f6f2eb]"
-                        : "border border-[#121110]/15 bg-[#fbf9f5] text-[#121110]"
+                        ? "border-[#39ff7a] bg-[#0d1c13] text-[#ebfff2]"
+                        : "border-[#193826] bg-[#050a07] text-[#c9eed6]"
                     }`}
                   >
                     <ReactMarkdown
@@ -122,14 +122,14 @@ const ChatWidget: React.FC = () => {
                             href={href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-0.5 font-medium text-[#ea681d] underline underline-offset-2 hover:text-[#c74f0e]"
+                            className="inline-flex items-center gap-0.5 font-medium text-[#39ff7a] underline underline-offset-2 hover:text-[#ffb000]"
                           >
                             {children}
                             <ArrowUpRight className="h-3 w-3" />
                           </a>
                         ),
                         code: ({ children }) => (
-                          <code className="bg-[#e8e3dd] px-1 py-0.5 font-mono text-xs text-[#171837]">
+                          <code className="border border-[#193826] bg-[#0d1c13] px-1 py-0.5 text-[11px] text-[#ffb000]">
                             {children}
                           </code>
                         ),
@@ -143,9 +143,9 @@ const ChatWidget: React.FC = () => {
 
               {isLoading && (
                 <div className="flex justify-start">
-                  <div className="flex items-center gap-2 border border-[#121110]/15 bg-[#fbf9f5] px-3.5 py-2.5 font-mono text-xs text-[#5a544d]">
-                    <span>Querying index</span>
-                    <span className="inline-block h-1.5 w-1.5 animate-pulse bg-[#ea681d]" />
+                  <div className="flex items-center gap-2 border border-[#193826] bg-[#050a07] px-3.5 py-2.5 text-xs text-[#39ff7a]">
+                    <span>QUERYING_INDEX</span>
+                    <span className="term-cursor inline-block h-3 w-1.5 bg-[#39ff7a]" />
                   </div>
                 </div>
               )}
@@ -153,9 +153,9 @@ const ChatWidget: React.FC = () => {
             </div>
 
             {messages.length < 3 && !isLoading && (
-              <div className="border-t border-[#121110]/10 bg-[#efebe4] px-4 py-2.5">
-                <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-[#5a544d]">
-                  Quick Prompts
+              <div className="border-t border-[#193826] bg-[#060f0b] px-4 py-2.5">
+                <p className="mb-1.5 text-[10px] uppercase tracking-[0.12em] text-[#6ca380]">
+                  quick_prompts
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {SUGGESTED_PROMPTS.map((prompt) => (
@@ -163,7 +163,7 @@ const ChatWidget: React.FC = () => {
                       key={prompt}
                       type="button"
                       onClick={() => sendMessage(prompt)}
-                      className="border border-[#121110]/20 bg-[#f6f2eb] px-2.5 py-1 text-left text-xs text-[#121110] transition-colors hover:border-[#ea681d] hover:bg-[#ea681d]/10"
+                      className="border border-[#193826] bg-[#0d1c13] px-2.5 py-1 text-left text-[11px] text-[#c9eed6] transition-colors hover:border-[#39ff7a] hover:text-[#39ff7a]"
                     >
                       {prompt}
                     </button>
@@ -174,22 +174,23 @@ const ChatWidget: React.FC = () => {
 
             <form
               onSubmit={handleSubmit}
-              className="flex items-center gap-2 border-t border-[#121110]/15 bg-[#f6f2eb] p-3"
+              className="flex items-center gap-2 border-t border-[#193826] bg-[#050a07] p-3"
             >
+              <span className="text-xs font-semibold text-[#39ff7a]">ai&gt;</span>
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about bots, SaaS, Flagships, or FHEVM..."
-                className="flex-1 bg-transparent px-2 py-1.5 text-sm text-[#121110] placeholder:text-[#5a544d] focus:outline-none"
+                className="flex-1 bg-transparent px-1 py-1 text-xs text-[#ebfff2] placeholder:text-[#6ca380] focus:outline-none"
               />
               <button
                 type="submit"
                 disabled={isLoading || !input.trim()}
                 aria-label="Send message"
-                className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ea681d] text-[#121110] transition-colors hover:bg-[#d85a12] disabled:cursor-not-allowed disabled:opacity-45"
+                className="flex h-7 w-7 items-center justify-center bg-[#39ff7a] text-[#041108] transition-colors hover:bg-[#22e563] disabled:cursor-not-allowed disabled:opacity-45"
               >
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-3.5 w-3.5" />
               </button>
             </form>
           </motion.div>

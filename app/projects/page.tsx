@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { ArrowUpRight, Github, Search, Award } from "lucide-react";
+import { ArrowUpRight, Award, Github, Search } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { QuantBotCard } from "@/components/projects/QuantBotCard";
@@ -11,7 +11,7 @@ import {
   quantBotProjects,
   platformProjects,
   web3Projects,
-  FlagshipProject,
+  type FlagshipProject,
 } from "@/lib/portfolio-data";
 
 import leadPreviewImg from "@/assets/plates/lead-preview.png";
@@ -111,29 +111,28 @@ export default function ProjectsPage() {
     filteredWeb3.length;
 
   return (
-    <div className="flex min-h-screen flex-col proofing-wall-ground text-[#121110]">
+    <div className="flex min-h-screen flex-col bg-[#050a07] text-[#c9eed6]">
       <Header />
 
       <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        {/* Page Heading */}
-        <div className="border-b border-[#141311]/35 pb-8">
+        <div className="border-b border-[#193826] pb-8">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
             <div>
-              <h1 className="text-4xl font-normal tracking-tight text-[#0a0a0a] sm:text-5xl lg:text-6xl">
+              <h1 className="text-3xl font-semibold tracking-tight text-[#ebfff2] sm:text-4xl lg:text-5xl">
                 Shipped Proofing Index
               </h1>
-              <p className="mt-3 max-w-3xl text-lg leading-relaxed text-[#2f2b26]">
-                37 production systems across four disciplines: six Flagship interactive browser runtimes, eleven Python Quant &amp; Perp DEX market-making bots, ten SaaS/Fintech/AI platforms, and ten confidential Web3 &amp; Zama FHEVM protocols.
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#6ca380] sm:text-base">
+                37 production systems across four disciplines: six Flagship interactive browser runtimes, eleven Python Quant &amp; Perp DEX trading bots, ten SaaS/Fintech/AI platforms, and ten confidential Web3 &amp; Zama FHEVM protocols.
               </p>
             </div>
-            <div className="shrink-0 font-mono text-xs uppercase tracking-[0.12em] text-[#171837]">
+            <div className="shrink-0 border border-[#193826] bg-[#08120c] px-3 py-1.5 text-xs uppercase tracking-[0.12em] text-[#39ff7a]">
               Showing {totalVisible} / 37 builds
             </div>
           </div>
         </div>
 
-        {/* Category Tabs, Stack Filters, & Search */}
-        <section className="strip-shadow my-8 space-y-4 bg-[#f2eee6] p-4 sm:p-5">
+        {/* Category Tabs, Stack Filters, & grep Search */}
+        <section className="my-8 space-y-4 border border-[#193826] bg-[#08120c] p-4 sm:p-5">
           <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
             <div className="flex flex-wrap gap-2" role="tablist" aria-label="Project tracks">
               {[
@@ -151,10 +150,10 @@ export default function ProjectsPage() {
                     role="tab"
                     aria-selected={active}
                     onClick={() => setCategory(tab.id as CategoryFilter)}
-                    className={`border px-3.5 py-2 font-mono text-xs uppercase tracking-[0.1em] transition-colors ${
+                    className={`border px-3 py-2 text-xs uppercase tracking-[0.08em] transition-colors ${
                       active
-                        ? "border-[#121110] bg-[#171837] text-[#f6f2eb]"
-                        : "border-[#141311]/25 bg-white/50 text-[#121110] hover:border-[#ea681d]"
+                        ? "border-[#39ff7a] bg-[#39ff7a] font-semibold text-[#041108]"
+                        : "border-[#193826] bg-[#050a07] text-[#c9eed6] hover:border-[#39ff7a] hover:text-[#39ff7a]"
                     }`}
                   >
                     {tab.label}
@@ -163,22 +162,22 @@ export default function ProjectsPage() {
               })}
             </div>
 
-            <div className="relative w-full lg:w-72">
-              <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#5a544d]" />
+            <div className="relative w-full lg:w-80">
+              <Search className="pointer-events-none absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-[#39ff7a]" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Filter by title, DEX, or stack..."
+                placeholder="grep projects by title, DEX, or stack..."
                 aria-label="Filter projects by keyword"
-                className="w-full border border-[#141311]/25 bg-white/75 py-2 pl-9 pr-3 text-sm text-[#121110] placeholder:text-[#5a544d] focus:border-[#ea681d] focus:outline-none"
+                className="w-full border border-[#193826] bg-[#050a07] py-2 pl-9 pr-3 text-xs text-[#ebfff2] placeholder:text-[#6ca380] focus:border-[#39ff7a] focus:outline-none"
               />
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-2 border-t border-[#141311]/12 pt-3">
-            <span className="mr-1 font-mono text-[11px] uppercase tracking-[0.12em] text-[#5a544d]">
-              Stack:
+          <div className="flex flex-wrap items-center gap-2 border-t border-[#193826] pt-3">
+            <span className="mr-1 text-[11px] uppercase tracking-[0.12em] text-[#6ca380]">
+              STACK_FILTER:
             </span>
             {STACK_FILTERS.map((tag) => {
               const active = stackFilter === tag;
@@ -187,10 +186,10 @@ export default function ProjectsPage() {
                   key={tag}
                   type="button"
                   onClick={() => setStackFilter(tag)}
-                  className={`border px-2.5 py-1 font-mono text-xs transition-colors ${
+                  className={`border px-2.5 py-1 text-xs transition-colors ${
                     active
-                      ? "border-[#ea681d] bg-[#ea681d] text-[#121110]"
-                      : "border-[#141311]/15 bg-[#e8e3dd]/70 text-[#2f2b26] hover:border-[#121110]"
+                      ? "border-[#39ff7a] bg-[#39ff7a] font-semibold text-[#041108]"
+                      : "border-[#193826] bg-[#0d1c13] text-[#c9eed6] hover:border-[#2f7d4d] hover:text-[#39ff7a]"
                   }`}
                 >
                   {tag}
@@ -200,25 +199,25 @@ export default function ProjectsPage() {
           </div>
         </section>
 
-        {/* Track 1: 6 Flagship Interactive Full-Stack Proof Sheets */}
+        {/* Track 1: 6 Flagship Interactive Full-Stack Runtimes */}
         {filteredFlagships.length > 0 && (
           <section className="mb-14">
-            <div className="mb-5 flex items-center justify-between border-b border-[#141311]/25 pb-2">
-              <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-[#121110]">
-                TRACK 01 · FLAGSHIP INTERACTIVE FULL-STACK SYSTEMS ({filteredFlagships.length})
+            <div className="mb-5 flex items-center justify-between border-b border-[#193826] pb-2">
+              <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-[#39ff7a]">
+                TRACK 01 // FLAGSHIP INTERACTIVE FULL-STACK SYSTEMS ({filteredFlagships.length})
               </h2>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {filteredFlagships.map((proj: FlagshipProject) => {
                 const plate = plateMap[proj.plateKey];
                 return (
                   <article
                     key={proj.id}
-                    className="proof-shadow flex flex-col justify-between bg-[#f2eee6] p-5"
+                    className="flex flex-col justify-between border border-[#193826] bg-[#08120c] p-5 transition-colors hover:border-[#2f7d4d]"
                   >
                     <div>
-                      <div className="mb-4 aspect-[16/9] w-full overflow-hidden bg-[#dcd7d0]">
+                      <div className="mb-4 aspect-[16/9] w-full overflow-hidden border border-[#193826] bg-[#050a07]">
                         <img
                           src={plate.src}
                           alt={`${proj.title} preview`}
@@ -227,33 +226,33 @@ export default function ProjectsPage() {
                       </div>
 
                       <div className="flex items-baseline justify-between gap-2">
-                        <h3 className="text-2xl font-normal tracking-tight text-[#0a0a0a]">
-                          {proj.index} · {proj.title}
+                        <h3 className="text-lg font-semibold tracking-tight text-[#ebfff2]">
+                          [{proj.index}] {proj.title}
                         </h3>
-                        <span className="shrink-0 font-mono text-[11px] uppercase tracking-[0.08em] text-[#ea681d]">
+                        <span className="shrink-0 text-[11px] uppercase tracking-[0.06em] text-[#39ff7a]">
                           {proj.shortLabel.split("·")[1]?.trim() || "Interactive"}
                         </span>
                       </div>
-                      <p className="mt-2 text-sm leading-relaxed text-[#38332c]">
+                      <p className="mt-2 text-xs leading-relaxed text-[#c9eed6]">
                         {proj.description}
                       </p>
 
-                      <ul className="mt-4 space-y-1.5 border-t border-[#141311]/10 pt-3 text-xs leading-relaxed text-[#474139]">
+                      <ul className="mt-4 space-y-1.5 border-t border-[#193826] pt-3 text-xs leading-relaxed text-[#9dc4ac]">
                         {proj.mechanics.slice(0, 3).map((mech) => (
                           <li key={mech} className="flex items-start gap-2">
-                            <span className="mt-1 h-1.5 w-1.5 shrink-0 bg-[#ea681d]" />
+                            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-[#39ff7a]" />
                             <span>{mech}</span>
                           </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="mt-5 border-t border-[#141311]/12 pt-4">
+                    <div className="mt-5 border-t border-[#193826] pt-4">
                       <div className="mb-4 flex flex-wrap gap-1.5">
                         {proj.tags.map((t) => (
                           <span
                             key={t}
-                            className="border border-[#141311]/15 bg-[#e8e3dd] px-2 py-0.5 font-mono text-[11px] text-[#1a1815]"
+                            className="border border-[#193826] bg-[#0d1c13] px-2 py-0.5 text-[11px] text-[#c9eed6]"
                           >
                             {t}
                           </span>
@@ -265,7 +264,7 @@ export default function ProjectsPage() {
                           href={proj.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-1.5 border border-[#141311]/30 bg-white/60 px-3 py-2 text-xs font-medium text-[#121110] transition-colors hover:border-[#121110] hover:bg-white"
+                          className="flex items-center justify-center gap-1.5 border border-[#2f7d4d] bg-[#050a07] px-3 py-2 text-xs text-[#c9eed6] transition-colors hover:border-[#39ff7a] hover:text-[#39ff7a]"
                         >
                           <Github className="h-3.5 w-3.5" />
                           <span>Source</span>
@@ -274,7 +273,7 @@ export default function ProjectsPage() {
                           href={proj.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-1.5 rounded-[3px] bg-[#ea681d] px-3 py-2 text-xs font-medium text-[#120e0a] transition-colors hover:bg-[#d85a12]"
+                          className="flex items-center justify-center gap-1.5 bg-[#39ff7a] px-3 py-2 text-xs font-semibold text-[#041108] transition-colors hover:bg-[#22e563]"
                         >
                           <span>Launch Live</span>
                           <ArrowUpRight className="h-3.5 w-3.5" />
@@ -291,16 +290,16 @@ export default function ProjectsPage() {
         {/* Track 2: 11 Quant & Algorithmic Perp DEX Trading Bots */}
         {filteredQuantBots.length > 0 && (
           <section className="mb-14">
-            <div className="mb-5 flex flex-wrap items-center justify-between gap-2 border-b border-[#141311]/25 pb-2">
-              <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-[#121110]">
-                TRACK 02 · QUANT &amp; ALGORITHMIC PERP DEX TRADING BOTS ({filteredQuantBots.length})
+            <div className="mb-5 flex flex-wrap items-center justify-between gap-2 border-b border-[#193826] pb-2">
+              <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-[#ffb000]">
+                TRACK 02 // QUANT &amp; ALGORITHMIC PERP DEX TRADING BOTS ({filteredQuantBots.length})
               </h2>
-              <span className="font-mono text-[11px] text-[#5a544d]">
+              <span className="text-[11px] text-[#6ca380]">
                 Python AsyncIO · WebSockets · SDK &amp; Market-Making Engines
               </span>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {filteredQuantBots.map((proj) => (
                 <QuantBotCard key={proj.id} proj={proj} />
               ))}
@@ -311,16 +310,16 @@ export default function ProjectsPage() {
         {/* Track 3: 10 Production SaaS, Fintech & AI Platforms */}
         {filteredPlatforms.length > 0 && (
           <section className="mb-14">
-            <div className="mb-5 flex flex-wrap items-center justify-between gap-2 border-b border-[#141311]/25 pb-2">
-              <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-[#121110]">
-                TRACK 03 · PRODUCTION SAAS, FINTECH &amp; AI PLATFORMS ({filteredPlatforms.length})
+            <div className="mb-5 flex flex-wrap items-center justify-between gap-2 border-b border-[#193826] pb-2">
+              <h2 className="text-xs font-semibold uppercase tracking-[0.14em] text-[#46e8c8]">
+                TRACK 03 // PRODUCTION SAAS, FINTECH &amp; AI PLATFORMS ({filteredPlatforms.length})
               </h2>
-              <span className="font-mono text-[11px] text-[#5a544d]">
+              <span className="text-[11px] text-[#6ca380]">
                 Base L2 Vaults · Offline/Cloud POS · Gemini AI · GPU 3D APIs
               </span>
             </div>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {filteredPlatforms.map((proj) => (
                 <PlatformProjectCard key={proj.id} proj={proj} />
               ))}
@@ -330,53 +329,53 @@ export default function ProjectsPage() {
 
         {/* Track 4: 10 Confidential Web3 & Zama FHEVM Protocols */}
         {filteredWeb3.length > 0 && (
-          <section className="border border-[#e8e3dd]/20 bg-[#171837] p-6 text-[#eeeef5] sm:p-8">
-            <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-b border-[#e8e3dd]/20 pb-4">
+          <section className="border border-[#193826] bg-[#060f0b] p-6 sm:p-8">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-b border-[#193826] pb-4">
               <div>
-                <h2 className="text-2xl font-normal text-[#f6f2eb] sm:text-3xl">
+                <h2 className="text-xl font-semibold text-[#ebfff2] sm:text-2xl">
                   On-Chain Privacy Protocols, Launchpads &amp; Tooling ({filteredWeb3.length})
                 </h2>
               </div>
-              <span className="font-mono text-xs text-[#e6d4b6]">
+              <span className="text-xs text-[#46e8c8]">
                 Solidity · Hardhat · Zama FHEVM · Monad · Morph L2
               </span>
             </div>
 
-            <div className="grid gap-5 md:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-2">
               {filteredWeb3.map((proj) => (
                 <article
                   key={proj.id}
-                  className="flex flex-col justify-between border border-[#e8e3dd]/25 bg-[#12132d] p-5 transition-colors hover:border-[#ea681d]/70"
+                  className="flex flex-col justify-between border border-[#193826] bg-[#08120c] p-5 transition-colors hover:border-[#2f7d4d]"
                 >
                   <div>
                     <div className="flex flex-wrap items-baseline justify-between gap-2">
-                      <h3 className="text-2xl font-normal text-[#f6f2eb]">
-                        {proj.index} · {proj.title}
+                      <h3 className="text-lg font-semibold text-[#ebfff2]">
+                        [{proj.index}] {proj.title}
                       </h3>
                       {proj.highlight && (
-                        <span className="inline-flex items-center gap-1.5 bg-[#ea681d] px-2.5 py-0.5 font-mono text-[11px] font-medium text-[#121110]">
+                        <span className="inline-flex items-center gap-1.5 bg-[#ffb000] px-2.5 py-0.5 text-[11px] font-semibold text-[#041108]">
                           <Award className="h-3 w-3" />
                           <span>{proj.highlight}</span>
                         </span>
                       )}
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-[#c6c7d6]">
+                    <p className="mt-2 text-xs leading-relaxed text-[#c9eed6]">
                       {proj.description}
                     </p>
 
-                    <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] text-[#e6d4b6]">
+                    <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-[#6ca380]">
                       {proj.features.map((feat) => (
                         <span key={feat}>• {feat}</span>
                       ))}
                     </div>
                   </div>
 
-                  <div className="mt-5 border-t border-[#e8e3dd]/15 pt-4">
+                  <div className="mt-5 border-t border-[#193826] pt-4">
                     <div className="mb-4 flex flex-wrap gap-1.5">
                       {proj.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="border border-[#e8e3dd]/20 bg-white/5 px-2 py-0.5 font-mono text-[11px] text-[#dcdde9]"
+                          className="border border-[#193826] bg-[#0d1c13] px-2 py-0.5 text-[11px] text-[#c9eed6]"
                         >
                           {tag}
                         </span>
@@ -388,7 +387,7 @@ export default function ProjectsPage() {
                         href={proj.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1.5 border border-[#e8e3dd]/30 px-3 py-2 text-xs text-[#f6f2eb] transition-colors hover:border-[#f6f2eb] hover:bg-white/10"
+                        className="flex items-center justify-center gap-1.5 border border-[#2f7d4d] bg-[#050a07] px-3 py-2 text-xs text-[#c9eed6] transition-colors hover:border-[#39ff7a] hover:text-[#39ff7a]"
                       >
                         <Github className="h-3.5 w-3.5" />
                         <span>GitHub</span>
@@ -397,7 +396,7 @@ export default function ProjectsPage() {
                         href={proj.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1.5 bg-[#ea681d] px-3 py-2 text-xs font-medium text-[#120e0a] transition-colors hover:bg-[#d85a12]"
+                        className="flex items-center justify-center gap-1.5 bg-[#39ff7a] px-3 py-2 text-xs font-semibold text-[#041108] transition-colors hover:bg-[#22e563]"
                       >
                         <span>Launch Live</span>
                         <ArrowUpRight className="h-3.5 w-3.5" />
@@ -411,8 +410,8 @@ export default function ProjectsPage() {
         )}
 
         {totalVisible === 0 && (
-          <div className="border border-[#141311]/20 bg-[#f2eee6] p-12 text-center">
-            <p className="text-xl text-[#0a0a0a]">No shipped builds matched the current filter.</p>
+          <div className="border border-[#193826] bg-[#08120c] p-12 text-center">
+            <p className="text-base text-[#ebfff2]">exit 1: No shipped builds matched the current filter.</p>
             <button
               type="button"
               onClick={() => {
@@ -420,9 +419,9 @@ export default function ProjectsPage() {
                 setStackFilter("All Stacks");
                 setSearchQuery("");
               }}
-              className="mt-4 bg-[#171837] px-5 py-2.5 text-sm text-[#f6f2eb] hover:bg-[#ea681d] hover:text-[#121110]"
+              className="mt-4 bg-[#39ff7a] px-5 py-2.5 text-xs font-semibold text-[#041108] hover:bg-[#22e563]"
             >
-              Reset All Filters
+              RESET FILTERS
             </button>
           </div>
         )}

@@ -1,444 +1,440 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-21T03:32:00.000Z",
-  "title": "Design System: Jobjab Portfolio — Studio Proofing Wall",
+  "generatedAt": "2026-11-21T05:32:00.000Z",
+  "title": "Design System: Jobjab Portfolio — Phosphor Unix Terminal",
   "extensions": {
     "colorMeta": {
-      "cadmium-signal": {
+      "phosphor-green": {
         "role": "primary",
-        "displayName": "Cadmium Signal",
-        "canonical": "#ea681d",
+        "displayName": "Phosphor Green",
+        "canonical": "#39ff7a",
         "tonalRamp": [
-          "oklch(24% 0.08 42)",
-          "oklch(34% 0.12 42)",
-          "oklch(45% 0.15 42)",
-          "oklch(55% 0.17 42)",
-          "oklch(64% 0.175 42)",
-          "oklch(74% 0.14 42)",
-          "oklch(84% 0.09 42)",
-          "oklch(94% 0.04 42)"
+          "oklch(22% 0.08 148)",
+          "oklch(34% 0.13 148)",
+          "oklch(48% 0.17 148)",
+          "oklch(62% 0.21 148)",
+          "oklch(75% 0.23 148)",
+          "oklch(87% 0.24 148)",
+          "oklch(92% 0.14 148)",
+          "oklch(96% 0.06 148)"
         ]
       },
-      "cadmium-hover": {
+      "phosphor-green-hover": {
         "role": "primary",
-        "displayName": "Cadmium Hover",
-        "canonical": "#d85a12",
+        "displayName": "Phosphor Green Hover",
+        "canonical": "#22e563",
         "tonalRamp": [
-          "oklch(22% 0.08 40)",
-          "oklch(32% 0.12 40)",
-          "oklch(42% 0.15 40)",
-          "oklch(52% 0.17 40)",
-          "oklch(60% 0.17 40)",
-          "oklch(71% 0.13 40)",
-          "oklch(82% 0.08 40)",
-          "oklch(93% 0.03 40)"
+          "oklch(20% 0.08 148)",
+          "oklch(32% 0.13 148)",
+          "oklch(45% 0.17 148)",
+          "oklch(58% 0.20 148)",
+          "oklch(70% 0.21 148)",
+          "oklch(80% 0.21 148)",
+          "oklch(89% 0.12 148)",
+          "oklch(95% 0.05 148)"
         ]
       },
-      "indigo-ledger": {
+      "phosphor-green-ink": {
+        "role": "neutral",
+        "displayName": "Phosphor Green Ink",
+        "canonical": "#041108",
+        "tonalRamp": [
+          "oklch(14% 0.025 148)",
+          "oklch(24% 0.03 148)",
+          "oklch(36% 0.032 148)",
+          "oklch(48% 0.032 148)",
+          "oklch(60% 0.03 148)",
+          "oklch(72% 0.025 148)",
+          "oklch(84% 0.018 148)",
+          "oklch(94% 0.01 148)"
+        ]
+      },
+      "phosphor-amber": {
         "role": "secondary",
-        "displayName": "Indigo Ledger",
-        "canonical": "#171837",
+        "displayName": "Phosphor Amber",
+        "canonical": "#ffb000",
         "tonalRamp": [
-          "oklch(16% 0.06 274)",
-          "oklch(22% 0.075 274)",
-          "oklch(32% 0.085 274)",
-          "oklch(44% 0.085 274)",
-          "oklch(56% 0.08 274)",
-          "oklch(68% 0.065 274)",
-          "oklch(81% 0.045 274)",
-          "oklch(94% 0.02 274)"
+          "oklch(24% 0.06 78)",
+          "oklch(36% 0.09 78)",
+          "oklch(48% 0.12 78)",
+          "oklch(60% 0.145 78)",
+          "oklch(72% 0.165 78)",
+          "oklch(80% 0.17 78)",
+          "oklch(88% 0.11 78)",
+          "oklch(95% 0.05 78)"
         ]
       },
-      "indigo-deep": {
+      "phosphor-amber-hover": {
         "role": "secondary",
-        "displayName": "Indigo Deep",
-        "canonical": "#12132d",
+        "displayName": "Phosphor Amber Hover",
+        "canonical": "#e59e00",
         "tonalRamp": [
-          "oklch(15% 0.055 274)",
-          "oklch(19% 0.068 274)",
-          "oklch(29% 0.075 274)",
-          "oklch(41% 0.075 274)",
-          "oklch(53% 0.07 274)",
-          "oklch(66% 0.055 274)",
-          "oklch(80% 0.035 274)",
-          "oklch(93% 0.015 274)"
+          "oklch(22% 0.06 78)",
+          "oklch(34% 0.09 78)",
+          "oklch(46% 0.12 78)",
+          "oklch(58% 0.14 78)",
+          "oklch(68% 0.155 78)",
+          "oklch(75% 0.16 78)",
+          "oklch(86% 0.10 78)",
+          "oklch(94% 0.04 78)"
         ]
       },
-      "indigo-ink": {
-        "role": "neutral",
-        "displayName": "Indigo Ink",
-        "canonical": "#eeeef5",
+      "phosphor-cyan": {
+        "role": "secondary",
+        "displayName": "Phosphor Cyan",
+        "canonical": "#46e8c8",
         "tonalRamp": [
-          "oklch(18% 0.01 275)",
-          "oklch(28% 0.01 275)",
-          "oklch(40% 0.012 275)",
-          "oklch(54% 0.012 275)",
-          "oklch(68% 0.012 275)",
-          "oklch(80% 0.012 275)",
-          "oklch(90% 0.012 275)",
-          "oklch(95% 0.012 275)"
+          "oklch(22% 0.05 178)",
+          "oklch(34% 0.08 178)",
+          "oklch(48% 0.11 178)",
+          "oklch(60% 0.13 178)",
+          "oklch(72% 0.145 178)",
+          "oklch(84% 0.15 178)",
+          "oklch(90% 0.09 178)",
+          "oklch(95% 0.04 178)"
         ]
       },
-      "indigo-muted": {
+      "term-void": {
         "role": "neutral",
-        "displayName": "Indigo Muted",
-        "canonical": "#c6c7d6",
+        "displayName": "Term Void",
+        "canonical": "#050a07",
         "tonalRamp": [
-          "oklch(18% 0.02 276)",
-          "oklch(30% 0.022 276)",
-          "oklch(42% 0.024 276)",
-          "oklch(55% 0.024 276)",
-          "oklch(68% 0.024 276)",
-          "oklch(82% 0.02 276)",
-          "oklch(89% 0.015 276)",
-          "oklch(95% 0.008 276)"
+          "oklch(12% 0.015 152)",
+          "oklch(22% 0.02 152)",
+          "oklch(34% 0.024 152)",
+          "oklch(46% 0.025 152)",
+          "oklch(60% 0.024 152)",
+          "oklch(74% 0.02 152)",
+          "oklch(86% 0.014 152)",
+          "oklch(94% 0.008 152)"
         ]
       },
-      "indigo-label": {
+      "term-sub": {
         "role": "neutral",
-        "displayName": "Indigo Label",
-        "canonical": "#a6a7b8",
+        "displayName": "Term Sub",
+        "canonical": "#060f0b",
         "tonalRamp": [
-          "oklch(18% 0.02 276)",
-          "oklch(29% 0.022 276)",
-          "oklch(41% 0.024 276)",
-          "oklch(55% 0.024 276)",
-          "oklch(72% 0.022 276)",
-          "oklch(82% 0.018 276)",
-          "oklch(89% 0.012 276)",
-          "oklch(95% 0.006 276)"
+          "oklch(14% 0.02 152)",
+          "oklch(24% 0.024 152)",
+          "oklch(36% 0.028 152)",
+          "oklch(48% 0.028 152)",
+          "oklch(61% 0.026 152)",
+          "oklch(75% 0.022 152)",
+          "oklch(87% 0.015 152)",
+          "oklch(95% 0.008 152)"
         ]
       },
-      "wall-plaster": {
+      "term-pane": {
         "role": "neutral",
-        "displayName": "Wall Plaster",
-        "canonical": "#bdb09f",
+        "displayName": "Term Pane",
+        "canonical": "#08120c",
         "tonalRamp": [
-          "oklch(18% 0.02 72)",
-          "oklch(30% 0.024 72)",
-          "oklch(42% 0.028 72)",
-          "oklch(56% 0.028 72)",
-          "oklch(75% 0.027 72)",
-          "oklch(84% 0.022 72)",
-          "oklch(90% 0.015 72)",
-          "oklch(95% 0.008 72)"
+          "oklch(16% 0.024 152)",
+          "oklch(26% 0.028 152)",
+          "oklch(38% 0.032 152)",
+          "oklch(50% 0.032 152)",
+          "oklch(63% 0.03 152)",
+          "oklch(76% 0.025 152)",
+          "oklch(88% 0.016 152)",
+          "oklch(95% 0.008 152)"
         ]
       },
-      "wall-sunlight": {
+      "term-pane-bar": {
         "role": "neutral",
-        "displayName": "Wall Sunlight",
-        "canonical": "#e6d4b6",
+        "displayName": "Term Pane Bar",
+        "canonical": "#0c1911",
         "tonalRamp": [
-          "oklch(20% 0.025 78)",
-          "oklch(32% 0.032 78)",
-          "oklch(46% 0.038 78)",
-          "oklch(60% 0.042 78)",
-          "oklch(74% 0.045 78)",
-          "oklch(87% 0.044 78)",
-          "oklch(92% 0.03 78)",
-          "oklch(96% 0.015 78)"
+          "oklch(19% 0.028 152)",
+          "oklch(29% 0.032 152)",
+          "oklch(41% 0.035 152)",
+          "oklch(53% 0.035 152)",
+          "oklch(66% 0.032 152)",
+          "oklch(78% 0.026 152)",
+          "oklch(89% 0.017 152)",
+          "oklch(95% 0.008 152)"
         ]
       },
-      "wall-shade": {
+      "term-pane-alt": {
         "role": "neutral",
-        "displayName": "Wall Shade",
-        "canonical": "#b2a28e",
+        "displayName": "Term Pane Alt",
+        "canonical": "#0d1c13",
         "tonalRamp": [
-          "oklch(17% 0.022 72)",
-          "oklch(28% 0.026 72)",
-          "oklch(40% 0.03 72)",
-          "oklch(54% 0.032 72)",
-          "oklch(71% 0.031 72)",
-          "oklch(81% 0.024 72)",
-          "oklch(89% 0.016 72)",
-          "oklch(95% 0.008 72)"
+          "oklch(20% 0.032 152)",
+          "oklch(30% 0.036 152)",
+          "oklch(42% 0.038 152)",
+          "oklch(55% 0.038 152)",
+          "oklch(67% 0.034 152)",
+          "oklch(79% 0.028 152)",
+          "oklch(89% 0.018 152)",
+          "oklch(95% 0.009 152)"
         ]
       },
-      "paper-sheet": {
+      "term-border": {
         "role": "neutral",
-        "displayName": "Paper Sheet",
-        "canonical": "#efebe4",
+        "displayName": "Term Border",
+        "canonical": "#193826",
         "tonalRamp": [
-          "oklch(18% 0.01 74)",
-          "oklch(30% 0.012 74)",
-          "oklch(44% 0.013 74)",
-          "oklch(58% 0.014 74)",
-          "oklch(72% 0.014 74)",
-          "oklch(83% 0.013 74)",
-          "oklch(90% 0.012 74)",
-          "oklch(94% 0.01 74)"
+          "oklch(22% 0.04 152)",
+          "oklch(31% 0.052 152)",
+          "oklch(42% 0.055 152)",
+          "oklch(55% 0.055 152)",
+          "oklch(67% 0.048 152)",
+          "oklch(79% 0.038 152)",
+          "oklch(89% 0.024 152)",
+          "oklch(95% 0.012 152)"
         ]
       },
-      "paper-bright": {
+      "term-border-bright": {
         "role": "neutral",
-        "displayName": "Paper Bright",
-        "canonical": "#f6f2eb",
+        "displayName": "Term Border Bright",
+        "canonical": "#2f7d4d",
         "tonalRamp": [
-          "oklch(18% 0.01 74)",
-          "oklch(31% 0.011 74)",
-          "oklch(45% 0.012 74)",
-          "oklch(59% 0.012 74)",
-          "oklch(73% 0.012 74)",
-          "oklch(84% 0.012 74)",
-          "oklch(91% 0.011 74)",
-          "oklch(96% 0.01 74)"
+          "oklch(24% 0.055 152)",
+          "oklch(36% 0.075 152)",
+          "oklch(51% 0.105 152)",
+          "oklch(63% 0.105 152)",
+          "oklch(74% 0.09 152)",
+          "oklch(84% 0.065 152)",
+          "oklch(91% 0.04 152)",
+          "oklch(96% 0.018 152)"
         ]
       },
-      "paper-card": {
-        "role": "neutral",
-        "displayName": "Paper Card",
-        "canonical": "#f2eee6",
+      "amber-tint": {
+        "role": "secondary",
+        "displayName": "Amber Tint",
+        "canonical": "#191205",
         "tonalRamp": [
-          "oklch(18% 0.01 74)",
-          "oklch(30% 0.012 74)",
-          "oklch(44% 0.013 74)",
-          "oklch(58% 0.014 74)",
-          "oklch(72% 0.014 74)",
-          "oklch(84% 0.013 74)",
-          "oklch(90% 0.012 74)",
-          "oklch(95% 0.011 74)"
+          "oklch(17% 0.032 78)",
+          "oklch(27% 0.04 78)",
+          "oklch(39% 0.045 78)",
+          "oklch(52% 0.045 78)",
+          "oklch(65% 0.042 78)",
+          "oklch(78% 0.035 78)",
+          "oklch(88% 0.022 78)",
+          "oklch(95% 0.01 78)"
         ]
       },
-      "paper-strip-upper": {
+      "term-ink-bright": {
         "role": "neutral",
-        "displayName": "Paper Strip Upper",
-        "canonical": "#dad5cf",
+        "displayName": "Term Ink Bright",
+        "canonical": "#ebfff2",
         "tonalRamp": [
-          "oklch(18% 0.008 72)",
-          "oklch(30% 0.01 72)",
-          "oklch(44% 0.011 72)",
-          "oklch(58% 0.011 72)",
-          "oklch(72% 0.011 72)",
-          "oklch(86% 0.01 72)",
-          "oklch(91% 0.008 72)",
-          "oklch(95% 0.006 72)"
+          "oklch(20% 0.015 150)",
+          "oklch(32% 0.018 150)",
+          "oklch(45% 0.022 150)",
+          "oklch(58% 0.024 150)",
+          "oklch(71% 0.024 150)",
+          "oklch(83% 0.022 150)",
+          "oklch(91% 0.02 150)",
+          "oklch(97% 0.018 150)"
         ]
       },
-      "paper-strip-mid": {
+      "term-ink": {
         "role": "neutral",
-        "displayName": "Paper Strip Mid",
-        "canonical": "#e6e1db",
+        "displayName": "Term Ink",
+        "canonical": "#c9eed6",
         "tonalRamp": [
-          "oklch(18% 0.009 72)",
-          "oklch(30% 0.011 72)",
-          "oklch(44% 0.011 72)",
-          "oklch(58% 0.012 72)",
-          "oklch(73% 0.012 72)",
-          "oklch(85% 0.011 72)",
-          "oklch(91% 0.01 72)",
-          "oklch(95% 0.008 72)"
+          "oklch(19% 0.024 150)",
+          "oklch(31% 0.032 150)",
+          "oklch(44% 0.04 150)",
+          "oklch(57% 0.045 150)",
+          "oklch(70% 0.048 150)",
+          "oklch(82% 0.05 150)",
+          "oklch(90% 0.045 150)",
+          "oklch(95% 0.025 150)"
         ]
       },
-      "ink-obsidian": {
+      "term-ink-soft": {
         "role": "neutral",
-        "displayName": "Ink Obsidian",
-        "canonical": "#121110",
+        "displayName": "Term Ink Soft",
+        "canonical": "#9dc4ac",
         "tonalRamp": [
-          "oklch(17% 0.005 68)",
-          "oklch(26% 0.006 68)",
-          "oklch(38% 0.006 68)",
-          "oklch(50% 0.006 68)",
-          "oklch(62% 0.006 68)",
-          "oklch(74% 0.005 68)",
-          "oklch(86% 0.004 68)",
-          "oklch(95% 0.003 68)"
+          "oklch(18% 0.022 150)",
+          "oklch(30% 0.03 150)",
+          "oklch(42% 0.038 150)",
+          "oklch(55% 0.042 150)",
+          "oklch(68% 0.044 150)",
+          "oklch(78% 0.042 150)",
+          "oklch(88% 0.03 150)",
+          "oklch(95% 0.015 150)"
         ]
       },
-      "ink-headline": {
+      "term-ink-muted": {
         "role": "neutral",
-        "displayName": "Ink Headline",
-        "canonical": "#0a0a0a",
+        "displayName": "Term Ink Muted",
+        "canonical": "#6ca380",
         "tonalRamp": [
-          "oklch(14% 0.0 0)",
-          "oklch(25% 0.0 0)",
-          "oklch(37% 0.0 0)",
-          "oklch(49% 0.0 0)",
-          "oklch(61% 0.0 0)",
-          "oklch(73% 0.0 0)",
-          "oklch(85% 0.0 0)",
-          "oklch(95% 0.0 0)"
-        ]
-      },
-      "ink-muted": {
-        "role": "neutral",
-        "displayName": "Ink Muted",
-        "canonical": "#5a544d",
-        "tonalRamp": [
-          "oklch(18% 0.012 72)",
-          "oklch(29% 0.014 72)",
-          "oklch(44% 0.015 72)",
-          "oklch(56% 0.015 72)",
-          "oklch(68% 0.014 72)",
-          "oklch(79% 0.011 72)",
-          "oklch(88% 0.008 72)",
-          "oklch(95% 0.005 72)"
+          "oklch(18% 0.025 150)",
+          "oklch(29% 0.035 150)",
+          "oklch(41% 0.045 150)",
+          "oklch(54% 0.054 150)",
+          "oklch(66% 0.058 150)",
+          "oklch(78% 0.048 150)",
+          "oklch(88% 0.03 150)",
+          "oklch(95% 0.015 150)"
         ]
       }
     },
     "typographyMeta": {
       "display": {
         "displayName": "Display",
-        "purpose": "Pinned hero proofing sheet lead title."
+        "purpose": "Subpage primary console headlines."
       },
       "headline": {
         "displayName": "Headline",
-        "purpose": "Section headings across Flagship, Web3 Ledger, Tech Matrix, and subpage heroes."
+        "purpose": "Major track headings across home workstation sections."
       },
       "title": {
         "displayName": "Title",
-        "purpose": "Numbered project card titles and Zama bounty dossier headings."
+        "purpose": "Proof Monitor active project title and numbered project card titles."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Project descriptions, architectural mechanics bullets, and studio prose."
+        "purpose": "Descriptions, capability bullets, and zsh transcript lines."
       },
       "label": {
         "displayName": "Label",
-        "purpose": "IBM Plex Mono technical stack tags, counts, indexes, and footer metadata."
+        "purpose": "Buttons, tmux nav tabs, and track headers."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Dependency chips, venue lines, and quick-command buttons."
+      },
+      "micro": {
+        "displayName": "Micro",
+        "purpose": "PRIVATE_REPO status badges and selector indices."
       }
     },
-    "shadows": [
-      {
-        "name": "proof-shadow",
-        "value": "0 12px 28px rgba(42, 32, 22, 0.24), 0 3px 8px rgba(42, 32, 22, 0.14)",
-        "purpose": "Soft paper drop shadow lifting pinned proof sheets and Flagship cards off the plaster wall."
-      },
-      {
-        "name": "strip-shadow",
-        "value": "0 4px 12px rgba(42, 32, 22, 0.18), 0 1px 4px rgba(42, 32, 22, 0.12)",
-        "purpose": "Lighter paper contact shadow for stacked hero strips 02-06 and Tech Matrix columns."
-      }
-    ],
+    "shadows": [],
     "motion": [
       {
-        "name": "card-lift",
-        "value": "transform -3px Y over 180ms cubic-bezier(0.22, 1, 0.36, 1)",
-        "purpose": "Subtle physical lift on Flagship proof cards under pointer hover."
+        "name": "proof-swap",
+        "value": "opacity 0->1 and y 6px->0 over 180ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Transitioning Proof Monitor state when swapping Flagship items or running cat <index>."
       },
       {
-        "name": "sheet-swap",
-        "value": "opacity 0->1 and y 12px->0 over 220ms cubic-bezier(0.22, 1, 0.36, 1)",
-        "purpose": "Swapping proofs from the 02-06 selector strip into the main hero wall sheet."
+        "name": "cursor-blink",
+        "value": "1.05s steps(2, start) infinite",
+        "purpose": "Authentic block cursor blink in the active zsh command prompt (disabled under reduced motion)."
       }
     ],
     "breakpoints": [
       { "name": "sm", "value": "640px" },
       { "name": "md", "value": "768px" },
       { "name": "lg", "value": "1024px" },
-      { "name": "stage-reference", "value": "1376px" },
       { "name": "max-container", "value": "1440px" }
     ]
   },
   "components": [
     {
-      "name": "Primary CTA Button",
+      "name": "Phosphor Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "High-contrast Cadmium Signal launch CTA reserved for live deployments and top bounty actions.",
+      "description": "High-contrast CRT Phosphor Green launch CTA for live deployments and EXEC shell submits.",
       "html": "<a href=\"#\" class=\"ds-btn-primary\"><span>Launch Live</span><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7\"/><path d=\"M7 7h10v10\"/></svg></a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--cadmium-signal, #ea681d); color: #120e0a; font-family: \"Rambla\", sans-serif; font-size: 13px; font-weight: 500; padding: 10px 20px; border-radius: 4px; text-decoration: none; cursor: pointer; transition: background-color 150ms ease; } .ds-btn-primary:hover { background: var(--cadmium-hover, #d85a12); } .ds-btn-primary:focus-visible { outline: 2px solid #121110; outline-offset: 2px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--phosphor-green, #39ff7a); color: var(--phosphor-green-ink, #041108); font-family: \"IBM Plex Mono\", monospace; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 0; text-decoration: none; cursor: pointer; transition: background-color 150ms ease; } .ds-btn-primary:hover { background: var(--phosphor-green-hover, #22e563); } .ds-btn-primary:focus-visible { outline: 1px solid #39ff7a; outline-offset: 2px; }"
     },
     {
-      "name": "Secondary Paper Button",
+      "name": "Terminal Secondary Button",
       "kind": "button",
-      "refersTo": "button-secondary-paper",
-      "description": "Square hairline-outlined secondary action for GitHub repositories on light paper surfaces.",
-      "html": "<a href=\"#\" class=\"ds-btn-paper\"><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4\"/><path d=\"M9 18c-4.51 2-5-2-7-2\"/></svg><span>GitHub</span></a>",
-      "css": ".ds-btn-paper { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: rgba(255, 255, 255, 0.65); color: var(--ink-obsidian, #121110); border: 1px solid rgba(20, 19, 17, 0.3); font-family: \"Rambla\", sans-serif; font-size: 12px; padding: 8px 12px; border-radius: 0; text-decoration: none; cursor: pointer; transition: border-color 150ms ease, background-color 150ms ease; } .ds-btn-paper:hover { border-color: #121110; background: #ffffff; } .ds-btn-paper:focus-visible { outline: 2px solid #ea681d; outline-offset: 2px; }"
+      "refersTo": "button-secondary",
+      "description": "Hairline-bordered secondary action button for public source repositories and studio links.",
+      "html": "<a href=\"#\" class=\"ds-btn-secondary\"><span>Source Repo</span></a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--term-void, #050a07); color: var(--term-ink, #c9eed6); border: 1px solid var(--term-border-bright, #2f7d4d); font-family: \"IBM Plex Mono\", monospace; font-size: 12px; padding: 8px 12px; border-radius: 0; text-decoration: none; cursor: pointer; transition: border-color 150ms ease, color 150ms ease; } .ds-btn-secondary:hover { border-color: #39ff7a; color: #39ff7a; }"
     },
     {
-      "name": "Secondary Indigo Ledger Button",
+      "name": "Private Repo Access Button",
       "kind": "button",
-      "refersTo": "button-secondary-indigo",
-      "description": "Sharp hairline action button on deep Indigo Ledger containers.",
-      "html": "<a href=\"#\" class=\"ds-btn-indigo\"><span>GitHub</span></a>",
-      "css": ".ds-btn-indigo { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--indigo-deep, #12132d); color: var(--paper-bright, #f6f2eb); border: 1px solid rgba(232, 227, 221, 0.3); font-family: \"Rambla\", sans-serif; font-size: 12px; padding: 8px 12px; border-radius: 0; text-decoration: none; cursor: pointer; transition: border-color 150ms ease, background-color 150ms ease; } .ds-btn-indigo:hover { border-color: #f6f2eb; background: rgba(255, 255, 255, 0.08); } .ds-btn-indigo:focus-visible { outline: 2px solid #ea681d; outline-offset: 2px; }"
+      "refersTo": "button-amber-access",
+      "description": "Amber-stroked request CTA for closed-source Quant Perp DEX bots and private SaaS backends.",
+      "html": "<a href=\"#\" class=\"ds-btn-amber\"><span>Request Access</span><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7\"/><path d=\"M7 7h10v10\"/></svg></a>",
+      "css": ".ds-btn-amber { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--amber-tint, #191205); color: var(--phosphor-amber, #ffb000); border: 1px solid rgba(255, 176, 0, 0.55); font-family: \"IBM Plex Mono\", monospace; font-size: 12px; font-weight: 500; padding: 8px 12px; border-radius: 0; text-decoration: none; cursor: pointer; transition: background-color 150ms ease, color 150ms ease; } .ds-btn-amber:hover { background: #ffb000; color: #041108; }"
     },
     {
-      "name": "AI Prompt Pill Input",
+      "name": "Interactive Zsh Command Prompt",
       "kind": "input",
-      "refersTo": "input-ai-pill",
-      "description": "Masthead natural-language search capsule triggering the studio portfolio assistant.",
-      "html": "<form class=\"ds-input-ai-pill\"><input type=\"text\" placeholder=\"Ask Jobjab AI...\" /><button type=\"submit\" aria-label=\"Send\"><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button></form>",
-      "css": ".ds-input-ai-pill { display: flex; align-items: center; justify-content: space-between; width: 208px; height: 36px; border: 1px solid #241a12; border-radius: 9999px; padding: 0 4px 0 14px; background: transparent; transition: border-color 150ms ease; } .ds-input-ai-pill:focus-within { border-color: var(--cadmium-signal, #ea681d); } .ds-input-ai-pill input { flex: 1; min-width: 0; border: none; background: transparent; color: #120c0b; font-size: 13px; outline: none; } .ds-input-ai-pill input::placeholder { color: rgba(42, 33, 25, 0.8); } .ds-input-ai-pill button { width: 28px; height: 28px; border-radius: 9999px; border: none; background: #0f0c0a; color: #efeae3; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background-color 150ms ease, color 150ms ease; } .ds-input-ai-pill button:hover { background: #ea681d; color: #121110; }"
+      "refersTo": "input-cli",
+      "description": "Bottom shell prompt bar accepting typed commands with blinking block cursor.",
+      "html": "<form class=\"ds-input-cli\"><span class=\"ds-prompt\">jobjab@prod:~$</span><input type=\"text\" placeholder=\"type command (help, ls, bots, cat 07)...\" /><button type=\"submit\">EXEC</button></form>",
+      "css": ".ds-input-cli { display: flex; align-items: center; gap: 8px; height: 40px; border: 1px solid var(--term-border, #193826); background: var(--term-void, #050a07); padding: 0 12px; font-family: \"IBM Plex Mono\", monospace; } .ds-input-cli:focus-within { border-color: #39ff7a; } .ds-prompt { color: #39ff7a; font-size: 12px; font-weight: 600; white-space: nowrap; } .ds-input-cli input { flex: 1; min-width: 0; border: none; background: transparent; color: #ebfff2; font-size: 12px; outline: none; caret-color: #39ff7a; } .ds-input-cli input::placeholder { color: #6ca380; } .ds-input-cli button { background: #39ff7a; color: #041108; border: none; padding: 4px 10px; font-size: 11px; font-weight: 600; cursor: pointer; }"
     },
     {
-      "name": "Stack Tag Chip",
+      "name": "Stack Dependency Chip",
       "kind": "chip",
-      "refersTo": "chip-paper",
-      "description": "Unrounded IBM Plex Mono technical tag chip inside paper project cards.",
-      "html": "<span class=\"ds-chip-paper\">React 19</span>",
-      "css": ".ds-chip-paper { display: inline-block; border: 1px solid rgba(20, 19, 17, 0.15); background: var(--paper-strip-mid, #e6e1db); color: #1a1815; padding: 2px 8px; font-family: \"IBM Plex Mono\", monospace; font-size: 11px; border-radius: 0; }"
+      "refersTo": "chip-tag",
+      "description": "Sharp hairline chip displaying SDKs, runtimes, or blockchain protocol labels.",
+      "html": "<span class=\"ds-chip-tag\">hyperliquid-python-sdk</span>",
+      "css": ".ds-chip-tag { display: inline-block; border: 1px solid var(--term-border, #193826); background: var(--term-pane-alt, #0d1c13); color: var(--term-ink, #c9eed6); padding: 2px 8px; font-family: \"IBM Plex Mono\", monospace; font-size: 11px; border-radius: 0; }"
     },
     {
-      "name": "Flagship Proofing Sheet Card",
-      "kind": "card",
-      "refersTo": "card-paper-proof",
-      "description": "Shadow-lifted paper card displaying flagship project plate preview, mechanics list, stack tags, and action footer without an outer border.",
-      "html": "<article class=\"ds-card-proof\"><div class=\"ds-card-head\"><h3>01 · HÄNSEL & ROTH</h3><span>Live SSE Auction</span></div><p>Real-time collector auction house powered by Server-Sent Events and React 19 optimistic mutations.</p></article>",
-      "css": ".ds-card-proof { background: var(--paper-card, #f2eee6); color: var(--ink-obsidian, #121110); padding: 20px; border-radius: 0; box-shadow: 0 12px 28px rgba(42, 32, 22, 0.24), 0 3px 8px rgba(42, 32, 22, 0.14); transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1); max-width: 360px; } .ds-card-proof:hover { transform: translateY(-3px); } .ds-card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; } .ds-card-head h3 { margin: 0; font-family: \"Rambla\", sans-serif; font-size: 22px; font-weight: 400; color: #0a0a0a; } .ds-card-head span { font-family: \"IBM Plex Mono\", monospace; font-size: 11px; color: #ea681d; } .ds-card-proof p { margin: 8px 0 0; font-size: 14px; line-height: 1.6; color: #38332c; }"
+      "name": "Private Repo Lock Chip",
+      "kind": "chip",
+      "refersTo": "chip-private-lock",
+      "description": "Amber security status pill marking non-public GitHub source repositories.",
+      "html": "<span class=\"ds-chip-lock\">PRIVATE_REPO</span>",
+      "css": ".ds-chip-lock { display: inline-block; border: 1px solid rgba(255, 176, 0, 0.45); background: var(--amber-tint, #191205); color: var(--phosphor-amber, #ffb000); padding: 2px 8px; font-family: \"IBM Plex Mono\", monospace; font-size: 10px; letter-spacing: 0.08em; border-radius: 0; }"
     },
     {
-      "name": "Confidential Web3 Ledger Card",
+      "name": "Tmux Project Pane",
       "kind": "card",
-      "refersTo": "card-indigo-ledger",
-      "description": "Flat 1px-bordered midnight indigo panel for encrypted smart contracts and FHEVM deployments.",
-      "html": "<article class=\"ds-card-ledger\"><div class=\"ds-ledger-top\"><h3>07 · fhevm-react-template</h3><span>1st Place ($5,000) · Zama Bounty</span></div><p>Universal SDK and starter template for encrypted frontend dApps with Zama FHEVM and Hardhat.</p></article>",
-      "css": ".ds-card-ledger { background: var(--indigo-deep, #12132d); color: var(--indigo-ink, #eeeef5); border: 1px solid rgba(232, 227, 221, 0.25); padding: 20px; border-radius: 0; transition: border-color 150ms ease; max-width: 420px; } .ds-card-ledger:hover { border-color: rgba(234, 104, 29, 0.75); } .ds-ledger-top { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; } .ds-ledger-top h3 { margin: 0; font-family: \"Rambla\", sans-serif; font-size: 22px; font-weight: 400; color: #f6f2eb; } .ds-ledger-top span { background: #ea681d; color: #121110; font-family: \"IBM Plex Mono\", monospace; font-size: 11px; font-weight: 500; padding: 2px 10px; } .ds-card-ledger p { margin: 8px 0 0; font-size: 14px; line-height: 1.6; color: #c6c7d6; }"
+      "refersTo": "pane-card",
+      "description": "Flat 1px-bordered terminal pane housing project specs without drop shadows or kickers.",
+      "html": "<article class=\"ds-pane\"><h3>[07] Hyperliquid Trading Bot</h3><p class=\"ds-sub\">Hyperliquid Perp DEX // Liquidity Provider & Volume Mode</p><p class=\"ds-desc\">Asynchronous Python market maker built on the official SDK with WebSocket order-book streams.</p></article>",
+      "css": ".ds-pane { border: 1px solid var(--term-border, #193826); background: var(--term-pane, #08120c); color: var(--term-ink, #c9eed6); padding: 20px; border-radius: 0; transition: border-color 150ms ease; max-width: 400px; } .ds-pane:hover { border-color: var(--term-border-bright, #2f7d4d); } .ds-pane h3 { margin: 0; font-family: \"IBM Plex Mono\", monospace; font-size: 18px; font-weight: 600; color: #ebfff2; } .ds-sub { margin: 4px 0 0; font-family: \"IBM Plex Mono\", monospace; font-size: 11px; color: #ffb000; } .ds-desc { margin: 10px 0 0; font-family: \"IBM Plex Mono\", monospace; font-size: 12px; line-height: 1.625; color: #c9eed6; }"
     }
   ],
   "narrative": {
-    "northStar": "Studio Proofing Wall",
-    "overview": "The visual system draws directly from an architectural design-engineering studio pinboard under warm side light. Warm mineral plaster forms an uninterrupted canvas across the viewport, marked at regular modular intersections by fine crosshair registration ticks. Matte cotton paper proofs rest proud of the wall using soft contact shadows rather than outlines, pairing unhurried humanist sans headlines with crisp technical mono indexes for interactive builds (`01–06`).\n\nBeneath the paper proofs sits a grounded midnight-indigo cryptographic ledger reserved exclusively for confidential smart contract protocols and on-chain Zama FHEVM work (`07–16`). Rather than decorative gradients or glowing glass dark-mode cards, contrast comes cleanly from switching physical materials between sunlit limestone plaster, warm paper rag, and dense indigo ledger stock punctuated by rare Cadmium Signal call-to-action ink.",
+    "northStar": "Phosphor Unix Terminal",
+    "overview": "The entire portfolio operates as a high-craft Unix workstation session (`jobjab@prod:~/portfolio`) running inside flat, razor-edged `tmux` split panes. Deep obsidian-green void surfaces hold calm, legible mint-phosphor body prose, structured command bars, and crisp single-pixel hairline partitions without fuzzy neon glow or generic dark-mode glass.\n\nRather than treating terminal aesthetics as pure decoration, the primary viewport houses a live interactive zsh interpreter alongside a synchronized hardware Proof Monitor for the 6 Flagship interactive runtimes, a live track jump table across all 37 production systems, and direct access to the Gemini 2.5 Studio Desk daemon. Signal phosphor green owns active prompts, active tabs, and primary live launches, while signal amber highlights Zama bounty honors, Python Perp DEX trading engines, and private-repository access controls.",
     "keyCharacteristics": [
-      "Tactile physical contrast: sunlit lime-plaster wall ground supporting sharp-cornered matte rag proof sheets and elevated index strips",
-      "Dual material worlds: warm daylight paper index for interactive frontend/canvas runtimes; deep indigo ledger stock for confidential Web3 & FHEVM deployments",
-      "Precision studio registration: fine `+` wall crosshairs and hairline horizontal dividers replacing decorative badges or rounded pill cards",
-      "Single-voice Cadmium Signal accent reserved strictly for primary interactive CTAs and live award callouts"
+      "Flat `tmux` split-pane geometry with crisp single-pixel green hairlines (`1px solid #193826`) and zero soft blur drop shadows or glowing neon halos",
+      "Real interactive command shell (`help`, `ls`, `bots`, `saas`, `web3`, `cat <01-37>`, `open <01-37>`, `whoami`, `ai <query>`) driving live state directly in the hero viewport",
+      "Phosphor-tinted green neutrals replacing neutral gray text so dark terminal contrast remains crisp across every hierarchy tier",
+      "Dual-signal semantic encoding: Phosphor Green for public live execution; Phosphor Amber for Zama bounty achievements, Quant Perp DEX bots, and `[PRIVATE_REPO]` locks"
     ],
     "rules": [
       {
-        "name": "The Single-Signal Rule",
-        "body": "Cadmium Signal (`cadmium-signal`) never fills backgrounds behind paragraphs or acts as decorative wash; reserve it exclusively for primary CTAs, award callout badges, active focus strokes, and 6px list indicators (`<= 10%` of viewport area).",
+        "name": "The Zero-Halo Rule",
+        "body": "Never wrap panes, text, or buttons in multi-pixel fluorescent `box-shadow` or `text-shadow` neon blooms; terminal authority comes from exact contrast ratios and razor-sharp `1px` borders.",
         "section": "colors"
       },
       {
-        "name": "The Two-Ground Contrast Rule",
-        "body": "Interactive frontend engines (`01–06`) always live on sunlit plaster and warm paper stock; confidential Web3 & FHEVM deployments (`07–16`) and the site footer always live on deep Indigo Ledger stock so visitors immediately read the split between the two disciplines.",
+        "name": "The Green-Tinted Neutral Rule",
+        "body": "Every muted caption and secondary description must come from phosphor-tinted green hues (`term-ink-muted`, `term-ink-soft`) rather than desaturating into cold neutral gray.",
         "section": "colors"
       },
       {
-        "name": "The Unbolded Display Rule",
-        "body": "Keep display and card headlines at weight `400` in `Rambla`; visual authority comes from scale contrast, negative tracking (`-0.02em`), and obsidian black ink (`ink-headline`), not heavy `700/800` weights.",
+        "name": "The Tabular Integrity Rule",
+        "body": "Enable `font-variant-numeric: tabular-nums` globally on `body` so numeric project indexes (`01` through `37`), pricing, and shell listings align in strict vertical columns.",
         "section": "typography"
       },
       {
         "name": "The No-Kicker Rule",
-        "body": "Never stack an uppercase monospaced eyebrow kicker immediately above an `h1`, `h2`, or `h3` heading; place metadata cleanly beside headlines or inside specification footers.",
+        "body": "Never stack an uppercase eyebrow label above any `h1`, `h2`, or `h3` heading; put venue, domain, or stack indicators directly beneath the heading or inside the pane's structural title bar.",
         "section": "typography"
       },
       {
-        "name": "The No Ghost-Card Rule",
-        "body": "Never apply a visible outer border (`1px solid ...`) on the same container that carries `.proof-shadow` or `.strip-shadow`; choose either paper shadow on plaster or hairline border inside dark indigo.",
+        "name": "The Flat-Tile Invariant Rule",
+        "body": "Borders alone carry containment; never add `box-shadow` or frosted `backdrop-filter` onto bordered terminal panes.",
         "section": "elevation"
       },
       {
-        "name": "The Hardware Motion Rule",
-        "body": "Hover states on paper proof cards translate subtly along `-Y` (`-3px` over `180ms`, `cubic-bezier(0.22, 1, 0.36, 1)`) mimicking lifting a pinned sheet; all transitions respect `prefers-reduced-motion` (`MotionConfig reducedMotion=\"user\"`).",
+        "name": "The Reduced-Motion Fidelity Rule",
+        "body": "Cursor blinking (`.term-cursor`) and subtle `4px` `.crt-scanlines` strictly yield under `prefers-reduced-motion: reduce`, while active proof monitor swaps animate cleanly over `180ms` using `MotionConfig reducedMotion=\"user\"`.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do keep `Cadmium Signal` under `10%` of viewport area so every primary launch button reads immediately against neutral paper or indigo.",
-      "Do preserve the daylight paper vs. midnight indigo material boundary between interactive web runtimes (`01–06`) and confidential FHEVM / Web3 protocols (`07–16`).",
-      "Do use warm ambient paper shadows (`proof-shadow` / `strip-shadow`) exclusively without outer borders on light plaster cards.",
-      "Do set Rambla headlines at weight `400` with tight negative letter spacing (`-0.015em` to `-0.02em`) and clean IBM Plex Mono technical metadata."
+      "Do preserve `0px` sharp corners across panes, buttons, tags, and terminal inputs so the layout stays faithful to a `tmux` window manager.",
+      "Do use phosphor-tinted green muted tokens (`#6ca380`, `#9dc4ac`) for secondary text and keep contrast well above `4.5:1`.",
+      "Do label private commercial bots and backends honestly with `[PRIVATE_REPO]` and `Request Access` routes rather than exposing dead 404 GitHub links.",
+      "Do bind interactive terminal commands cleanly to live React state (`activeFlagshipIdx`) and the global AI chat context."
     ],
     "donts": [
-      "Don't place uppercase monospaced eyebrow kickers above `h1`, `h2`, or `h3` headings.",
-      "Don't combine outer `1px` borders with `box-shadow` (\"ghost cards\") on paper surfaces, or add neon/blur glows to indigo ledger panels.",
-      "Don't round paper proof cards, tags, or filter tabs with `8px–16px` borders; keep containers architectural `0px` (`3px–4px` max for primary CTAs).",
-      "Don't fabricate project metrics, unverified TVL/latency stats, or duplicate design-direction meta labels inside shipped templates."
+      "Don't apply `box-shadow` drop shadows or glowing neon halos (`box-shadow: 0 0 20px ...`) to cards, headings, or CRT text.",
+      "Don't place uppercase eyebrow kickers above any `h1`, `h2`, or `h3` heading.",
+      "Don't use cold gray (`#888`, `slate-400`) on obsidian-green panes or round pane containers to look like generic SaaS templates.",
+      "Don't fabricate trading PnL, volume metrics, win rates, or fake revenue statistics anywhere in copy, AI prompts, or CLI command outputs."
     ]
   }
 }

@@ -10,15 +10,15 @@ export default function ContactPage() {
   const { setIsOpen } = useChat();
 
   return (
-    <div className="flex min-h-screen flex-col proofing-wall-ground text-[#121110]">
+    <div className="flex min-h-screen flex-col bg-[#050a07] text-[#c9eed6]">
       <Header />
 
       <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="mb-10 border-b border-[#141311]/35 pb-8">
-          <h1 className="text-4xl font-normal tracking-tight text-[#0a0a0a] sm:text-5xl lg:text-6xl">
+        <div className="mb-10 border-b border-[#193826] pb-8">
+          <h1 className="text-3xl font-semibold tracking-tight text-[#ebfff2] sm:text-4xl lg:text-5xl">
             Get in Touch
           </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#2f2b26]">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#6ca380] sm:text-base">
             Open to product studio collaborations, Creative Technologist / Design Engineer roles, Perp DEX trading systems, full-stack SaaS architecture, and confidential Zama FHEVM protocol engagements.
           </p>
         </div>
@@ -30,35 +30,35 @@ export default function ContactPage() {
               href={channel.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="strip-shadow group flex flex-col justify-between bg-[#f2eee6] p-6 transition-transform duration-150 hover:-translate-y-0.5 sm:p-8"
+              className="group flex flex-col justify-between border border-[#193826] bg-[#08120c] p-6 transition-colors hover:border-[#39ff7a] sm:p-8"
             >
               <div>
                 <div className="flex items-baseline justify-between gap-2">
-                  <h2 className="text-2xl font-normal tracking-tight text-[#0a0a0a] group-hover:text-[#ea681d] sm:text-3xl">
+                  <h2 className="text-xl font-semibold tracking-tight text-[#ebfff2] group-hover:text-[#39ff7a] sm:text-2xl">
                     {channel.value}
                   </h2>
-                  <ArrowUpRight className="h-4 w-4 shrink-0 text-[#ea681d] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-[#39ff7a] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
-                <p className="mt-1 font-mono text-xs uppercase tracking-[0.12em] text-[#5a544d]">
-                  0{idx + 1} · {channel.label}
+                <p className="mt-1 text-xs uppercase tracking-[0.12em] text-[#ffb000]">
+                  0{idx + 1} // {channel.label}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-[#433e37]">
+                <p className="mt-3 text-xs leading-relaxed text-[#c9eed6]">
                   {channel.note}
                 </p>
               </div>
-              <div className="mt-6 border-t border-[#141311]/10 pt-3 font-mono text-[11px] uppercase tracking-[0.12em] text-[#171837]">
+              <div className="mt-6 border-t border-[#193826] pt-3 text-[11px] uppercase tracking-[0.12em] text-[#39ff7a]">
                 Open {channel.label} →
               </div>
             </a>
           ))}
         </div>
 
-        <section className="mt-10 grid gap-6 border border-[#e8e3dd]/20 bg-[#171837] p-8 text-[#eeeef5] sm:p-12 lg:grid-cols-12 lg:items-center">
+        <section className="mt-10 grid gap-6 border border-[#193826] bg-[#08120c] p-8 sm:p-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-8">
-            <h2 className="text-3xl font-normal tracking-tight text-[#f6f2eb] sm:text-4xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-[#ebfff2] sm:text-3xl">
               Let&apos;s ship something resilient and tactile.
             </h2>
-            <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#c9cad8]">
+            <p className="mt-3 max-w-2xl text-xs leading-relaxed text-[#6ca380] sm:text-sm">
               Whether you need a custom Web Audio / Canvas interactive interface, Python Perp DEX market-making infrastructure, full-stack SaaS &amp; AI pipelines, or encrypted Solidity FHEVM contracts, write directly to my studio inbox.
             </p>
           </div>
@@ -66,7 +66,7 @@ export default function ContactPage() {
           <div className="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
             <a
               href="mailto:peejabh@gmail.com"
-              className="inline-flex items-center gap-2 rounded-[4px] bg-[#ea681d] px-6 py-3 text-sm font-normal text-[#120e0a] transition-colors hover:bg-[#d85a12]"
+              className="inline-flex items-center gap-2 bg-[#39ff7a] px-6 py-3 text-xs font-semibold text-[#041108] transition-colors hover:bg-[#22e563]"
             >
               <Mail className="h-4 w-4" />
               <span>Email peejabh@gmail.com</span>
@@ -74,9 +74,9 @@ export default function ContactPage() {
             <button
               type="button"
               onClick={() => setIsOpen(true)}
-              className="inline-flex items-center gap-2 border border-[#e8e3dd]/35 px-5 py-3 text-sm text-[#f6f2eb] transition-colors hover:border-[#ea681d] hover:bg-white/5"
+              className="inline-flex items-center gap-2 border border-[#2f7d4d] bg-[#050a07] px-5 py-3 text-xs text-[#c9eed6] transition-colors hover:border-[#39ff7a] hover:text-[#39ff7a]"
             >
-              <MessageSquare className="h-4 w-4 text-[#ea681d]" />
+              <MessageSquare className="h-4 w-4 text-[#ffb000]" />
               <span>Ask Studio AI</span>
             </button>
           </div>

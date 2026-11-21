@@ -1,247 +1,246 @@
 ---
-name: Jobjab Portfolio — Studio Proofing Wall
-description: Warm architectural plaster proofing wall uniting editorial paper print sheets, technical stack indexes, and deep-indigo Web3 privacy ledgers.
+name: Jobjab Portfolio — Phosphor Unix Terminal
+description: Deep green-black CRT terminal workstation uniting interactive zsh command shell, tmux split panes, phosphor green signals, and amber private-engine highlights.
 colors:
-  cadmium-signal: "#ea681d"
-  cadmium-hover: "#d85a12"
-  wall-plaster: "#bdb09f"
-  wall-sunlight: "#e6d4b6"
-  wall-shade: "#b2a28e"
-  paper-sheet: "#efebe4"
-  paper-bright: "#f6f2eb"
-  paper-card: "#f2eee6"
-  paper-strip-upper: "#dad5cf"
-  paper-strip-mid: "#e6e1db"
-  ink-obsidian: "#121110"
-  ink-headline: "#0a0a0a"
-  ink-muted: "#5a544d"
-  indigo-ledger: "#171837"
-  indigo-deep: "#12132d"
-  indigo-ink: "#eeeef5"
-  indigo-muted: "#c6c7d6"
-  indigo-label: "#a6a7b8"
+  phosphor-green: "#39ff7a"
+  phosphor-green-hover: "#22e563"
+  phosphor-green-ink: "#041108"
+  phosphor-amber: "#ffb000"
+  phosphor-amber-hover: "#e59e00"
+  phosphor-cyan: "#46e8c8"
+  term-void: "#050a07"
+  term-sub: "#060f0b"
+  term-pane: "#08120c"
+  term-pane-bar: "#0c1911"
+  term-pane-alt: "#0d1c13"
+  term-border: "#193826"
+  term-border-bright: "#2f7d4d"
+  amber-tint: "#191205"
+  term-ink-bright: "#ebfff2"
+  term-ink: "#c9eed6"
+  term-ink-soft: "#9dc4ac"
+  term-ink-muted: "#6ca380"
 typography:
   display:
-    fontFamily: "Rambla, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "3.3rem"
-    fontWeight: 400
-    lineHeight: 1.08
+    fontFamily: "IBM Plex Mono, ui-monospace, SFMono-Regular, monospace"
+    fontSize: "2.25rem"
+    fontWeight: 600
+    lineHeight: 1.15
     letterSpacing: "-0.02em"
   headline:
-    fontFamily: "Rambla, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "2.25rem"
-    fontWeight: 400
-    lineHeight: 1.15
+    fontFamily: "IBM Plex Mono, ui-monospace, SFMono-Regular, monospace"
+    fontSize: "1.875rem"
+    fontWeight: 600
+    lineHeight: 1.2
     letterSpacing: "-0.015em"
   title:
-    fontFamily: "Rambla, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "1.5rem"
-    fontWeight: 400
-    lineHeight: 1.2
+    fontFamily: "IBM Plex Mono, ui-monospace, SFMono-Regular, monospace"
+    fontSize: "1.125rem"
+    fontWeight: 600
+    lineHeight: 1.3
     letterSpacing: "-0.01em"
   body:
-    fontFamily: "Rambla, ui-sans-serif, system-ui, sans-serif"
-    fontSize: "0.875rem"
+    fontFamily: "IBM Plex Mono, ui-monospace, SFMono-Regular, monospace"
+    fontSize: "0.75rem"
     fontWeight: 400
     lineHeight: 1.625
     letterSpacing: "0em"
   label:
     fontFamily: "IBM Plex Mono, ui-monospace, SFMono-Regular, monospace"
     fontSize: "0.75rem"
+    fontWeight: 500
+    lineHeight: 1.4
+    letterSpacing: "0.08em"
+  caption:
+    fontFamily: "IBM Plex Mono, ui-monospace, SFMono-Regular, monospace"
+    fontSize: "0.6875rem"
     fontWeight: 400
     lineHeight: 1.4
-    letterSpacing: "0.12em"
+    letterSpacing: "0.06em"
+  micro:
+    fontFamily: "IBM Plex Mono, ui-monospace, SFMono-Regular, monospace"
+    fontSize: "0.625rem"
+    fontWeight: 400
+    lineHeight: 1.3
+    letterSpacing: "0.08em"
 rounded:
   none: "0px"
-  sharp: "3px"
-  subtle: "4px"
-  pill: "9999px"
 spacing:
   xs: "6px"
   sm: "12px"
   md: "20px"
   lg: "32px"
-  xl: "80px"
+  xl: "64px"
 components:
   button-primary:
-    backgroundColor: "{colors.cadmium-signal}"
-    textColor: "{colors.ink-obsidian}"
-    rounded: "{rounded.subtle}"
-    padding: "10px 20px"
+    backgroundColor: "{colors.phosphor-green}"
+    textColor: "{colors.phosphor-green-ink}"
+    rounded: "{rounded.none}"
+    padding: "8px 16px"
   button-primary-hover:
-    backgroundColor: "{colors.cadmium-hover}"
-    textColor: "{colors.ink-obsidian}"
-  button-secondary-paper:
-    backgroundColor: "{colors.paper-bright}"
-    textColor: "{colors.ink-obsidian}"
+    backgroundColor: "{colors.phosphor-green-hover}"
+    textColor: "{colors.phosphor-green-ink}"
+  button-secondary:
+    backgroundColor: "{colors.term-void}"
+    textColor: "{colors.term-ink}"
     rounded: "{rounded.none}"
     padding: "8px 12px"
-  button-secondary-indigo:
-    backgroundColor: "{colors.indigo-deep}"
-    textColor: "{colors.paper-bright}"
+  button-amber-access:
+    backgroundColor: "{colors.amber-tint}"
+    textColor: "{colors.phosphor-amber}"
     rounded: "{rounded.none}"
     padding: "8px 12px"
-  chip-paper:
-    backgroundColor: "{colors.paper-strip-mid}"
-    textColor: "{colors.ink-obsidian}"
+  chip-tag:
+    backgroundColor: "{colors.term-pane-alt}"
+    textColor: "{colors.term-ink}"
     rounded: "{rounded.none}"
     padding: "2px 8px"
-  chip-indigo:
-    backgroundColor: "{colors.indigo-ledger}"
-    textColor: "{colors.indigo-ink}"
+  chip-private-lock:
+    backgroundColor: "{colors.amber-tint}"
+    textColor: "{colors.phosphor-amber}"
     rounded: "{rounded.none}"
     padding: "2px 8px"
-  card-paper-proof:
-    backgroundColor: "{colors.paper-card}"
-    textColor: "{colors.ink-obsidian}"
+  pane-card:
+    backgroundColor: "{colors.term-pane}"
+    textColor: "{colors.term-ink}"
     rounded: "{rounded.none}"
     padding: "20px"
-  card-indigo-ledger:
-    backgroundColor: "{colors.indigo-deep}"
-    textColor: "{colors.indigo-ink}"
+  input-cli:
+    backgroundColor: "{colors.term-void}"
+    textColor: "{colors.term-ink-bright}"
     rounded: "{rounded.none}"
-    padding: "20px"
-  input-ai-pill:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink-obsidian}"
-    rounded: "{rounded.pill}"
-    padding: "0 4px 0 14px"
-    height: "36px"
-    width: "208px"
+    padding: "10px 14px"
+    height: "40px"
 ---
 
-# Design System: Jobjab Portfolio — Studio Proofing Wall
+# Design System: Jobjab Portfolio — Phosphor Unix Terminal
 
 ## Overview
 
-**Creative North Star: "Studio Proofing Wall"**
+**Creative North Star: "Phosphor Unix Terminal"**
 
-The visual system draws directly from an architectural design-engineering studio pinboard under warm side light. Warm mineral plaster forms an uninterrupted canvas across the viewport, marked at regular modular intersections by fine crosshair registration ticks. Matte cotton paper proofs rest proud of the wall using soft contact shadows rather than outlines, pairing unhurried humanist sans headlines with crisp technical mono indexes for interactive builds (`01–06`).
+The entire portfolio operates as a high-craft Unix workstation session (`jobjab@prod:~/portfolio`) running inside flat, razor-edged `tmux` split panes. Deep obsidian-green void surfaces hold calm, legible mint-phosphor body prose, structured command bars, and crisp single-pixel hairline partitions without fuzzy neon glow or generic dark-mode glass.
 
-Beneath the paper proofs sits a grounded midnight-indigo cryptographic ledger reserved exclusively for confidential smart contract protocols and on-chain Zama FHEVM work (`07–16`). Rather than decorative gradients or glowing glass dark-mode cards, contrast comes cleanly from switching physical materials between sunlit limestone plaster, warm paper rag, and dense indigo ledger stock punctuated by rare Cadmium Signal call-to-action ink.
+Rather than treating terminal aesthetics as pure decoration, the primary viewport houses a live interactive zsh interpreter alongside a synchronized hardware Proof Monitor for the 6 Flagship interactive runtimes, a live track jump table across all 37 production systems, and direct access to the Gemini 2.5 Studio Desk daemon. Signal phosphor green owns active prompts, active tabs, and primary live launches, while signal amber highlights Zama bounty honors, Python Perp DEX trading engines, and private-repository access controls.
 
 **Key Characteristics:**
-- Tactile physical contrast: sunlit lime-plaster wall ground supporting sharp-cornered matte rag proof sheets and elevated index strips
-- Dual material worlds: warm daylight paper index for interactive frontend/canvas runtimes; deep indigo ledger stock for confidential Web3 & FHEVM deployments
-- Precision studio registration: fine `+` wall crosshairs and hairline horizontal dividers replacing decorative badges or rounded pill cards
-- Single-voice Cadmium Signal accent reserved strictly for primary interactive CTAs and live award callouts
+- Flat `tmux` split-pane geometry with crisp single-pixel green hairlines (`1px solid #193826`) and zero soft blur drop shadows or glowing neon halos
+- Real interactive command shell (`help`, `ls`, `bots`, `saas`, `web3`, `cat <01-37>`, `open <01-37>`, `whoami`, `ai <query>`) driving live state directly in the hero viewport
+- Phosphor-tinted green neutrals replacing neutral gray text so dark terminal contrast remains crisp across every hierarchy tier
+- Dual-signal semantic encoding: Phosphor Green for public live execution; Phosphor Amber for Zama bounty achievements, Quant Perp DEX bots, and `[PRIVATE_REPO]` locks
 
 ## Colors
 
-A daylight mineral-neutral studio palette anchored by warm limestone and uncoated paper stock, split cleanly against a deep indigo technical band and punctuated by one burnt Cadmium Signal accent.
+A dark CRT green-obsidian palette calibrated so every surface, divider, secondary hint, and interactive control shares one cohesive green-black spectrum punctuated by high-visibility Phosphor Green, Amber, and Cyan status signals.
 
 ### Primary
-- **Cadmium Signal** (`cadmium-signal`): High-visibility orange-red signal ink used strictly for primary live-launch CTAs, award placement tags, bullet markers, and hover focus borders so interactive entry points stay unmistakably clear.
-- **Cadmium Hover** (`cadmium-hover`): Deeper pressed state for primary action buttons on pointer hover without shifting hue temperature.
+- **Phosphor Green** (`phosphor-green`): Primary interactive signal color for `Launch Live` actions, active `tmux` tabs, live blinking cursors, and primary focus outlines. Paired exclusively with deep green-black ink (`phosphor-green-ink`) to maintain maximum legibility.
+- **Phosphor Green Hover** (`phosphor-green-hover`): Pressed and pointer-hover state for primary green action fills.
+- **Phosphor Green Ink** (`phosphor-green-ink`): Deep green-black foreground text rendered atop solid Phosphor Green and Amber buttons.
 
 ### Secondary
-- **Indigo Ledger** (`indigo-ledger`): Dense midnight indigo band anchoring the bottom hero confidential Web3 index, the dedicated Protocols (`07–16`) band, and the studio footer.
-- **Indigo Deep** (`indigo-deep`): Darkened recessed surface used for individual confidential ledger cards inside the indigo band.
-- **Indigo Ink** (`indigo-ink`): Cool paper-tinted white text rendering high contrast on midnight indigo surfaces.
-- **Indigo Muted** (`indigo-muted`): Subdued blue-gray body copy inside confidential Web3 ledger entries.
-- **Indigo Label** (`indigo-label`): Desaturated slate mono label ink for section captions and footer metadata inside indigo bands.
+- **Phosphor Amber** (`phosphor-amber`): Dedicated semantic status signal for the `$5,000` Zama Monthly Bounty placement, Algorithmic Quant & Perp DEX track headers, and `[PRIVATE_REPO]` security lock badges.
+- **Phosphor Amber Hover** (`phosphor-amber-hover`): Deeper amber hover stop for secondary amber controls.
+- **Amber Tint** (`amber-tint`): Recessed warm-amber dark surface fill behind `[PRIVATE_REPO]` lock tags and Request Access buttons.
+- **Phosphor Cyan** (`phosphor-cyan`): Supporting terminal telemetry hue reserved for SaaS/Fintech/AI domain lines, Quick Node headings, and track count readouts.
 
 ### Neutral
-- **Wall Plaster** (`wall-plaster`): Base mineral beige-taupe ground spanning full viewport width behind proofing sheets and crosshairs.
-- **Wall Sunlight** (`wall-sunlight`): Warm diagonal sunlight highlight wash across upper-left and mid-right wall coordinates.
-- **Wall Shade** (`wall-shade`): Subtle cooler shadow tone at the upper-right wall corner to reinforce natural raking side illumination.
-- **Paper Sheet** (`paper-sheet`): Primary uncoated cream rag sheet behind the lead project proof on `/` and mobile navigation drawers.
-- **Paper Bright** (`paper-bright`): Lifted ivory stock reserved for high-emphasis callout sheets (Zama Bounty Dossier) and crisp button fills.
-- **Paper Card** (`paper-card`): Warm archival cream surface used on full-stack project catalogue cards and tech-matrix columns.
-- **Paper Strip Upper** (`paper-strip-upper`): Slightly shaded cool stone-paper gradient stop for upper index strips (`02`, `03`).
-- **Paper Strip Mid** (`paper-strip-mid`): Neutral uncoated stock for selector strip states and monospaced tech tag chips.
-- **Ink Obsidian** (`ink-obsidian`): Near-black charcoal ink for body copy, primary buttons, and navigation rules.
-- **Ink Headline** (`ink-headline`): Pure neutral black reserved for large Rambla display numbers, titles, and section headings.
-- **Ink Muted** (`ink-muted`): Warm umber gray for numeric section indexes and secondary metadata on light paper surfaces.
+- **Term Void** (`term-void`): Root canvas ground beneath every page, CLI input bar, and inline button inset.
+- **Term Sub** (`term-sub`): Slightly lifted obsidian-green background for the Confidential Web3 Ledger section and quick-run command bar.
+- **Term Pane** (`term-pane`): Primary surface fill for every project pane, terminal transcript window, header bar, and footer.
+- **Term Pane Bar** (`term-pane-bar`): Title-bar header strip framing `[0] jobjab@prod:~/portfolio` and `[1] proof-monitor`.
+- **Term Pane Alt** (`term-pane-alt`): Surface fill behind monospaced technology stack pills and terminal quick-run buttons.
+- **Term Border** (`term-border`): Standard `1px` single-pixel hairline divider and resting pane perimeter.
+- **Term Border Bright** (`term-border-bright`): Active hover boundary and secondary outlined button border.
+- **Term Ink Bright** (`term-ink-bright`): High-luminance phosphor white-green ink for headings, active shell inputs, and channel values.
+- **Term Ink** (`term-ink`): Primary readable body prose ink across descriptions and terminal output.
+- **Term Ink Soft** (`term-ink-soft`): Slightly softer green-tinted ink for multi-line bullet lists inside cards.
+- **Term Ink Muted** (`term-ink-muted`): Green-tinted subdued ink for metadata timestamps, placeholders, and secondary paths (never un-tinted neutral gray).
 
 ### Named Rules
-**The Single-Signal Rule.** Cadmium Signal (`cadmium-signal`) never fills backgrounds behind paragraphs or acts as decorative wash; reserve it exclusively for primary CTAs, award callout badges, active focus strokes, and 6px list indicators (`≤ 10%` of viewport area).
-**The Two-Ground Contrast Rule.** Interactive frontend engines (`01–06`) always live on sunlit plaster and warm paper stock; confidential Web3 & FHEVM deployments (`07–16`) and the site footer always live on deep Indigo Ledger stock so visitors immediately read the split between the two disciplines.
+**The Zero-Halo Rule.** Never wrap panes, text, or buttons in multi-pixel fluorescent `box-shadow` or `text-shadow` neon blooms; terminal authority comes from exact contrast ratios and razor-sharp `1px` borders.
+**The Green-Tinted Neutral Rule.** Every muted caption and secondary description must come from phosphor-tinted green hues (`term-ink-muted`, `term-ink-soft`) rather than desaturating into cold neutral gray.
 
 ## Typography
 
-**Display Font:** Rambla (`Rambla`, fallback `ui-sans-serif, system-ui, sans-serif`)
-**Body Font:** Rambla (`Rambla`, fallback `ui-sans-serif, system-ui, sans-serif`)
+**Display Font:** IBM Plex Mono (`IBM Plex Mono`, fallback `ui-monospace, SFMono-Regular, monospace`)
+**Body Font:** IBM Plex Mono (`IBM Plex Mono`, fallback `ui-monospace, SFMono-Regular, monospace`)
 **Label/Mono Font:** IBM Plex Mono (`IBM Plex Mono`, fallback `ui-monospace, SFMono-Regular, monospace`)
 
-**Character:** Unpretentious condensed humanist proportions (`Rambla` weight `400` at display scale) paired with dry tabular monospace (`IBM Plex Mono` weights `400/500`) give technical architecture notes the directness of printed studio specification sheets without heavy bold weights or display serif ornament.
+**Character:** Uncompromising utilitarian precision. Four self-hosted weights (`400`, `500`, `600`, and `700`) of `IBM Plex Mono` paired with enforced `tabular-nums` ensure aligned index columns, dense dependency badges, and crisp shell output without decorative sans or display mixing.
 
 ### Hierarchy
-- **Display** (`400`, `3.3rem` / `clamp(2.25rem, 3.85cqw, 3.3rem)` on hero lead stage, `1.08` line-height, `-0.02em` tracking): Lead project headline inside the pinned hero proofing sheet.
-- **Headline** (`400`, `2.25rem`, `1.15` line-height, `-0.015em` tracking): Major section headings (`Six Purpose-Built Web Runtimes & Engines (01–06)`, `Ten Live On-Chain Privacy & Layer-2 Protocols (07–16)`) and subpage `h1` titles.
-- **Title** (`400`, `1.5rem`, `1.2` line-height, `-0.01em` tracking): Individual project card titles (`01 · HÄNSEL & ROTH`), award sheet title, and ledger entry titles.
-- **Body** (`400`, `0.875rem` with `1.625` line-height for descriptions; `0.75rem` with `1.5` line-height for technical bullets): Readable prose constrained around `55–72ch`.
-- **Label** (`400`/`500` IBM Plex Mono, `0.6875rem–0.75rem`, `+0.10em–+0.14em` letter-spacing, uppercase for indexes and Ledger captions): Project stack specs, nav divider metadata, filter counts, and stack tags.
+- **Display** (`600`, `2.25rem`, `1.15` line-height, `-0.02em` tracking): Subpage main `h1` headings (`Shipped Proofing Index`, `Get in Touch`).
+- **Headline** (`600`, `1.875rem`, `1.2` line-height, `-0.015em` tracking): Major portfolio section headings on `/` (`Interactive Web Runtimes & Engines (01–06)`).
+- **Title** (`600`, `1.125rem`, `1.3` line-height, `-0.01em` tracking): Pane and project headings (`[07] Hyperliquid Trading Bot`, `[1] proof-monitor`).
+- **Body** (`400`, `0.75rem`, `1.625` line-height): System descriptions, capability bullets, and live CLI shell transcript lines.
+- **Label** (`500`, `0.75rem`, `1.4` line-height, `+0.08em` tracking): Action buttons, nav window items (`0:home`, `1:projects(37)`), and track headers.
+- **Caption** (`400`, `0.6875rem`, `1.4` line-height, `+0.06em` tracking): Venue/strategy tags, dependency pills, and quick-run buttons.
+- **Micro** (`400`, `0.625rem`, `1.3` line-height, `+0.08em` tracking): `[PRIVATE_REPO]` badge text and compact quick-selector indices.
 
 ### Named Rules
-**The Unbolded Display Rule.** Keep display and card headlines at weight `400` in `Rambla`; visual authority comes from scale contrast, negative tracking (`-0.02em`), and obsidian black ink (`ink-headline`), not heavy `700/800` weights.
-**The No-Kicker Rule.** Never stack an uppercase monospaced eyebrow kicker immediately above an `h1`, `h2`, or `h3` heading; place metadata cleanly beside headlines or inside specification footers.
+**The Tabular Integrity Rule.** Enable `font-variant-numeric: tabular-nums` globally on `body` so numeric project indexes (`01` through `37`), pricing, and shell listings align in strict vertical columns.
+**The No-Kicker Rule.** Never stack an uppercase eyebrow label above any `h1`, `h2`, or `h3` heading; put venue, domain, or stack indicators directly beneath the heading or inside the pane's structural title bar.
 
 ## Layout
 
-Desktop (`>= 1024px`) opens with a container-queried `1376 × 768` aspect proofing wall (`container-type: inline-size`) pinning the lead `57.99% × 69.92%` paper sheet alongside five vertical index strips (`17.95%` wide, `02` through `06`) and a `10.68%` full-bleed Indigo Ledger footer strip (`5` equal/proportional deployment cells). Below the fold and on subpages (`/projects`, `/about`, `/awards`, `/contact`), content aligns inside a centered `max-width: 1440px` frame (`px-4` mobile, `px-6` tablet, `px-8` desktop):
-- **Flagship Projects Grid:** `1` col (`< 768px`), `2` cols (`768px–1023px`), `3` cols (`>= 1024px`) with `24px` gutter.
-- **Web3 Ledger Grid:** `1` col (`< 768px`), `2` cols (`>= 768px`) with `16px` gap on `#171837` ground.
-- **Tech Matrix Grid:** `1` col (`< 768px`), `2` cols (`768px–1023px`), `4` cols (`>= 1024px`) with `20px` gap.
-- **Mobile (`390px`):** Replaces fixed percentage coordinates with a natural stacked flow: top utility header + drawer toggle, lead proofing card, `2`-column `01–06` strip selector, vertical Web3 cell list, then full single-column project catalogue with zero horizontal overflow.
+All desktop (`>= 1024px`) and responsive views align inside a centered `max-width: 1440px` workstation container (`px-4` mobile, `px-6` tablet, `px-8` desktop):
+- **Hero Workstation Grid:** `12`-column CSS grid (`7` columns for `[0] interactive zsh pane`, `5` columns stacking `[1] proof-monitor` + `[2] sys-index`), underscored by a full-width `5`-column Confidential Web3 quick-node strip.
+- **Track 01 (`01–06`), Track 02 (`07–17`), Track 03 (`18–27`):** `1` col (`< 768px`), `2` cols (`768px–1023px`), `3` cols (`>= 1024px`) with `20px` gap across flat `1px`-bordered panes.
+- **Track 04 (`28–37` Web3 Ledger):** `2` cols (`>= 768px`) nested inside a `term-sub` recessed band.
+- **Unified Stack Matrix:** `1` col (`< 768px`), `2` cols (`768px–1023px`), `4` cols (`>= 1024px`).
 
 ## Elevation & Depth
 
-This system uses a **Material-Split Hybrid Depth** strategy grounded in physical paper mechanics rather than digital UI elevation tiers. Light paper proofs and selector strips sitting over sunlit plaster lift through warm-brown ambient contact shadows (`.proof-shadow` and `.strip-shadow`) with zero outer border stroke. Inside midnight Indigo Ledger bands, shadows cannot read naturally on dark ground, so cards stay completely flat and separate via crisp `1px` warm-paper hairline borders (`rgba(232, 227, 221, 0.25)`).
-
-### Shadow Vocabulary
-- **Proof Sheet Shadow** (`box-shadow: 0 12px 28px rgba(42, 32, 22, 0.24), 0 3px 8px rgba(42, 32, 22, 0.14)`): Used on pinned hero lead sheets, Flagship project cards (`01–06`), and high-emphasis award summary sheets resting on warm plaster.
-- **Index Strip Shadow** (`box-shadow: 0 4px 12px rgba(42, 32, 22, 0.18), 0 1px 4px rgba(42, 32, 22, 0.12)`): Lighter contact shadow for stacked hero selector strips (`02–06`) and compact tech-matrix columns.
+This design system uses a **Zero-Shadow Flat Tiling Model**. No component renders a soft drop shadow or outer glow; visual hierarchy emerges strictly from surface step contrast (`term-void` -> `term-pane` -> `term-pane-alt`) separated by `1px solid` crisp hairline borders (`term-border` rising to `term-border-bright` or `phosphor-green` on pointer hover and focus).
 
 ### Named Rules
-**The No Ghost-Card Rule.** Never apply a visible outer border (`1px solid ...`) on the same container that carries `.proof-shadow` or `.strip-shadow`; choose either paper shadow on plaster or hairline border inside dark indigo.
-**The Hardware Motion Rule.** Hover states on paper proof cards translate subtly along `-Y` (`-3px` over `180ms`, `cubic-bezier(0.22, 1, 0.36, 1)`) mimicking lifting a pinned sheet; all transitions respect `prefers-reduced-motion` (`MotionConfig reducedMotion="user"`).
+**The Flat-Tile Invariant Rule.** Borders alone carry containment; never add `box-shadow` or frosted `backdrop-filter` onto bordered terminal panes.
+**The Reduced-Motion Fidelity Rule.** Cursor blinking (`.term-cursor`) and subtle `4px` `.crt-scanlines` strictly yield under `prefers-reduced-motion: reduce`, while active proof monitor swaps animate cleanly over `180ms` using `MotionConfig reducedMotion="user"`.
 
 ## Shapes
 
-Paper cuts are predominantly knife-trimmed square rectangles (`0px` radius) across all project cards, selector strips, image plates, filter tabs, tag chips, and Web3 ledger rows, underscored by tiny corner crop marks inside the lead hero sheet and `+` studio registration crosshairs on the wall ground. Micro softening (`3px`–`4px`) appears strictly on primary Cadmium Signal CTA buttons (`Launch Live`, `Open SDK Demo`) so action buttons separate tactilely from archival cards, while full capsule geometry (`9999px`) is restricted solely to the header's `Ask Jobjab AI...` search pill and the floating drawer toggle.
+Architectural zero-radius orthogonality (`0px` corners) governs every surface in the application—header window tabs, buttons, `grep` inputs, stack tags, `[PRIVATE_REPO]` locks, AI dialogue boxes, and project panes—reinforcing a genuine raster terminal grid rather than consumer rounded SaaS cards.
 
 ## Components
 
-Physical-studio clarity defines every control: high-contrast ink over uncoated stock, single-pixel hairline dividers where needed, and crisp hover flips to Cadmium Signal.
+Every interactive primitive mirrors an authentic terminal buffer, status bar button, or hairline pane control with immediate focus outlines (`1px solid #39ff7a`, `2px` offset) and zero border radius.
 
 ### Buttons
-- **Shape:** Primary Signal CTAs use subtle `3px`–`4px` corners; secondary outlined paper and indigo buttons remain razor-square (`0px`).
-- **Primary:** Cadmium Signal (`cadmium-signal`) background, Ink Obsidian (`ink-obsidian`) text, `10px 20px` padding (`.ds-btn-primary` / hero CTA).
-- **Hover / Focus:** Transitions smoothly to Cadmium Hover (`cadmium-hover`); keyboard focus outlines use visible contrast strokes.
-- **Secondary:** Paper Bright (`paper-bright`) fill with `1px solid rgba(20, 19, 17, 0.30)` stroke on plaster ground (`.ds-btn-paper`); Indigo Deep (`indigo-deep`) with `1px solid rgba(232, 227, 221, 0.30)` stroke inside Web3 bands (`.ds-btn-indigo`).
+- **Shape:** Sharp square (`0px`).
+- **Primary:** Solid Phosphor Green (`phosphor-green`) fill with deep Phosphor Green Ink (`phosphor-green-ink`) bold text (`padding: 8px 16px`), darkening to `phosphor-green-hover` on hover.
+- **Secondary:** Term Void (`term-void`) fill inside `1px solid #2f7d4d`, shifting border and foreground ink cleanly to `phosphor-green` on hover.
+- **Amber Access CTA:** Amber Tint (`amber-tint`) with `1px solid` amber stroke (`#ffb000`) for requesting walkthroughs on `[PRIVATE_REPO]` quant bots and commercial SaaS backends.
 
 ### Chips
-- **Style:** Sharp `0px` corners with IBM Plex Mono `11px` labels (`padding: 2px 8px`). Paper variant uses Paper Strip Mid (`paper-strip-mid`) + `1px solid rgba(20, 19, 17, 0.15)`; Indigo variant uses white `5%` overlay + `1px solid rgba(232, 227, 221, 0.20)`.
-- **State:** Interactive filter tabs on `/projects` switch solidly to Indigo Ledger fill (`#171837`) with Paper Bright ink when selected.
+- **Stack Tag:** Flat `0px` box (`padding: 2px 8px`) with `1px solid #193826` over `term-pane-alt`.
+- **Private Lock Badge:** `[PRIVATE_REPO]` lock chip using `amber-tint` background and `phosphor-amber` text inside a hairline amber border.
 
 ### Cards / Containers
 - **Corner Style:** Razor-square (`0px`).
-- **Background:** Paper Card (`paper-card`) on plaster ground; Indigo Deep (`indigo-deep`) inside Web3 ledger bands.
-- **Shadow Strategy:** Paper cards carry `.proof-shadow` (`.strip-shadow` for tech columns) with zero outer border; Indigo cards carry zero shadow.
-- **Border:** None on paper cards (internal `1px` dividers `rgba(20, 19, 17, 0.12)` separate header, mechanics list, and footer); `1px solid rgba(232, 227, 221, 0.25)` shifting to `rgba(234, 104, 29, 0.75)` on hover for Indigo cards.
-- **Internal Padding:** `20px` (`p-5`) standard cards; `24px–32px` (`p-6 sm:p-8`) award highlight sheet.
+- **Background:** Term Pane (`term-pane`), internal rule dividers (`1px solid #193826`).
+- **Border:** `1px solid #193826` shifting to `1px solid #2f7d4d` (`#39ff7a` on interactive links/cards) on hover. Zero drop shadow.
+- **Internal Padding:** `20px` (`p-5`) standard pane cards; `24px–32px` on award/contact feature panes.
 
 ### Inputs / Fields
-- **Style:** Transparent background framed inside `1px solid #241a12` (`9999px` capsule) for the masthead `Ask Jobjab AI...` field with an embedded `28px` Ink Obsidian submit circle (`rounded-full`).
-- **Focus:** Border shifts smoothly from `#241a12` to Cadmium Signal (`cadmium-signal`) via `focus-within`; submit button flips to `cadmium-signal` on hover.
+- **Interactive Shell Prompt & Filter Inputs:** Grounded on Term Void (`term-void`), framed by `1px solid #193826` shifting to `#39ff7a` on `:focus` / `:focus-within`, rendered with `caret-color: #39ff7a` and visible blinking block cursor in the zsh prompt.
 
 ### Navigation
-- Sticky translucent/plaster top header (`h-14`, `max-width: 1440px`), uppercase Rambla studio wordmark on the left, `/` slash-delimited page links (`Home / Projects / About / Awards / Contact`) with `underline-offset-4` active rule, and AI prompt pill on the right. Below `768px`, collapses to a clean mobile menu toggle revealing a full-width `#efebe4` sheet drawer.
+- Sticky `48px` `tmux`-style status bar (`[0:jobjab@prod] // PORTFOLIO_V3`), numbered window links (`0:home`, `1:projects(37)`, `2:about`, `3:awards`, `4:contact`) where the active window lights up solid Phosphor Green with an asterisk (`*`), paired with an inline `ai>` prompt bar.
 
-### Signature Component: Pinboard Strip Selector (02–06)
-A vertical rail of five paper-toned horizontal index strips pinned along the right side of the hero wall. Each strip pairs a mono index number (`02`–`06`), cropped studio plate thumbnail (`object-cover`), and label (`TITLE · TECHNIQUE`), letting visitors swap any flagship build into the main proofing sheet with keyboard-accessible buttons (`aria-pressed`) and spring-eased transitions.
+### Signature Component: Interactive Zsh Console (`InteractiveShell`)
+Split-pane terminal emulator supporting real keyboard navigation (`ArrowUp`/`ArrowDown` command history, `Tab` command completion), instant inspection (`cat <01-37>` updating the adjacent `proof-monitor` plate), filtering commands (`ls`, `bots`, `saas`, `web3`), direct URL launching (`open <01-37>`), and natural-language AI escalation (`ai <question>`).
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep `Cadmium Signal` under `10%` of viewport area so every primary launch button reads immediately against neutral paper or indigo.
-- **Do** preserve the daylight paper vs. midnight indigo material boundary between interactive web runtimes (`01–06`) and confidential FHEVM / Web3 protocols (`07–16`).
-- **Do** use warm ambient paper shadows (`proof-shadow` / `strip-shadow`) exclusively without outer borders on light plaster cards.
-- **Do** set Rambla headlines at weight `400` with tight negative letter spacing (`-0.015em` to `-0.02em`) and clean IBM Plex Mono technical metadata.
+- **Do** preserve `0px` sharp corners across panes, buttons, tags, and terminal inputs so the layout stays faithful to a `tmux` window manager.
+- **Do** use phosphor-tinted green muted tokens (`#6ca380`, `#9dc4ac`) for secondary text and keep contrast well above `4.5:1`.
+- **Do** label private commercial bots and backends honestly with `[PRIVATE_REPO]` and `Request Access` routes rather than exposing dead 404 GitHub links.
+- **Do** bind interactive terminal commands cleanly to live React state (`activeFlagshipIdx`) and the global AI chat context.
 
 ### Don't:
-- **Don't** place uppercase monospaced eyebrow kickers above `h1`, `h2`, or `h3` headings.
-- **Don't** combine outer `1px` borders with `box-shadow` ("ghost cards") on paper surfaces, or add neon/blur glows to indigo ledger panels.
-- **Don't** round paper proof cards, tags, or filter tabs with `8px–16px` borders; keep containers architectural `0px` (`3px–4px` max for primary CTAs).
-- **Don't** fabricate project metrics, unverified TVL/latency stats, or duplicate design-direction meta labels inside shipped templates.
+- **Don't** apply `box-shadow` drop shadows or glowing neon halos (`box-shadow: 0 0 20px ...`) to cards, headings, or CRT text.
+- **Don't** place uppercase eyebrow kickers above any `h1`, `h2`, or `h3` heading.
+- **Don't** use cold gray (`#888`, `slate-400`) on obsidian-green panes or round pane containers to look like generic SaaS templates.
+- **Don't** fabricate trading PnL, volume metrics, win rates, or fake revenue statistics anywhere in copy, AI prompts, or CLI command outputs.

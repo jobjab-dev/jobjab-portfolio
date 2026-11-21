@@ -4,17 +4,18 @@ import { ChatProvider } from "@/context/ChatContext";
 import ChatWidget from "@/components/ai/ChatWidget";
 
 export const metadata: Metadata = {
-  title: "Jobjab — Creative Technologist & Design Engineer",
+  title: "jobjab@prod:~/portfolio — 37 Production Systems",
   description:
-    "Architectural engineering portfolio of Jobjab (jobjab-dev): 6 interactive full-stack flagship interfaces and 10 confidential Web3 & Zama FHEVM protocols.",
+    "Phosphor Unix Terminal portfolio of Jobjab (jobjab-dev): 6 interactive full-stack runtimes, 11 Python Perp DEX trading bots, 10 SaaS/AI/Fintech platforms, and 10 confidential Web3 & Zama FHEVM protocols.",
   keywords: [
     "Creative Technologist",
     "Design Engineer",
-    "Next.js",
+    "Quant Trading Bots",
+    "Hyperliquid",
+    "Polymarket",
+    "Next.js 16",
     "React 19",
-    "Web Audio API",
     "Zama FHEVM",
-    "Web3",
     "Solidity",
   ],
   icons: {
@@ -34,12 +35,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className="dark">
+      <body className="bg-[#050a07] text-[#c9eed6] antialiased">
         <ChatProvider>
           {children}
           <ChatWidget />
         </ChatProvider>
+        <div
+          aria-hidden="true"
+          className="crt-scanlines pointer-events-none fixed inset-0 z-50"
+        />
       </body>
     </html>
   );
