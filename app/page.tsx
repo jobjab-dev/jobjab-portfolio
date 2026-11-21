@@ -35,10 +35,10 @@ const plateMap = {
 } as const;
 
 const trackJumpRows = [
-  { href: "#flagship", code: "01-06", label: "Interactive Frontend Runtimes", count: "06 LIVE" },
-  { href: "#quant", code: "07-17", label: "Python Quant & Perp DEX Bots", count: "11 BOTS" },
-  { href: "#platforms", code: "18-27", label: "Production SaaS, Fintech & AI", count: "10 APPS" },
-  { href: "#web3", code: "28-37", label: "Confidential Web3 & FHEVM", count: "10 DAPPS" },
+  { href: "#flagship", code: "01-06", label: "Flagship", count: "06 ↗" },
+  { href: "#quant", code: "07-17", label: "Quant Bots", count: "11 ↗" },
+  { href: "#platforms", code: "18-27", label: "SaaS & AI", count: "10 ↗" },
+  { href: "#web3", code: "28-37", label: "Web3 FHEVM", count: "10 ↗" },
 ];
 
 const web3QuickStrip = [
@@ -70,11 +70,11 @@ export default function Home() {
              ============================================================ */}
           <section
             aria-label="Phosphor Unix Terminal Workstation"
-            className="mx-auto max-w-[1440px] px-4 pb-8 pt-6 sm:px-6 lg:px-8"
+            className="mx-auto w-full max-w-[1440px] px-4 py-3 sm:px-6 lg:flex lg:h-[calc(100dvh-45px)] lg:min-h-[610px] lg:max-h-[860px] lg:flex-col lg:gap-2.5 lg:px-8 lg:py-3"
           >
-            <div className="grid gap-4 lg:grid-cols-12">
+            <div className="grid gap-3 lg:min-h-0 lg:flex-1 lg:grid-cols-12">
               {/* Left Pane (7 cols): Interactive Terminal CLI */}
-              <div className="lg:col-span-7">
+              <div className="min-w-0 lg:col-span-7 lg:min-h-0">
                 <InteractiveShell
                   activeFlagshipIdx={activeIndex}
                   onSelectFlagship={setActiveIndex}
@@ -82,19 +82,19 @@ export default function Home() {
               </div>
 
               {/* Right Column (5 cols): Active Proof Monitor + System Index */}
-              <div className="flex flex-col gap-4 lg:col-span-5">
-                <div className="flex flex-col border border-[#193826] bg-[#08120c]">
-                  <div className="flex items-center justify-between border-b border-[#193826] bg-[#0c1911] px-3.5 py-2 text-xs">
-                    <span className="flex items-center gap-2 font-semibold text-[#ebfff2]">
-                      <Monitor className="h-3.5 w-3.5 text-[#39ff7a]" />
-                      <span>[1] proof-monitor // #{activeProject.index}</span>
+              <div className="flex min-w-0 flex-col gap-2.5 lg:col-span-5 lg:min-h-0">
+                <div className="flex min-w-0 flex-col border border-[#193826] bg-[#08120c] lg:min-h-0 lg:flex-1">
+                  <div className="flex shrink-0 items-center justify-between border-b border-[#193826] bg-[#0c1911] px-3 py-1.5 text-xs">
+                    <span className="flex min-w-0 items-center gap-2 font-semibold text-[#ebfff2]">
+                      <Monitor className="h-3.5 w-3.5 shrink-0 text-[#39ff7a]" />
+                      <span className="truncate">[1] proof-monitor // #{activeProject.index}</span>
                     </span>
-                    <span className="text-[11px] text-[#39ff7a]">
+                    <span className="shrink-0 text-[11px] text-[#39ff7a]">
                       {activeProject.shortLabel.split("·")[1]?.trim() || "LIVE"}
                     </span>
                   </div>
 
-                  <div className="p-4">
+                  <div className="flex min-h-0 min-w-0 flex-1 flex-col justify-between p-3">
                     <AnimatePresence mode="wait">
                       <motion.div
                         key={activeProject.id}
@@ -102,12 +102,16 @@ export default function Home() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -4 }}
                         transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                        className="flex min-h-0 min-w-0 flex-1 flex-col"
                       >
-                        <h1 className="text-lg font-semibold leading-snug tracking-tight text-[#ebfff2] sm:text-xl">
+                        <h1
+                          title={activeProject.headline}
+                          className="truncate text-sm font-semibold tracking-tight text-[#ebfff2] sm:text-base"
+                        >
                           {activeProject.headline}
                         </h1>
 
-                        <div className="my-3 aspect-[16/9] w-full overflow-hidden border border-[#193826] bg-[#050a07]">
+                        <div className="my-2 aspect-[16/9] w-full overflow-hidden border border-[#193826] bg-[#050a07] lg:aspect-auto lg:min-h-0 lg:flex-1">
                           <img
                             src={activePlate.src}
                             alt={`${activeProject.title} studio preview`}
@@ -115,16 +119,16 @@ export default function Home() {
                           />
                         </div>
 
-                        <p className="text-[11px] uppercase tracking-[0.06em] text-[#6ca380]">
+                        <p className="truncate text-[11px] uppercase tracking-[0.06em] text-[#6ca380]">
                           STACK: {activeProject.stackLine}
                         </p>
 
-                        <div className="mt-3 grid grid-cols-2 gap-2.5">
+                        <div className="mt-2 grid grid-cols-2 gap-2">
                           <a
                             href={activeProject.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-1.5 border border-[#2f7d4d] bg-[#050a07] py-2 text-xs text-[#c9eed6] transition-colors hover:border-[#39ff7a] hover:text-[#39ff7a]"
+                            className="flex items-center justify-center gap-1.5 border border-[#2f7d4d] bg-[#050a07] py-1.5 text-xs text-[#c9eed6] transition-colors hover:border-[#39ff7a] hover:text-[#39ff7a]"
                           >
                             <Github className="h-3.5 w-3.5" />
                             <span>Source Repo</span>
@@ -133,7 +137,7 @@ export default function Home() {
                             href={activeProject.liveUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-1.5 bg-[#39ff7a] py-2 text-xs font-semibold text-[#041108] transition-colors hover:bg-[#22e563]"
+                            className="flex items-center justify-center gap-1.5 bg-[#39ff7a] py-1.5 text-xs font-semibold text-[#041108] transition-colors hover:bg-[#22e563]"
                           >
                             <span>Launch Live</span>
                             <ArrowUpRight className="h-3.5 w-3.5" />
@@ -143,7 +147,7 @@ export default function Home() {
                     </AnimatePresence>
 
                     {/* 01-06 Proof Selector Bar */}
-                    <div className="mt-4 grid grid-cols-3 gap-1.5 border-t border-[#193826] pt-3 sm:grid-cols-6">
+                    <div className="mt-2.5 grid shrink-0 grid-cols-3 gap-1.5 border-t border-[#193826] pt-2.5 sm:grid-cols-6">
                       {flagshipProjects.map((proj, idx) => {
                         const active = idx === activeIndex;
                         return (
@@ -153,7 +157,7 @@ export default function Home() {
                             onClick={() => setActiveIndex(idx)}
                             aria-pressed={active}
                             aria-label={`Inspect proof ${proj.index}: ${proj.title}`}
-                            className={`border px-2 py-1.5 text-left text-[11px] transition-colors ${
+                            className={`border px-1.5 py-1 text-left text-[11px] transition-colors ${
                               active
                                 ? "border-[#39ff7a] bg-[#39ff7a] font-semibold text-[#041108]"
                                 : "border-[#193826] bg-[#050a07] text-[#c9eed6] hover:border-[#2f7d4d] hover:text-[#39ff7a]"
@@ -169,33 +173,33 @@ export default function Home() {
                 </div>
 
                 {/* System Index Pane */}
-                <div className="border border-[#193826] bg-[#08120c]">
-                  <div className="flex items-center justify-between border-b border-[#193826] bg-[#0c1911] px-3.5 py-1.5 text-[11px] text-[#6ca380]">
+                <div className="shrink-0 border border-[#193826] bg-[#08120c]">
+                  <div className="flex items-center justify-between border-b border-[#193826] bg-[#0c1911] px-3 py-1 text-[11px] text-[#6ca380]">
                     <span className="font-semibold text-[#ebfff2]">[2] sys-index // /proc/tracks</span>
                     <span>37 TOTAL</span>
                   </div>
-                  <div className="divide-y divide-[#193826]">
+                  <div className="grid grid-cols-2 gap-px bg-[#193826]">
                     {trackJumpRows.map((row) => (
                       <a
                         key={row.href}
                         href={row.href}
-                        className="flex items-center justify-between px-3.5 py-2 text-xs transition-colors hover:bg-[#0d1c13] hover:text-[#39ff7a]"
+                        className="flex items-center justify-between gap-1 bg-[#08120c] px-2.5 py-1.5 text-[11px] transition-colors hover:bg-[#0d1c13] hover:text-[#39ff7a]"
                       >
                         <span className="truncate">
-                          <span className="mr-2 text-[#6ca380]">[{row.code}]</span>
+                          <span className="mr-1 text-[#6ca380]">[{row.code}]</span>
                           <span>{row.label}</span>
                         </span>
-                        <span className="shrink-0 text-[11px] text-[#46e8c8]">{row.count} ↗</span>
+                        <span className="shrink-0 text-[#46e8c8]">{row.count}</span>
                       </a>
                     ))}
                   </div>
                   <Link
                     href="/awards"
-                    className="flex items-center justify-between border-t border-[#ffb000]/40 bg-[#191205] px-3.5 py-2 text-xs text-[#ffb000] transition-colors hover:bg-[#ffb000] hover:text-[#041108]"
+                    className="flex items-center justify-between border-t border-[#ffb000]/40 bg-[#191205] px-3 py-1.5 text-[11px] text-[#ffb000] transition-colors hover:bg-[#ffb000] hover:text-[#041108]"
                   >
-                    <span className="flex items-center gap-2 font-medium">
+                    <span className="flex min-w-0 items-center gap-2 font-medium">
                       <Award className="h-3.5 w-3.5 shrink-0" />
-                      <span>Zama $5,000 Monthly Bounty Winner (1st Place)</span>
+                      <span className="truncate">Zama $5,000 Monthly Bounty Winner (1st Place)</span>
                     </span>
                     <ArrowUpRight className="h-3.5 w-3.5 shrink-0" />
                   </Link>
@@ -204,21 +208,21 @@ export default function Home() {
             </div>
 
             {/* Full-Width Confidential Web3 Quick-Launch Strip */}
-            <div className="mt-4 border border-[#193826] bg-[#08120c]">
-              <div className="flex items-center justify-between border-b border-[#193826] bg-[#0c1911] px-3.5 py-1.5 text-[11px]">
-                <span className="text-[#46e8c8]">CONFIDENTIAL WEB3 &amp; ZAMA FHEVM QUICK_NODES</span>
-                <Link href="/projects" className="text-[#39ff7a] hover:underline">
+            <div className="mt-3 shrink-0 border border-[#193826] bg-[#08120c] lg:mt-0">
+              <div className="flex items-center justify-between gap-2 border-b border-[#193826] bg-[#0c1911] px-3 py-1 text-[11px]">
+                <span className="truncate text-[#46e8c8]">CONFIDENTIAL WEB3 &amp; ZAMA FHEVM QUICK_NODES</span>
+                <Link href="/projects" className="shrink-0 text-[#39ff7a] hover:underline">
                   open ~/projects (37) →
                 </Link>
               </div>
-              <div className="grid divide-y divide-[#193826] sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-5">
+              <div className="grid grid-cols-1 gap-px bg-[#193826] sm:grid-cols-2 lg:grid-cols-5">
                 {web3QuickStrip.map((node) => (
                   <a
                     key={node.label}
                     href={node.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex items-center justify-between gap-2 px-3.5 py-2.5 text-xs transition-colors hover:bg-[#0d1c13] ${
+                    className={`flex items-center justify-between gap-2 bg-[#08120c] px-3 py-2 text-xs transition-colors hover:bg-[#0d1c13] ${
                       node.highlight ? "text-[#ffb000]" : "text-[#c9eed6] hover:text-[#39ff7a]"
                     }`}
                   >

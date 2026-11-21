@@ -29,16 +29,19 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-[#193826] bg-[#08120c]">
-      <div className="mx-auto flex h-12 max-w-[1440px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-11 max-w-[1440px] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
           className="flex min-w-0 items-center gap-2 truncate text-xs font-semibold tracking-tight text-[#39ff7a] sm:text-sm"
         >
           <Terminal className="h-4 w-4 shrink-0" />
-          <span className="truncate">[0:jobjab@prod] // PORTFOLIO_V3</span>
+          <span className="truncate">
+            [0:jobjab@prod]
+            <span className="hidden sm:inline"> // PORTFOLIO_V3</span>
+          </span>
         </Link>
 
-        <div className="hidden items-center gap-4 lg:flex">
+        <div className="hidden items-center gap-3 md:flex">
           <nav aria-label="Primary Navigation" className="flex items-center gap-1 text-xs">
             {navItems.map((item) => {
               const active = pathname === item.href;
@@ -46,7 +49,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`border px-2.5 py-1 transition-colors ${
+                  className={`border px-2 py-1 transition-colors ${
                     active
                       ? "border-[#39ff7a] bg-[#39ff7a] font-semibold text-[#041108]"
                       : "border-transparent text-[#c9eed6] hover:border-[#193826] hover:bg-[#0d1c13] hover:text-[#39ff7a]"
@@ -61,7 +64,7 @@ export function Header() {
 
           <form
             onSubmit={handleSubmit}
-            className="flex h-8 w-56 items-center justify-between border border-[#193826] bg-[#050a07] pl-2.5 pr-1 transition-colors focus-within:border-[#39ff7a]"
+            className="hidden h-7 w-52 items-center justify-between border border-[#193826] bg-[#050a07] pl-2.5 pr-1 transition-colors focus-within:border-[#39ff7a] lg:flex"
           >
             <span className="mr-1.5 text-[11px] font-semibold text-[#39ff7a]">ai&gt;</span>
             <input
@@ -75,9 +78,9 @@ export function Header() {
             <button
               type="submit"
               aria-label="Ask AI Assistant"
-              className="flex h-6 w-6 shrink-0 items-center justify-center bg-[#39ff7a] text-[#041108] transition-colors hover:bg-[#22e563]"
+              className="flex h-5 w-5 shrink-0 items-center justify-center bg-[#39ff7a] text-[#041108] transition-colors hover:bg-[#22e563]"
             >
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowRight className="h-3 w-3" />
             </button>
           </form>
         </div>
@@ -86,14 +89,14 @@ export function Header() {
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation menu"
-          className="flex h-8 w-8 items-center justify-center border border-[#193826] bg-[#0d1c13] text-[#39ff7a] lg:hidden"
+          className="flex h-8 w-8 items-center justify-center border border-[#193826] bg-[#0d1c13] text-[#39ff7a] md:hidden"
         >
           {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-[#193826] bg-[#08120c] px-4 py-4 lg:hidden">
+        <div className="border-t border-[#193826] bg-[#08120c] px-4 py-4 md:hidden">
           <nav className="flex flex-col gap-1.5 text-sm">
             {navItems.map((item) => {
               const active = pathname === item.href;

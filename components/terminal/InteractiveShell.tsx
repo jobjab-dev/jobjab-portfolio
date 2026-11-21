@@ -76,6 +76,26 @@ const INITIAL_ENTRIES: TerminalEntry[] = [
         tone: "amber",
       },
       {
+        text: "INDEX SNAPSHOT:",
+        tone: "muted",
+      },
+      {
+        text: "  [01-06] HÄNSEL & ROTH · KINETON M-4 · FELD · VECTRA OPS · PRESS 09 · ATELIER",
+        tone: "normal",
+      },
+      {
+        text: "  [07-17] Hyperliquid · GRVT · Polymarket · Lighter · Aster · Nado · Apex · Paradex · Backpack · Pacifica · ActiveLP",
+        tone: "normal",
+      },
+      {
+        text: "  [18-27] JVAULT · POSkub · Poskub Pay · FastCaption · Nudrub · BOND · PaoPay · TikTok AI · TryOn · Dukira 3D",
+        tone: "normal",
+      },
+      {
+        text: "  [28-37] fhevm-react-template ($5k) · ZipherLaunch · Monad World · Zadiction · Paylink (+5 FHEVM)",
+        tone: "normal",
+      },
+      {
         text: "Type 'help', 'ls', 'bots', 'saas', 'web3', 'cat <01-37>', 'open <01-37>', or 'ai <question>'.",
         tone: "muted",
       },
@@ -116,7 +136,7 @@ export function InteractiveShell({
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (logRef.current) {
+    if (entries.length > INITIAL_ENTRIES.length && logRef.current) {
       logRef.current.scrollTop = logRef.current.scrollHeight;
     }
   }, [entries]);
@@ -414,18 +434,18 @@ export function InteractiveShell({
 
   return (
     <div
-      className="flex h-full flex-col border border-[#193826] bg-[#08120c]"
+      className="flex h-full min-h-0 min-w-0 flex-col border border-[#193826] bg-[#08120c]"
       onClick={() => inputRef.current?.focus()}
     >
       {/* tmux Pane Title Bar */}
-      <div className="flex items-center justify-between border-b border-[#193826] bg-[#0c1911] px-3.5 py-2 text-xs">
-        <div className="flex items-center gap-2 text-[#c9eed6]">
-          <Terminal className="h-3.5 w-3.5 text-[#39ff7a]" />
-          <span className="font-semibold text-[#ebfff2]">[0] jobjab@prod:~/portfolio</span>
-          <span className="hidden text-[#6ca380] sm:inline">— zsh (interactive)</span>
+      <div className="flex shrink-0 items-center justify-between gap-2 border-b border-[#193826] bg-[#0c1911] px-3 py-1.5 text-xs">
+        <div className="flex min-w-0 items-center gap-2 text-[#c9eed6]">
+          <Terminal className="h-3.5 w-3.5 shrink-0 text-[#39ff7a]" />
+          <span className="truncate font-semibold text-[#ebfff2]">[0] jobjab@prod:~/portfolio</span>
+          <span className="hidden shrink-0 text-[#6ca380] xl:inline">— zsh (interactive)</span>
         </div>
-        <div className="flex items-center gap-3 text-[11px]">
-          <span className="text-[#6ca380]">ACTIVE: #{flagshipProjects[activeFlagshipIdx]?.index}</span>
+        <div className="flex shrink-0 items-center gap-2.5 whitespace-nowrap text-[11px]">
+          <span className="hidden text-[#6ca380] sm:inline">ACTIVE: #{flagshipProjects[activeFlagshipIdx]?.index}</span>
           <span className="text-[#39ff7a]">● ONLINE</span>
         </div>
       </div>
@@ -434,7 +454,7 @@ export function InteractiveShell({
       <div
         ref={logRef}
         aria-live="polite"
-        className="custom-scrollbar h-[340px] flex-1 space-y-3 overflow-y-auto p-4 text-xs leading-relaxed sm:h-[380px]"
+        className="custom-scrollbar h-[210px] space-y-2.5 overflow-y-auto p-3 text-xs leading-relaxed sm:h-[240px] lg:h-auto lg:min-h-0 lg:flex-1 lg:p-3.5"
       >
         {entries.map((entry) => (
           <div key={entry.id} className="space-y-1">
@@ -468,8 +488,8 @@ export function InteractiveShell({
       </div>
 
       {/* Quick Command Strip */}
-      <div className="flex flex-wrap items-center gap-1.5 border-t border-[#193826] bg-[#060f0b] px-3 py-2 text-[11px]">
-        <span className="mr-1 text-[#6ca380]">RUN:</span>
+      <div className="custom-scrollbar flex shrink-0 items-center gap-1.5 overflow-x-auto whitespace-nowrap border-t border-[#193826] bg-[#060f0b] px-3 py-1.5 text-[11px] sm:flex-wrap">
+        <span className="mr-1 shrink-0 text-[#6ca380]">RUN:</span>
         {QUICK_CHIPS.map((cmdChip) => (
           <button
             key={cmdChip}
@@ -478,7 +498,7 @@ export function InteractiveShell({
               e.stopPropagation();
               executeCommand(cmdChip);
             }}
-            className="border border-[#193826] bg-[#0d1c13] px-2 py-0.5 text-[#c9eed6] transition-colors hover:border-[#39ff7a] hover:text-[#39ff7a]"
+            className="shrink-0 border border-[#193826] bg-[#0d1c13] px-2 py-0.5 text-[#c9eed6] transition-colors hover:border-[#39ff7a] hover:text-[#39ff7a]"
           >
             {cmdChip}
           </button>
@@ -488,9 +508,10 @@ export function InteractiveShell({
       {/* Interactive Command Prompt */}
       <form
         onSubmit={handleSubmit}
-        className="flex items-center gap-2 border-t border-[#193826] bg-[#050a07] px-3.5 py-2.5 text-xs"
+        className="flex shrink-0 items-center gap-2 border-t border-[#193826] bg-[#050a07] px-3 py-2 text-xs"
       >
-        <span className="shrink-0 font-semibold text-[#39ff7a]">jobjab@prod:~$</span>
+        <span className="shrink-0 font-semibold text-[#39ff7a] sm:hidden">$</span>
+        <span className="hidden shrink-0 font-semibold text-[#39ff7a] sm:inline">jobjab@prod:~$</span>
         <input
           ref={inputRef}
           type="text"
@@ -498,7 +519,7 @@ export function InteractiveShell({
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           aria-label="Terminal command input"
-          placeholder="type command (help, ls, bots, cat 07, whoami)..."
+          placeholder="help, ls, bots, cat 07, whoami..."
           className="min-w-0 flex-1 bg-transparent text-xs text-[#ebfff2] placeholder:text-[#6ca380] focus:outline-none"
         />
         <span aria-hidden="true" className="term-cursor h-3.5 w-2 shrink-0 bg-[#39ff7a]" />
