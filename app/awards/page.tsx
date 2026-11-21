@@ -1,78 +1,105 @@
 "use client";
 
-import { Trophy, Award, Star } from "lucide-react";
+import { ArrowUpRight, Award, Github } from "lucide-react";
+import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Card } from "@/components/ui/Card";
+import { awardsData } from "@/lib/portfolio-data";
 
-const awards = [
-    {
-        icon: Trophy,
-        title: "Zama Monthly Bounty Winner",
-        date: "October 2025",
-        description: "Won 1st Place ($5,000) in Zama's Monthly Bounty Track for building 'fhevm-react-template', a Universal FHEVM SDK for confidential dApps.",
-    },
-];
+export default function AwardsPage() {
+  return (
+    <div className="flex min-h-screen flex-col proofing-wall-ground text-[#121110]">
+      <Header />
 
-export default function Awards() {
-    return (
-        <>
-            <Header />
-            <main className="min-h-screen pt-20 bg-background relative">
+      <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="mb-10 border-b border-[#141311]/35 pb-8">
+          <h1 className="text-4xl font-normal tracking-tight text-[#0a0a0a] sm:text-5xl lg:text-6xl">
+            Awards &amp; Recognition
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#2f2b26]">
+            Open-source cryptographic tooling and production dApp architecture recognized across the Ethereum and Zama FHEVM ecosystem.
+          </p>
+        </div>
 
-                {/* Background Elements */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-[100px] animate-pulse" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] animate-pulse delay-700" />
+        <div className="space-y-8">
+          {awardsData.map((award) => (
+            <article
+              key={award.id}
+              className="proof-shadow relative bg-[#f2eee6] p-6 sm:p-10"
+            >
+              <span className="pointer-events-none absolute left-3 top-3 h-3 w-3 border-l border-t border-[#141311]/30" />
+              <span className="pointer-events-none absolute right-3 top-3 h-3 w-3 border-r border-t border-[#141311]/30" />
+              <span className="pointer-events-none absolute bottom-3 left-3 h-3 w-3 border-b border-l border-[#141311]/30" />
+              <span className="pointer-events-none absolute bottom-3 right-3 h-3 w-3 border-b border-r border-[#141311]/30" />
+
+              <div className="flex flex-col justify-between gap-4 border-b border-[#141311]/15 pb-6 sm:flex-row sm:items-start">
+                <div>
+                  <h2 className="text-3xl font-normal tracking-tight text-[#0a0a0a] sm:text-4xl">
+                    {award.title}
+                  </h2>
+                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.14em] text-[#5a544d]">
+                    {award.index} · {award.date}
+                  </p>
                 </div>
 
-                <section className="py-20 sm:py-32 relative z-10">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        {/* Header */}
-                        <div className="text-center mb-16">
-                            <h1 className="text-4xl sm:text-6xl font-heading font-bold mb-6">
-                                Awards & <span className="gradient-text">Recognition</span>
-                            </h1>
-                            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                                Achievements and recognition for contributions to the Web3 and blockchain ecosystem.
-                            </p>
-                        </div>
+                <div className="inline-flex items-center gap-2 self-start bg-[#171837] px-4 py-2 font-mono text-xs uppercase tracking-[0.12em] text-[#f6f2eb]">
+                  <Award className="h-4 w-4 text-[#ea681d]" />
+                  <span>{award.placement}</span>
+                </div>
+              </div>
 
-                        {/* Awards Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                            {awards.map((award, index) => {
-                                const Icon = award.icon;
-                                return (
-                                    <div key={award.title}>
-                                        <Card className="p-6 h-full">
-                                            <div className="flex items-start space-x-4">
-                                                <div className="p-3 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex-shrink-0">
-                                                    <Icon className="w-6 h-6 text-white" />
-                                                </div>
-                                                <div className="flex-grow">
-                                                    <div className="flex items-start justify-between mb-2">
-                                                        <h3 className="text-xl font-heading font-semibold">
-                                                            {award.title}
-                                                        </h3>
-                                                        <span className="text-sm text-muted-foreground ml-2 flex-shrink-0">
-                                                            {award.date}
-                                                        </span>
-                                                    </div>
-                                                    <p className="text-muted-foreground">
-                                                        {award.description}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </Card>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <Footer />
-        </>
-    );
+              <p className="mt-6 max-w-3xl text-base leading-relaxed text-[#26231f] sm:text-lg">
+                {award.description}
+              </p>
+
+              <div className="mt-6 grid gap-3 border-t border-[#141311]/10 pt-6 sm:grid-cols-3">
+                {award.highlights.map((item, idx) => (
+                  <div
+                    key={item}
+                    className="border border-[#141311]/12 bg-[#e8e3dd]/65 p-4 text-sm leading-relaxed text-[#1a1815]"
+                  >
+                    <span className="mb-1 block font-mono text-[11px] uppercase tracking-[0.12em] text-[#5a544d]">
+                      0{idx + 1} · Deliverable
+                    </span>
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href={award.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-[4px] bg-[#ea681d] px-5 py-2.5 text-sm font-normal text-[#120e0a] transition-colors hover:bg-[#d85a12]"
+                >
+                  <span>Launch {award.projectTitle}</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+
+                <a
+                  href={award.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-[#141311]/30 bg-white/50 px-5 py-2.5 text-sm text-[#121110] transition-colors hover:border-[#121110] hover:bg-white/80"
+                >
+                  <Github className="h-4 w-4" />
+                  <span>Inspect Repository</span>
+                </a>
+
+                <Link
+                  href="/projects"
+                  className="ml-auto font-mono text-xs uppercase tracking-[0.12em] text-[#171837] underline underline-offset-4 hover:text-[#ea681d]"
+                >
+                  View all 16 live projects →
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
 }

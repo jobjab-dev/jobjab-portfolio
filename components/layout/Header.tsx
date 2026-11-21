@@ -1,101 +1,134 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { usePathname } from "next/navigation";
+import { ArrowRight, Menu, X } from "lucide-react";
+import { useChat } from "@/context/ChatContext";
 
-const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
-    { href: "/awards", label: "Awards" },
-    { href: "/contact", label: "Contact" },
+const navItems = [
+  { href: "/", label: "Home" },
+  { href: "/projects", label: "Projects" },
+  { href: "/about", label: "About" },
+  { href: "/awards", label: "Awards" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Header() {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const { sendMessage } = useChat();
+  const [query, setQuery] = useState("");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-    return (
-        <motion.header
-            initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/50"
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!query.trim()) return;
+    sendMessage(query.trim());
+    setQuery("");
+  };
+
+  return (
+    <header className="sticky top-0 z-40 w-full border-b border-[#141311]/45 proofing-wall-ground">
+      <div className="mx-auto flex h-14 max-w-[1440px] items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          className="truncate text-sm font-normal uppercase tracking-[-0.01em] text-[#0f0c0a] sm:text-base lg:text-[17px]"
         >
-            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex items-center justify-between h-20">
-                    {/* Logo */}
-                    <Link href="/" className="flex items-center space-x-3 font-heading font-bold text-2xl group">
-                        <div className="relative w-12 h-12 rounded-full overflow-hidden border border-border group-hover:border-[#F5E147] transition-colors">
-                            <Image
-                                src="/apple-touch-icon.png"
-                                alt="Logo"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                        <span className="group-hover:text-[#F5E147] transition-colors">jobjab-portfolio</span>
-                    </Link>
+          JOBJAB · CREATIVE TECHNOLOGIST &amp; DESIGN ENGINEER
+        </Link>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                className="text-muted-foreground hover:text-[#F5E147] transition-colors font-medium text-sm font-mono uppercase tracking-wide"
-                            >
-                                {link.label}
-                            </Link>
-                        ))}
-                        <ThemeToggle />
-                    </div>
+        <div className="hidden items-center gap-6 md:flex">
+          <nav aria-label="Primary Navigation" className="flex items-center gap-2 text-[15px] text-[#120c0b]">
+            {navItems.map((item, idx) => {
+              const active = pathname === item.href;
+              return (
+                <React.Fragment key={item.href}>
+                  {idx > 0 && <span className="text-[#120c0b]/45">/</span>}
+                  <Link
+                    href={item.href}
+                    className={`underline-offset-4 transition-opacity ${
+                      active ? "underline decoration-[#120c0b]" : "hover:underline"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                </React.Fragment>
+              );
+            })}
+          </nav>
 
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center space-x-4">
-                        <ThemeToggle />
-                        <button
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="p-2 rounded-lg hover:bg-muted transition-colors"
-                            aria-label="Toggle menu"
-                        >
-                            {isMobileMenuOpen ? (
-                                <X className="w-6 h-6" />
-                            ) : (
-                                <Menu className="w-6 h-6" />
-                            )}
-                        </button>
-                    </div>
-                </div>
+          <form
+            onSubmit={handleSubmit}
+            className="flex h-9 w-52 items-center justify-between rounded-full border border-[#241a12] pl-3.5 pr-1 transition-colors focus-within:border-[#ea681d]"
+          >
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Ask Jobjab AI..."
+              aria-label="Ask Jobjab AI"
+              className="min-w-0 flex-1 bg-transparent text-sm text-[#120c0b] placeholder:text-[#2a2119]/80 focus:outline-none"
+            />
+            <button
+              type="submit"
+              aria-label="Ask AI Assistant"
+              className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#0f0c0a] text-[#efeae3] transition-colors hover:bg-[#ea681d] hover:text-[#121110]"
+            >
+              <ArrowRight className="h-3.5 w-3.5" />
+            </button>
+          </form>
+        </div>
 
-                {/* Mobile Navigation */}
-                <AnimatePresence>
-                    {isMobileMenuOpen && (
-                        <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.2 }}
-                            className="md:hidden overflow-hidden"
-                        >
-                            <div className="py-4 space-y-2">
-                                {navLinks.map((link) => (
-                                    <Link
-                                        key={link.href}
-                                        href={link.href}
-                                        onClick={() => setIsMobileMenuOpen(false)}
-                                        className="block px-4 py-2 rounded-lg hover:bg-muted transition-colors font-medium"
-                                    >
-                                        {link.label}
-                                    </Link>
-                                ))}
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </nav>
-        </motion.header>
-    );
+        <button
+          type="button"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle navigation menu"
+          className="flex h-9 w-9 items-center justify-center border border-[#141311]/35 bg-[#efebe4] text-[#121110] md:hidden"
+        >
+          {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+        </button>
+      </div>
+
+      {mobileOpen && (
+        <div className="border-t border-[#141311]/25 bg-[#efebe4] px-4 py-4 md:hidden">
+          <nav className="flex flex-col gap-2 text-base text-[#120c0b]">
+            {navItems.map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className={`border-b border-[#141311]/10 py-2 ${
+                    active ? "font-bold text-[#ea681d]" : ""
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+          </nav>
+          <form
+            onSubmit={handleSubmit}
+            className="mt-3 flex h-10 items-center justify-between rounded-full border border-[#241a12] bg-white/60 pl-4 pr-1"
+          >
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Ask Jobjab AI..."
+              className="min-w-0 flex-1 bg-transparent text-sm text-[#120c0b] placeholder:text-[#2a2119]/80 focus:outline-none"
+            />
+            <button
+              type="submit"
+              aria-label="Ask AI Assistant"
+              className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0f0c0a] text-[#efeae3]"
+            >
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </form>
+        </div>
+      )}
+    </header>
+  );
 }

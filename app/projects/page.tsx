@@ -1,185 +1,355 @@
 "use client";
 
-import { ExternalLink, Github } from "lucide-react";
-import Image from "next/image";
+import React, { useMemo, useState } from "react";
+import { ArrowUpRight, Github, Search, Award } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { flagshipProjects, web3Projects, FlagshipProject } from "@/lib/portfolio-data";
 
-const projects = [
-    {
-        title: "fhevm-react-template",
-        description: "A template for building React applications with FHEVM (Zama) and Hardhat.",
-        tags: ["FHEVM (Zama)", "Next.js", "React", "Tailwind CSS", "Solidity"],
-        github: "https://github.com/jobjab-dev/fhevm-react-template",
-        demo: "https://jobjab-fhevm-react-template-nextjs.vercel.app/",
-        logo: null,
-    },
-    {
-        title: "Monad World",
-        description: "Web3 Idle-Game on Monad Testnet. MonadWorld is a Web3 project on the Monad blockchain featuring Lilnad NFTs as unique Soul-Bound Tokens (SBTs).",
-        tags: ["Next.js", "TypeScript", "Solidity", "Prisma", "PostgreSQL", "Monad", "SBT/NFT"],
-        github: "https://github.com/jobjab-dev/MonadWorld",
-        demo: "https://www.monadworld.xyz/",
-        logo: "https://www.monadworld.xyz/logo_no_bg.png",
-    },
-    {
-        title: "Zadiction",
-        description: "A transparent, linear-capped lottery AMM with dynamic odds and secure on-chain RNG powered by Zama FHEVM",
-        tags: ["Solidity", "FHE", "TypeScript", "ethers.js"],
-        github: "https://github.com/jobjab-dev/Zadiction",
-        demo: "https://zadiction-nextjs.vercel.app/",
-        logo: "https://bafybeifxneoifd3vnjvkgl7qme5q42bs2ronkqscnnpnkzxwmxbdizzbse.ipfs.w3s.link/logo_bg.png",
-    },
-    {
-        title: "Click on chain",
-        description: "Click Counter is a decentralized application (dApp) built on the Tea Sepolia Testnet.",
-        tags: [, "React.js", "Solidity", "ethers.js"],
-        github: "https://github.com/jobjab-dev/Clickonchain.xyz",
-        demo: "https://www.clickonchain.xyz/",
-        logo: "https://www.clickonchain.xyz/clicklogo.png",
-    },
-    {
-        title: "Paylink",
-        description: "A complete Web3 payment ecosystem built on Morph Layer 2 blockchain that enables seamless QR code-based payments with gasless transactions.",
-        tags: ["Next.js", "TypeScript", "Solidity", "Morph L2", "QR Payments", "Gasless"],
-        github: "https://github.com/jobjab-dev/PayLink",
-        demo: "https://paylink-psi.vercel.app/",
-        logo: null,
-    },
-    {
-        title: "Private Vote",
-        description: "Confidential Voting dApp using Zama's Fully Homomorphic Encryption(FHE).",
-        tags: ["Next.js", "TypeScript", "Solidity", "Hardhat", "FHEVM (Zama)", "Confidential Voting", "Sepolia"],
-        github: "https://github.com/jobjab-dev/Private-Vote-FHEVM",
-        demo: "https://private-vote-fhevm-app.vercel.app/",
-        logo: "https://private-vote-fhevm-app.vercel.app/images/logo.png",
-    },
-    {
-        title: "hello-fhevm-tutorial",
-        description: "The most beginner-friendly way to learn confidential blockchain development",
-        tags: ["React", "Vite", "FHEVM (Zama)", "Solidity", "Hardhat"],
-        github: "https://github.com/jobjab-dev/hello-fhevm-tutorial",
-        demo: "https://hello-fhevm-tutorial.vercel.app/",
-        logo: null,
-    },
-    {
-        title: "Zameme.fun",
-        description: "Zameme is a Privacy-First Fair Launch Platform for Meme Tokens using Zama's FHE (Fully Homomorphic Encryption) technology.",
-        tags: ["FHEVM (Zama)", "Solidity", "Next.js", "Bonding Curve", "Fair Launch"],
-        github: "https://github.com/jobjab-dev/Zameme",
-        demo: "https://zameme-fun.vercel.app/",
-        logo: "https://bafybeig3agemxeyv3alyk4jgjieecnl2qtj54kgnxsbm22oosyxxojmeyy.ipfs.w3s.link/Zameme_logo.png",
-    },
-    {
-        title: "FHEVM Example Hub",
-        description: "A CLI tool and web app for generating ready-to-use FHEVM smart contract examples. Quickly scaffold confidential voting, private auctions, and more.",
-        tags: ["FHEVM (Zama)", "CLI", "TypeScript", "Solidity", "Hardhat", "Developer Tools"],
-        github: "https://github.com/jobjab-dev/fhevm-example-hub",
-        demo: "https://fhevm-example-hub-rho.vercel.app/",
-        logo: "https://fhevm-example-hub-rho.vercel.app/android-chrome-192x192.png",
-    },
-    {
-        title: "ZipherLaunch",
-        description: "Confidential Token Launchpad & Private Auctions powered by Fully Homomorphic Encryption. Sealed-bid Dutch auctions with hidden bids and fair price discovery.",
-        tags: ["FHEVM (Zama)", "Next.js", "Solidity", "Dutch Auction", "Private Bidding", "Token Launchpad"],
-        github: "https://github.com/jobjab-dev/ZipherLaunch",
-        demo: "https://zipher-launch.vercel.app/",
-        logo: "https://zipher-launch.vercel.app/icon.png",
-    },
+import leadPreviewImg from "@/assets/plates/lead-preview.png";
+import thumb02Img from "@/assets/plates/thumb-02.png";
+import thumb03Img from "@/assets/plates/thumb-03.png";
+import thumb04Img from "@/assets/plates/thumb-04.png";
+import thumb05Img from "@/assets/plates/thumb-05.png";
+import thumb06Img from "@/assets/plates/thumb-06.png";
+
+const plateMap = {
+  "lead-preview": leadPreviewImg,
+  "thumb-02": thumb02Img,
+  "thumb-03": thumb03Img,
+  "thumb-04": thumb04Img,
+  "thumb-05": thumb05Img,
+  "thumb-06": thumb06Img,
+} as const;
+
+type CategoryFilter = "all" | "flagship" | "web3";
+
+const STACK_FILTERS = [
+  "All Stacks",
+  "Next.js",
+  "React 19",
+  "FHEVM (Zama)",
+  "Solidity",
+  "Astro 7",
+  "Web Audio API",
+  "Vite 8",
 ];
 
-export default function Projects() {
-    return (
-        <>
-            <Header />
-            <main className="min-h-screen pt-20 bg-background relative">
+export default function ProjectsPage() {
+  const [category, setCategory] = useState<CategoryFilter>("all");
+  const [stackFilter, setStackFilter] = useState("All Stacks");
+  const [searchQuery, setSearchQuery] = useState("");
 
-                {/* Background Elements */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-[100px] animate-pulse" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] animate-pulse delay-700" />
-                </div>
+  const matchesSearchAndStack = (title: string, desc: string, tags: string[]) => {
+    const q = searchQuery.trim().toLowerCase();
+    const matchesSearch =
+      !q ||
+      title.toLowerCase().includes(q) ||
+      desc.toLowerCase().includes(q) ||
+      tags.some((t) => t.toLowerCase().includes(q));
 
-                <section className="py-20 sm:py-32 relative z-10">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        {/* Header */}
-                        <div className="text-center mb-16">
-                            <h1 className="text-4xl sm:text-6xl font-heading font-bold mb-6">
-                                My <span className="gradient-text">Projects</span>
-                            </h1>
-                            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                                A collection of Web3 projects showcasing smart contracts, DeFi protocols,
-                                and decentralized applications built with cutting-edge technology.
-                            </p>
-                        </div>
+    const matchesStack =
+      stackFilter === "All Stacks" ||
+      tags.some((t) => t.toLowerCase().includes(stackFilter.toLowerCase().replace(" (zama)", "")));
 
-                        {/* Projects Grid */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                            {projects.map((project, index) => (
-                                <div key={project.title}>
-                                    <Card className="p-6 h-full flex flex-col">
-                                        {/* Logo */}
-                                        <div className={`mb-4 flex items-center justify-center h-24 w-24 mx-auto ${!project.logo ? "rounded-xl overflow-hidden bg-gradient-to-br from-purple-500 to-pink-500" : ""}`}>
-                                            {project.logo ? (
-                                                <Image
-                                                    src={project.logo}
-                                                    alt={`${project.title} logo`}
-                                                    width={96}
-                                                    height={96}
-                                                    className="object-contain"
-                                                />
-                                            ) : (
-                                                <span className="text-4xl font-bold text-white">
-                                                    {project.title[0]}
-                                                </span>
-                                            )}
-                                        </div>
+    return matchesSearch && matchesStack;
+  };
 
-                                        <h3 className="text-2xl font-heading font-bold mb-3 text-center">
-                                            {project.title}
-                                        </h3>
-                                        <p className="text-muted-foreground mb-4 flex-grow text-center">
-                                            {project.description}
-                                        </p>
+  const filteredFlagships = useMemo(
+    () =>
+      category === "web3"
+        ? []
+        : flagshipProjects.filter((p) => matchesSearchAndStack(p.title, p.description, p.tags)),
+    [category, stackFilter, searchQuery]
+  );
 
-                                        {/* Tags */}
-                                        <div className="flex flex-wrap gap-2 mb-4">
-                                            {project.tags.map((tag) => (
-                                                <span
-                                                    key={tag}
-                                                    className="px-3 py-1 text-xs font-medium rounded-full bg-muted text-muted-foreground"
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
-                                        </div>
+  const filteredWeb3 = useMemo(
+    () =>
+      category === "flagship"
+        ? []
+        : web3Projects.filter((p) => matchesSearchAndStack(p.title, p.description, p.tags)),
+    [category, stackFilter, searchQuery]
+  );
 
-                                        {/* Links */}
-                                        <div className="flex gap-3">
-                                            <a href={project.github} className="flex-1">
-                                                <Button variant="outline" size="sm" className="w-full">
-                                                    <Github className="w-4 h-4 mr-2" />
-                                                    Code
-                                                </Button>
-                                            </a>
-                                            <a href={project.demo} className="flex-1">
-                                                <Button variant="primary" size="sm" className="w-full">
-                                                    <ExternalLink className="w-4 h-4 mr-2" />
-                                                    Demo
-                                                </Button>
-                                            </a>
-                                        </div>
-                                    </Card>
-                                </div>
-                            ))}
-                        </div>
+  const totalVisible = filteredFlagships.length + filteredWeb3.length;
+
+  return (
+    <div className="flex min-h-screen flex-col proofing-wall-ground text-[#121110]">
+      <Header />
+
+      <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        {/* Page Heading */}
+        <div className="border-b border-[#141311]/35 pb-8">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <h1 className="text-4xl font-normal tracking-tight text-[#0a0a0a] sm:text-5xl lg:text-6xl">
+                Shipped Proofing Index
+              </h1>
+              <p className="mt-3 max-w-2xl text-lg leading-relaxed text-[#2f2b26]">
+                Six flagship interactive full-stack projects paired with ten confidential Web3 &amp; Zama FHEVM decentralized applications—every entry links directly to live production and source code.
+              </p>
+            </div>
+            <div className="font-mono text-xs uppercase tracking-[0.12em] text-[#171837]">
+              Showing {totalVisible} / 16 live deployments
+            </div>
+          </div>
+        </div>
+
+        {/* Category Tabs, Stack Filters, & Search */}
+        <section className="strip-shadow my-8 space-y-4 bg-[#f2eee6] p-4 sm:p-5">
+          <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
+            <div className="flex flex-wrap gap-2" role="tablist" aria-label="Project tracks">
+              {[
+                { id: "all", label: "All Builds (16)" },
+                { id: "flagship", label: "Flagship Full-Stack (6)" },
+                { id: "web3", label: "Confidential Web3 & FHEVM (10)" },
+              ].map((tab) => {
+                const active = category === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    type="button"
+                    role="tab"
+                    aria-selected={active}
+                    onClick={() => setCategory(tab.id as CategoryFilter)}
+                    className={`border px-3.5 py-2 font-mono text-xs uppercase tracking-[0.1em] transition-colors ${
+                      active
+                        ? "border-[#121110] bg-[#171837] text-[#f6f2eb]"
+                        : "border-[#141311]/25 bg-white/50 text-[#121110] hover:border-[#ea681d]"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="relative w-full lg:w-72">
+              <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#5a544d]" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Filter by title or stack..."
+                aria-label="Filter projects by keyword"
+                className="w-full border border-[#141311]/25 bg-white/75 py-2 pl-9 pr-3 text-sm text-[#121110] placeholder:text-[#5a544d] focus:border-[#ea681d] focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2 border-t border-[#141311]/12 pt-3">
+            <span className="mr-1 font-mono text-[11px] uppercase tracking-[0.12em] text-[#5a544d]">
+              Stack:
+            </span>
+            {STACK_FILTERS.map((tag) => {
+              const active = stackFilter === tag;
+              return (
+                <button
+                  key={tag}
+                  type="button"
+                  onClick={() => setStackFilter(tag)}
+                  className={`border px-2.5 py-1 font-mono text-xs transition-colors ${
+                    active
+                      ? "border-[#ea681d] bg-[#ea681d] text-[#121110]"
+                      : "border-[#141311]/15 bg-[#e8e3dd]/70 text-[#2f2b26] hover:border-[#121110]"
+                  }`}
+                >
+                  {tag}
+                </button>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Track 1: 6 Flagship Interactive Full-Stack Proof Sheets */}
+        {filteredFlagships.length > 0 && (
+          <section className="mb-14">
+            <div className="mb-5 flex items-center justify-between border-b border-[#141311]/25 pb-2">
+              <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-[#121110]">
+                TRACK 01 · FLAGSHIP INTERACTIVE FULL-STACK SYSTEMS ({filteredFlagships.length})
+              </h2>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {filteredFlagships.map((proj: FlagshipProject) => {
+                const plate = plateMap[proj.plateKey];
+                return (
+                  <article
+                    key={proj.id}
+                    className="proof-shadow flex flex-col justify-between bg-[#f2eee6] p-5"
+                  >
+                    <div>
+                      <div className="mb-4 aspect-[16/9] w-full overflow-hidden bg-[#dcd7d0]">
+                        <img
+                          src={plate.src}
+                          alt={`${proj.title} preview`}
+                          className="h-full w-full object-cover object-center"
+                        />
+                      </div>
+
+                      <div className="flex items-baseline justify-between gap-2">
+                        <h3 className="text-2xl font-normal tracking-tight text-[#0a0a0a]">
+                          {proj.index} · {proj.title}
+                        </h3>
+                        <span className="shrink-0 font-mono text-[11px] uppercase tracking-[0.08em] text-[#ea681d]">
+                          {proj.shortLabel.split("·")[1]?.trim() || "Interactive"}
+                        </span>
+                      </div>
+                      <p className="mt-2 text-sm leading-relaxed text-[#38332c]">
+                        {proj.description}
+                      </p>
+
+                      <ul className="mt-4 space-y-1.5 border-t border-[#141311]/10 pt-3 text-xs leading-relaxed text-[#474139]">
+                        {proj.mechanics.slice(0, 3).map((mech) => (
+                          <li key={mech} className="flex items-start gap-2">
+                            <span className="mt-1 h-1.5 w-1.5 shrink-0 bg-[#ea681d]" />
+                            <span>{mech}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                </section>
-            </main>
-            <Footer />
-        </>
-    );
+
+                    <div className="mt-5 pt-4 border-t border-[#141311]/12">
+                      <div className="mb-4 flex flex-wrap gap-1.5">
+                        {proj.tags.map((t) => (
+                          <span
+                            key={t}
+                            className="border border-[#141311]/15 bg-[#e8e3dd] px-2 py-0.5 font-mono text-[11px] text-[#1a1815]"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="grid grid-cols-2 gap-2.5">
+                        <a
+                          href={proj.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-1.5 border border-[#141311]/30 bg-white/60 px-3 py-2 text-xs font-medium text-[#121110] transition-colors hover:border-[#121110] hover:bg-white"
+                        >
+                          <Github className="h-3.5 w-3.5" />
+                          <span>Source</span>
+                        </a>
+                        <a
+                          href={proj.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-1.5 rounded-[3px] bg-[#ea681d] px-3 py-2 text-xs font-medium text-[#120e0a] transition-colors hover:bg-[#d85a12]"
+                        >
+                          <span>Launch Live</span>
+                          <ArrowUpRight className="h-3.5 w-3.5" />
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {/* Track 2: 10 Confidential Web3 & Zama FHEVM Protocols */}
+        {filteredWeb3.length > 0 && (
+          <section className="border border-[#e8e3dd]/20 bg-[#171837] p-6 text-[#eeeef5] sm:p-8">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-b border-[#e8e3dd]/20 pb-4">
+              <div>
+                <h2 className="text-2xl font-normal text-[#f6f2eb] sm:text-3xl">
+                  On-Chain Privacy Protocols, Launchpads &amp; Tooling ({filteredWeb3.length})
+                </h2>
+              </div>
+              <span className="font-mono text-xs text-[#e6d4b6]">
+                Solidity · Hardhat · Zama FHEVM · Monad · Morph L2
+              </span>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              {filteredWeb3.map((proj) => (
+                <article
+                  key={proj.id}
+                  className="flex flex-col justify-between border border-[#e8e3dd]/25 bg-[#12132d] p-5 transition-colors hover:border-[#ea681d]/70"
+                >
+                  <div>
+                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                      <h3 className="text-2xl font-normal text-[#f6f2eb]">
+                        {proj.index} · {proj.title}
+                      </h3>
+                      {proj.highlight && (
+                        <span className="inline-flex items-center gap-1.5 bg-[#ea681d] px-2.5 py-0.5 font-mono text-[11px] font-medium text-[#121110]">
+                          <Award className="h-3 w-3" />
+                          <span>{proj.highlight}</span>
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-[#c6c7d6]">
+                      {proj.description}
+                    </p>
+
+                    <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] text-[#e6d4b6]">
+                      {proj.features.map((feat) => (
+                        <span key={feat}>• {feat}</span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-5 border-t border-[#e8e3dd]/15 pt-4">
+                    <div className="mb-4 flex flex-wrap gap-1.5">
+                      {proj.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="border border-[#e8e3dd]/20 bg-white/5 px-2 py-0.5 font-mono text-[11px] text-[#dcdde9]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-2.5">
+                      <a
+                        href={proj.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-1.5 border border-[#e8e3dd]/30 px-3 py-2 text-xs text-[#f6f2eb] transition-colors hover:border-[#f6f2eb] hover:bg-white/10"
+                      >
+                        <Github className="h-3.5 w-3.5" />
+                        <span>GitHub</span>
+                      </a>
+                      <a
+                        href={proj.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-1.5 bg-[#ea681d] px-3 py-2 text-xs font-medium text-[#120e0a] transition-colors hover:bg-[#d85a12]"
+                      >
+                        <span>Launch Live</span>
+                        <ArrowUpRight className="h-3.5 w-3.5" />
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {totalVisible === 0 && (
+          <div className="border border-[#141311]/20 bg-[#f2eee6] p-12 text-center">
+            <p className="text-xl text-[#0a0a0a]">No shipped builds matched the current filter.</p>
+            <button
+              type="button"
+              onClick={() => {
+                setCategory("all");
+                setStackFilter("All Stacks");
+                setSearchQuery("");
+              }}
+              className="mt-4 bg-[#171837] px-5 py-2.5 text-sm text-[#f6f2eb] hover:bg-[#ea681d] hover:text-[#121110]"
+            >
+              Reset All Filters
+            </button>
+          </div>
+        )}
+      </main>
+
+      <Footer />
+    </div>
+  );
 }

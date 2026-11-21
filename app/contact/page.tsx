@@ -1,118 +1,89 @@
 "use client";
 
-import { Mail, Github, Twitter, MessageCircle, Send, } from "lucide-react";
+import { ArrowUpRight, Mail, MessageSquare } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Card } from "@/components/ui/Card";
+import { contactChannels } from "@/lib/portfolio-data";
+import { useChat } from "@/context/ChatContext";
 
-const contactMethods = [
-    {
-        icon: Mail,
-        label: "Email",
-        value: "peejabh@gmail.com",
-        href: "mailto:peejabh@gmail.com",
-    },
-    {
-        icon: Github,
-        label: "GitHub",
-        value: "@jobjab-dev",
-        href: "https://github.com/jobjab-dev",
-    },
-    {
-        icon: Twitter,
-        label: "Twitter",
-        value: "@jobjab_eth",
-        href: "https://twitter.com/jobjab_eth",
-    },
-    {
-        icon: Send,
-        label: "Telegram",
-        value: "@jobjab123",
-        href: "https://t.me/jobjab123",
-    },
-];
+export default function ContactPage() {
+  const { setIsOpen } = useChat();
 
-export default function Contact() {
-    return (
-        <>
-            <Header />
-            <main className="min-h-screen pt-20 bg-background relative">
+  return (
+    <div className="flex min-h-screen flex-col proofing-wall-ground text-[#121110]">
+      <Header />
 
-                {/* Background Elements */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-[100px] animate-pulse" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] animate-pulse delay-700" />
+      <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="mb-10 border-b border-[#141311]/35 pb-8">
+          <h1 className="text-4xl font-normal tracking-tight text-[#0a0a0a] sm:text-5xl lg:text-6xl">
+            Get in Touch
+          </h1>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#2f2b26]">
+            Open to product studio collaborations, Creative Technologist / Design Engineer roles, and confidential Zama FHEVM protocol engagements.
+          </p>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2">
+          {contactChannels.map((channel, idx) => (
+            <a
+              key={channel.id}
+              href={channel.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="strip-shadow group flex flex-col justify-between bg-[#f2eee6] p-6 transition-transform duration-150 hover:-translate-y-0.5 sm:p-8"
+            >
+              <div>
+                <div className="flex items-baseline justify-between gap-2">
+                  <h2 className="text-2xl font-normal tracking-tight text-[#0a0a0a] group-hover:text-[#ea681d] sm:text-3xl">
+                    {channel.value}
+                  </h2>
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-[#ea681d] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
+                <p className="mt-1 font-mono text-xs uppercase tracking-[0.12em] text-[#5a544d]">
+                  0{idx + 1} · {channel.label}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-[#433e37]">
+                  {channel.note}
+                </p>
+              </div>
+              <div className="mt-6 border-t border-[#141311]/10 pt-3 font-mono text-[11px] uppercase tracking-[0.12em] text-[#171837]">
+                Open {channel.label} →
+              </div>
+            </a>
+          ))}
+        </div>
 
-                <section className="py-20 sm:py-32 relative z-10">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        {/* Header */}
-                        <div className="text-center mb-16">
-                            <h1 className="text-4xl sm:text-6xl font-heading font-bold mb-6">
-                                Get in <span className="gradient-text">Touch</span>
-                            </h1>
-                            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                                Have a project in mind or want to collaborate? Feel free to reach out through any of these channels.
-                            </p>
-                        </div>
+        <section className="mt-10 grid gap-6 border border-[#e8e3dd]/20 bg-[#171837] p-8 text-[#eeeef5] sm:p-12 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-8">
+            <h2 className="text-3xl font-normal tracking-tight text-[#f6f2eb] sm:text-4xl">
+              Let&apos;s ship something resilient and tactile.
+            </h2>
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#c9cad8]">
+              Whether you need a custom Web Audio / Canvas interactive interface, Next.js 16 real-time product architecture, or encrypted Solidity FHEVM contracts, write directly to my studio inbox.
+            </p>
+          </div>
 
-                        {/* Contact Cards */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
-                            {contactMethods.map((method, index) => {
-                                const Icon = method.icon;
-                                return (
-                                    <a
-                                        key={method.label}
-                                        href={method.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Card className="p-6 cursor-pointer group">
-                                            <div className="flex items-center space-x-4">
-                                                <div className="p-3 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 group-hover:scale-110 transition-transform">
-                                                    <Icon className="w-6 h-6 text-white" />
-                                                </div>
-                                                <div>
-                                                    <div className="text-sm text-muted-foreground mb-1">
-                                                        {method.label}
-                                                    </div>
-                                                    <div className="font-medium text-foreground group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                                                        {method.value}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </Card>
-                                    </a>
-                                );
-                            })}
-                        </div>
+          <div className="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
+            <a
+              href="mailto:peejabh@gmail.com"
+              className="inline-flex items-center gap-2 rounded-[4px] bg-[#ea681d] px-6 py-3 text-sm font-normal text-[#120e0a] transition-colors hover:bg-[#d85a12]"
+            >
+              <Mail className="h-4 w-4" />
+              <span>Email peejabh@gmail.com</span>
+            </a>
+            <button
+              type="button"
+              onClick={() => setIsOpen(true)}
+              className="inline-flex items-center gap-2 border border-[#e8e3dd]/35 px-5 py-3 text-sm text-[#f6f2eb] transition-colors hover:border-[#ea681d] hover:bg-white/5"
+            >
+              <MessageSquare className="h-4 w-4 text-[#ea681d]" />
+              <span>Ask Studio AI</span>
+            </button>
+          </div>
+        </section>
+      </main>
 
-                        {/* CTA */}
-                        <div className="text-center">
-                            <Card className="p-12 max-w-2xl mx-auto">
-                                <Send className="w-12 h-12 mx-auto mb-6 text-purple-600" />
-                                <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-4">
-                                    Let's Build Something Amazing
-                                </h2>
-                                <p className="text-muted-foreground mb-6">
-                                    I'm always interested in hearing about new projects and opportunities
-                                    in the Web3 space. Whether you have a question or just want to say hi,
-                                    I'll try my best to get back to you!
-                                </p>
-                                <a
-                                    href="mailto:your.email@example.com"
-                                    className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-lg hover:shadow-purple-500/50 hover:-translate-y-0.5 transition-all duration-200"
-                                >
-                                    <Mail className="w-5 h-5 mr-2" />
-                                    Send Email
-                                </a>
-                            </Card>
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <Footer />
-        </>
-    );
+      <Footer />
+    </div>
+  );
 }

@@ -1,108 +1,142 @@
-"use client";
-
-import { Code2, Cpu, Database, Globe } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { Card } from "@/components/ui/Card";
+import { portfolioData, techMatrix } from "@/lib/portfolio-data";
 
-const skills = [
-    {
-        icon: Code2,
-        title: "Confidential Smart Contracts",
-        description: "Pioneering privacy-first dApps using Zama's FHEVM and encrypted on-chain logic",
-    },
-    {
-        icon: Database,
-        title: "DeFi & GameFi Architecture",
-        description: "Building complex protocols, from AMMs and Fair Launch platforms to on-chain gaming",
-    },
-    {
-        icon: Globe,
-        title: "Full Stack Web3",
-        description: "End-to-end development using Next.js, Solidity, Hardhat, and modern frontend frameworks",
-    },
-    {
-        icon: Cpu,
-        title: "Emerging Ecosystems",
-        description: "Early adopter building on Monad, Morph L2, and other cutting-edge blockchains",
-    },
-];
+export default function AboutPage() {
+  return (
+    <div className="flex min-h-screen flex-col proofing-wall-ground text-[#121110]">
+      <Header />
 
-export default function About() {
-    return (
-        <>
-            <Header />
-            <main className="min-h-screen pt-20 bg-background relative">
+      <main className="mx-auto w-full max-w-[1440px] flex-1 px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="mb-10 border-b border-[#141311]/35 pb-8">
+          <h1 className="text-4xl font-normal tracking-tight text-[#0a0a0a] sm:text-5xl lg:text-6xl">
+            Creative Technologist &amp; Design Engineer
+          </h1>
+          <p className="mt-4 max-w-3xl text-lg leading-relaxed text-[#2f2b26]">
+            {portfolioData.bio}
+          </p>
+        </div>
 
-                {/* Background Elements */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/20 rounded-full blur-[100px] animate-pulse" />
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px] animate-pulse delay-700" />
+        {/* Biography & Positioning */}
+        <section className="proof-shadow relative mb-12 bg-[#f2eee6] p-6 sm:p-10">
+          <span className="pointer-events-none absolute left-3 top-3 h-3 w-3 border-l border-t border-[#141311]/30" />
+          <span className="pointer-events-none absolute right-3 top-3 h-3 w-3 border-r border-t border-[#141311]/30" />
+          <span className="pointer-events-none absolute bottom-3 left-3 h-3 w-3 border-b border-l border-[#141311]/30" />
+          <span className="pointer-events-none absolute bottom-3 right-3 h-3 w-3 border-b border-r border-[#141311]/30" />
+
+          <div className="grid gap-8 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <h2 className="text-2xl font-normal text-[#0a0a0a] sm:text-3xl">
+                Bridging tactile interactive web engines with encrypted smart contract architecture.
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-[#2b2722]">
+                My work spans two tightly integrated engineering tracks: bespoke frontend interaction engines—using React 19 optimistic mutations, Server-Sent Events, native Web Audio synthesis, custom matrix zoom canvases, Astro SSR Islands, and virtualized telemetry—and privacy-preserving EVM decentralized applications powered by Zama&apos;s Fully Homomorphic Encryption (FHEVM), Monad, and Morph Layer 2.
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-[#2b2722]">
+                Every system in this portfolio is deployed live with open-source code: six distinct flagship interactive builds engineered across disparate web runtimes, paired alongside ten audited/shipping Web3 dApps including the 1st Place ($5,000) Zama Monthly Bounty winner{" "}
+                <span className="font-mono text-sm underline decoration-[#ea681d] underline-offset-4">
+                  fhevm-react-template
+                </span>
+                .
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-between gap-4 border-t border-[#141311]/15 pt-6 lg:col-span-5 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
+              <div className="space-y-4">
+                <div className="border-b border-[#141311]/12 pb-3">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#5a544d]">
+                    Live Deployments
+                  </p>
+                  <p className="mt-1 text-xl font-normal text-[#0a0a0a]">
+                    {portfolioData.stats.totalShipped}
+                  </p>
+                </div>
+                <div className="border-b border-[#141311]/12 pb-3">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#5a544d]">
+                    Recognition
+                  </p>
+                  <p className="mt-1 text-xl font-normal text-[#0a0a0a]">
+                    {portfolioData.stats.awardsWon}
+                  </p>
+                </div>
+                <div>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-[#5a544d]">
+                    Focus
+                  </p>
+                  <p className="mt-1 text-base text-[#2b2722]">
+                    {portfolioData.stats.experience}
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-3 pt-2">
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center gap-2 rounded-[4px] bg-[#ea681d] px-5 py-2.5 text-sm text-[#120e0a] transition-colors hover:bg-[#d85a12]"
+                >
+                  <span>Browse All 16 Projects</span>
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 border border-[#141311]/30 bg-white/60 px-5 py-2.5 text-sm text-[#121110] transition-colors hover:border-[#121110]"
+                >
+                  <span>Contact Studio</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Unified Multi-Stack Technical Matrix */}
+        <section>
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="text-3xl font-normal tracking-tight text-[#0a0a0a]">
+              Full Engineering Stack
+            </h2>
+            <Link
+              href="/projects"
+              className="font-mono text-xs uppercase tracking-[0.12em] text-[#171837] underline underline-offset-4 hover:text-[#ea681d]"
+            >
+              Inspect shipped implementations →
+            </Link>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            {techMatrix.map((cat) => (
+              <article
+                key={cat.code}
+                className="strip-shadow flex flex-col justify-between bg-[#f2eee6] p-6"
+              >
+                <div>
+                  <div className="flex items-center justify-between border-b border-[#141311]/12 pb-3">
+                    <h3 className="text-xl font-normal text-[#0a0a0a]">{cat.group}</h3>
+                    <span className="font-mono text-xs text-[#5a544d]">{cat.code}</span>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-[#433e37]">
+                    {cat.summary}
+                  </p>
                 </div>
 
-                {/* Hero */}
-                <section className="py-20 sm:py-32 relative z-10">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center mb-16">
-                            <h1 className="text-4xl sm:text-6xl font-heading font-bold mb-6">
-                                About <span className="gradient-text">Me</span>
-                            </h1>
-                            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                                Passionate Web3 developer focused on Privacy-Preserving Technologies,
-                                FHE, and building the next generation of decentralized applications.
-                            </p>
-                        </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {cat.items.map((tech) => (
+                    <span
+                      key={tech}
+                      className="border border-[#141311]/15 bg-[#e8e3dd] px-2.5 py-1 font-mono text-xs text-[#121110]"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </main>
 
-                        {/* Bio */}
-                        <div className="mb-20">
-                            <Card className="p-8 sm:p-12 max-w-4xl mx-auto">
-                                <p className="text-lg leading-relaxed mb-6">
-                                    I'm a Full Stack Web3 Developer with a deep focus on <strong>Privacy-Preserving Technologies</strong> and <strong>Fully Homomorphic Encryption (FHE)</strong>.
-                                    I specialize in building confidential decentralized applications using <strong>Zama's FHEVM stack</strong>, pushing the boundaries of what's possible on-chain.
-                                </p>
-                                <p className="text-lg leading-relaxed">
-                                    My experience spans across building innovative protocols like private lotteries and fair launch platforms,
-                                    to immersive on-chain gaming experiences on emerging networks like <strong>Monad</strong> and <strong>Morph L2</strong>.
-                                    I'm passionate about creating secure, scalable, and user-friendly dApps that bring real privacy and utility to users.
-                                </p>
-                            </Card>
-                        </div>
-
-                        {/* Skills */}
-                        <div>
-                            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-center mb-12">
-                                Expertise
-                            </h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                {skills.map((skill, index) => {
-                                    const Icon = skill.icon;
-                                    return (
-                                        <div key={skill.title}>
-                                            <Card className="p-6 h-full">
-                                                <div className="flex items-start space-x-4">
-                                                    <div className="p-3 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500">
-                                                        <Icon className="w-6 h-6 text-white" />
-                                                    </div>
-                                                    <div>
-                                                        <h3 className="text-xl font-heading font-semibold mb-2">
-                                                            {skill.title}
-                                                        </h3>
-                                                        <p className="text-muted-foreground">
-                                                            {skill.description}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </Card>
-                                        </div>
-                                    );
-                                })}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </main>
-            <Footer />
-        </>
-    );
+      <Footer />
+    </div>
+  );
 }
