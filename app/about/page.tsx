@@ -29,17 +29,17 @@ export default function AboutPage() {
           <div className="grid gap-8 lg:grid-cols-12">
             <div className="lg:col-span-7">
               <h2 className="text-2xl font-normal text-[#0a0a0a] sm:text-3xl">
-                Bridging tactile interactive web engines with encrypted smart contract architecture.
+                Bridging tactile interactive web engines, quant trading bots, SaaS platforms, and confidential Web3.
               </h2>
               <p className="mt-4 text-base leading-relaxed text-[#2b2722]">
-                My work spans two tightly integrated engineering tracks: bespoke frontend interaction engines—using React 19 optimistic mutations, Server-Sent Events, native Web Audio synthesis, custom matrix zoom canvases, Astro SSR Islands, and virtualized telemetry—and privacy-preserving EVM decentralized applications powered by Zama&apos;s Fully Homomorphic Encryption (FHEVM), Monad, and Morph Layer 2.
+                My work spans four integrated engineering tracks: bespoke frontend interaction engines (React 19 optimistic UI, SSE streams, native Web Audio synthesis, CSS Matrix canvases, Astro SSR Islands, virtualized radars), high-frequency Python market-making bots across 11 Perp DEXs &amp; CLOBs (Hyperliquid, GRVT V2, Polymarket, Paradex, Backpack, ActiveLP), full-stack SaaS/AI/Fintech platforms (JVAULT, POSkub, Poskub Pay, FastCaption, Nudrub, BOND, Dukira Trellis 3D), and Zama FHEVM confidential smart contracts.
               </p>
               <p className="mt-4 text-base leading-relaxed text-[#2b2722]">
-                Every system in this portfolio is deployed live with open-source code: six distinct flagship interactive builds engineered across disparate web runtimes, paired alongside ten audited/shipping Web3 dApps including the 1st Place ($5,000) Zama Monthly Bounty winner{" "}
+                Every public runtime and Web3 protocol links directly to verified production deployments and open-source repositories—including the 1st Place ($5,000) Zama Monthly Bounty winner{" "}
                 <span className="font-mono text-sm underline decoration-[#ea681d] underline-offset-4">
                   fhevm-react-template
                 </span>
-                .
+                —while commercial quant engines and private SaaS backends are available for walkthroughs upon request.
               </p>
             </div>
 
@@ -76,7 +76,7 @@ export default function AboutPage() {
                   href="/projects"
                   className="inline-flex items-center gap-2 rounded-[4px] bg-[#ea681d] px-5 py-2.5 text-sm text-[#120e0a] transition-colors hover:bg-[#d85a12]"
                 >
-                  <span>Browse All 16 Projects</span>
+                  <span>Browse All 37 Systems</span>
                   <ArrowUpRight className="h-4 w-4" />
                 </Link>
                 <Link

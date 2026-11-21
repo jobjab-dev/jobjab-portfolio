@@ -19,7 +19,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-[#2f2b26]">
-            Open to product studio collaborations, Creative Technologist / Design Engineer roles, and confidential Zama FHEVM protocol engagements.
+            Open to product studio collaborations, Creative Technologist / Design Engineer roles, Perp DEX trading systems, full-stack SaaS architecture, and confidential Zama FHEVM protocol engagements.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function ContactPage() {
               Let&apos;s ship something resilient and tactile.
             </h2>
             <p className="mt-3 max-w-2xl text-base leading-relaxed text-[#c9cad8]">
-              Whether you need a custom Web Audio / Canvas interactive interface, Next.js 16 real-time product architecture, or encrypted Solidity FHEVM contracts, write directly to my studio inbox.
+              Whether you need a custom Web Audio / Canvas interactive interface, Python Perp DEX market-making infrastructure, full-stack SaaS &amp; AI pipelines, or encrypted Solidity FHEVM contracts, write directly to my studio inbox.
             </p>
           </div>
 

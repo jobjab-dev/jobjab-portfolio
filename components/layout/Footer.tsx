@@ -9,10 +9,10 @@ export function Footer() {
         <div className="grid gap-8 border-b border-[#e8e3dd]/20 pb-10 md:grid-cols-12">
           <div className="md:col-span-5">
             <h2 className="text-2xl font-normal tracking-tight text-[#f6f2eb]">
-              16 Live Production Builds across Interactive Systems &amp; Confidential Web3.
+              37 Production Systems across Interactive UI, Quant Trading, SaaS &amp; Confidential Web3.
             </h2>
             <p className="mt-3 max-w-md text-sm leading-relaxed text-[#c6c7d6]">
-              Available for product studio engagements, senior design-engineering roles, and confidential FHEVM protocol builds.
+              Available for product studio engagements, Python Perp DEX market-making systems, full-stack SaaS/AI platforms, and confidential FHEVM protocols.
             </p>
           </div>
 
@@ -21,7 +21,7 @@ export function Footer() {
               <p className="font-mono text-xs uppercase tracking-[0.14em] text-[#a6a7b8]">Pages</p>
               <div className="flex flex-col gap-1.5">
                 <Link href="/" className="hover:text-[#ea681d]">Home Wall</Link>
-                <Link href="/projects" className="hover:text-[#ea681d]">Projects (16)</Link>
+                <Link href="/projects" className="hover:text-[#ea681d]">Projects (37)</Link>
                 <Link href="/about" className="hover:text-[#ea681d]">Tech &amp; About</Link>
                 <Link href="/awards" className="hover:text-[#ea681d]">Awards</Link>
                 <Link href="/contact" className="hover:text-[#ea681d]">Contact</Link>

@@ -91,7 +91,7 @@ export default function AwardsPage() {
                   href="/projects"
                   className="ml-auto font-mono text-xs uppercase tracking-[0.12em] text-[#171837] underline underline-offset-4 hover:text-[#ea681d]"
                 >
-                  View all 16 live projects →
+                  View all 37 shipped systems →
                 </Link>
               </div>
             </article>

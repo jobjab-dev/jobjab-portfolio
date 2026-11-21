@@ -10,9 +10,9 @@ import { useChat } from "@/context/ChatContext";
 
 const SUGGESTED_PROMPTS = [
   "Walk me through your 6 flagship builds",
-  "How does your Zama FHEVM work function?",
-  "Tell me about the $5,000 Zama award",
-  "How can a product studio hire you?",
+  "Tell me about your Perp DEX trading bots",
+  "What SaaS & AI platforms have you built?",
+  "Tell me about the $5,000 Zama FHEVM award",
 ];
 
 const ChatWidget: React.FC = () => {
@@ -86,7 +86,7 @@ const ChatWidget: React.FC = () => {
                 <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-[#e6d4b6]">
                   STUDIO DESK ASSISTANT · GEMINI 2.5
                 </p>
-                <p className="text-sm font-medium">16 Live Shipped Builds Indexed</p>
+                <p className="text-sm font-medium">37 Shipped Systems Indexed</p>
               </div>
               <button
                 type="button"
@@ -180,7 +180,7 @@ const ChatWidget: React.FC = () => {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about stacks, Flagships, or FHEVM..."
+                placeholder="Ask about bots, SaaS, Flagships, or FHEVM..."
                 className="flex-1 bg-transparent px-2 py-1.5 text-sm text-[#121110] placeholder:text-[#5a544d] focus:outline-none"
               />
               <button

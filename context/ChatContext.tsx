@@ -24,7 +24,7 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     {
       role: "assistant",
       content:
-        "Hello—I am Jobjab's studio assistant. Ask about the **6 Flagship Full-Stack builds**, the **10 Confidential Web3 / Zama FHEVM protocols**, his **$5,000 Zama Bounty award**, or live demo/GitHub links.",
+        "Hello—I am Jobjab's studio assistant. Ask about the **37 indexed production systems**: **6 Flagship UI builds**, **11 Quant & Perp DEX trading bots**, **10 SaaS/Fintech/AI platforms**, or **10 Confidential Web3 / Zama FHEVM protocols**.",
     },
   ]);
   const [isLoading, setIsLoading] = useState(false);
@@ -60,7 +60,7 @@ export const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           {
             role: "assistant",
             content:
-              "Studio desk connection timed out. You can still browse all 16 live deployments on `/projects` or reach Jobjab directly at `peejabh@gmail.com`.",
+              "Studio desk connection timed out. You can still browse all 37 systems on `/projects` or reach Jobjab directly at `peejabh@gmail.com`.",
           },
         ]);
       } finally {

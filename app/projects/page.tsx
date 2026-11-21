@@ -4,7 +4,15 @@ import React, { useMemo, useState } from "react";
 import { ArrowUpRight, Github, Search, Award } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { flagshipProjects, web3Projects, FlagshipProject } from "@/lib/portfolio-data";
+import { QuantBotCard } from "@/components/projects/QuantBotCard";
+import { PlatformProjectCard } from "@/components/projects/PlatformProjectCard";
+import {
+  flagshipProjects,
+  quantBotProjects,
+  platformProjects,
+  web3Projects,
+  FlagshipProject,
+} from "@/lib/portfolio-data";
 
 import leadPreviewImg from "@/assets/plates/lead-preview.png";
 import thumb02Img from "@/assets/plates/thumb-02.png";
@@ -22,14 +30,18 @@ const plateMap = {
   "thumb-06": thumb06Img,
 } as const;
 
-type CategoryFilter = "all" | "flagship" | "web3";
+type CategoryFilter = "all" | "flagship" | "quant" | "platform" | "web3";
 
 const STACK_FILTERS = [
   "All Stacks",
   "Next.js",
   "React 19",
+  "Python",
+  "WebSockets",
   "FHEVM (Zama)",
   "Solidity",
+  "Supabase",
+  "Gemini AI",
   "Astro 7",
   "Web Audio API",
   "Vite 8",
@@ -40,12 +52,13 @@ export default function ProjectsPage() {
   const [stackFilter, setStackFilter] = useState("All Stacks");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const matchesSearchAndStack = (title: string, desc: string, tags: string[]) => {
+  const matchesSearchAndStack = (title: string, desc: string, tags: string[], extra = "") => {
     const q = searchQuery.trim().toLowerCase();
     const matchesSearch =
       !q ||
       title.toLowerCase().includes(q) ||
       desc.toLowerCase().includes(q) ||
+      extra.toLowerCase().includes(q) ||
       tags.some((t) => t.toLowerCase().includes(q));
 
     const matchesStack =
@@ -57,21 +70,45 @@ export default function ProjectsPage() {
 
   const filteredFlagships = useMemo(
     () =>
-      category === "web3"
+      category !== "all" && category !== "flagship"
         ? []
         : flagshipProjects.filter((p) => matchesSearchAndStack(p.title, p.description, p.tags)),
     [category, stackFilter, searchQuery]
   );
 
+  const filteredQuantBots = useMemo(
+    () =>
+      category !== "all" && category !== "quant"
+        ? []
+        : quantBotProjects.filter((p) =>
+            matchesSearchAndStack(p.title, p.description, p.tags, `${p.venue} ${p.strategy}`)
+          ),
+    [category, stackFilter, searchQuery]
+  );
+
+  const filteredPlatforms = useMemo(
+    () =>
+      category !== "all" && category !== "platform"
+        ? []
+        : platformProjects.filter((p) =>
+            matchesSearchAndStack(p.title, p.description, p.tags, p.domain)
+          ),
+    [category, stackFilter, searchQuery]
+  );
+
   const filteredWeb3 = useMemo(
     () =>
-      category === "flagship"
+      category !== "all" && category !== "web3"
         ? []
         : web3Projects.filter((p) => matchesSearchAndStack(p.title, p.description, p.tags)),
     [category, stackFilter, searchQuery]
   );
 
-  const totalVisible = filteredFlagships.length + filteredWeb3.length;
+  const totalVisible =
+    filteredFlagships.length +
+    filteredQuantBots.length +
+    filteredPlatforms.length +
+    filteredWeb3.length;
 
   return (
     <div className="flex min-h-screen flex-col proofing-wall-ground text-[#121110]">
@@ -85,12 +122,12 @@ export default function ProjectsPage() {
               <h1 className="text-4xl font-normal tracking-tight text-[#0a0a0a] sm:text-5xl lg:text-6xl">
                 Shipped Proofing Index
               </h1>
-              <p className="mt-3 max-w-2xl text-lg leading-relaxed text-[#2f2b26]">
-                Six flagship interactive full-stack projects paired with ten confidential Web3 &amp; Zama FHEVM decentralized applications—every entry links directly to live production and source code.
+              <p className="mt-3 max-w-3xl text-lg leading-relaxed text-[#2f2b26]">
+                37 production systems across four disciplines: six Flagship interactive browser runtimes, eleven Python Quant &amp; Perp DEX market-making bots, ten SaaS/Fintech/AI platforms, and ten confidential Web3 &amp; Zama FHEVM protocols.
               </p>
             </div>
-            <div className="font-mono text-xs uppercase tracking-[0.12em] text-[#171837]">
-              Showing {totalVisible} / 16 live deployments
+            <div className="shrink-0 font-mono text-xs uppercase tracking-[0.12em] text-[#171837]">
+              Showing {totalVisible} / 37 builds
             </div>
           </div>
         </div>
@@ -100,8 +137,10 @@ export default function ProjectsPage() {
           <div className="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
             <div className="flex flex-wrap gap-2" role="tablist" aria-label="Project tracks">
               {[
-                { id: "all", label: "All Builds (16)" },
+                { id: "all", label: "All Builds (37)" },
                 { id: "flagship", label: "Flagship Full-Stack (6)" },
+                { id: "quant", label: "Quant & Trading Bots (11)" },
+                { id: "platform", label: "SaaS, Fintech & AI (10)" },
                 { id: "web3", label: "Confidential Web3 & FHEVM (10)" },
               ].map((tab) => {
                 const active = category === tab.id;
@@ -130,7 +169,7 @@ export default function ProjectsPage() {
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Filter by title or stack..."
+                placeholder="Filter by title, DEX, or stack..."
                 aria-label="Filter projects by keyword"
                 className="w-full border border-[#141311]/25 bg-white/75 py-2 pl-9 pr-3 text-sm text-[#121110] placeholder:text-[#5a544d] focus:border-[#ea681d] focus:outline-none"
               />
@@ -209,7 +248,7 @@ export default function ProjectsPage() {
                       </ul>
                     </div>
 
-                    <div className="mt-5 pt-4 border-t border-[#141311]/12">
+                    <div className="mt-5 border-t border-[#141311]/12 pt-4">
                       <div className="mb-4 flex flex-wrap gap-1.5">
                         {proj.tags.map((t) => (
                           <span
@@ -249,7 +288,47 @@ export default function ProjectsPage() {
           </section>
         )}
 
-        {/* Track 2: 10 Confidential Web3 & Zama FHEVM Protocols */}
+        {/* Track 2: 11 Quant & Algorithmic Perp DEX Trading Bots */}
+        {filteredQuantBots.length > 0 && (
+          <section className="mb-14">
+            <div className="mb-5 flex flex-wrap items-center justify-between gap-2 border-b border-[#141311]/25 pb-2">
+              <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-[#121110]">
+                TRACK 02 · QUANT &amp; ALGORITHMIC PERP DEX TRADING BOTS ({filteredQuantBots.length})
+              </h2>
+              <span className="font-mono text-[11px] text-[#5a544d]">
+                Python AsyncIO · WebSockets · SDK &amp; Market-Making Engines
+              </span>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {filteredQuantBots.map((proj) => (
+                <QuantBotCard key={proj.id} proj={proj} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Track 3: 10 Production SaaS, Fintech & AI Platforms */}
+        {filteredPlatforms.length > 0 && (
+          <section className="mb-14">
+            <div className="mb-5 flex flex-wrap items-center justify-between gap-2 border-b border-[#141311]/25 pb-2">
+              <h2 className="font-mono text-xs uppercase tracking-[0.16em] text-[#121110]">
+                TRACK 03 · PRODUCTION SAAS, FINTECH &amp; AI PLATFORMS ({filteredPlatforms.length})
+              </h2>
+              <span className="font-mono text-[11px] text-[#5a544d]">
+                Base L2 Vaults · Offline/Cloud POS · Gemini AI · GPU 3D APIs
+              </span>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {filteredPlatforms.map((proj) => (
+                <PlatformProjectCard key={proj.id} proj={proj} />
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Track 4: 10 Confidential Web3 & Zama FHEVM Protocols */}
         {filteredWeb3.length > 0 && (
           <section className="border border-[#e8e3dd]/20 bg-[#171837] p-6 text-[#eeeef5] sm:p-8">
             <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-b border-[#e8e3dd]/20 pb-4">

@@ -12,11 +12,11 @@ Product studios, technical founders, and engineering leads evaluating Jobjab (`j
 
 ## Product Purpose
 
-Serve as Jobjab's flagship personal portfolio and interactive proof-of-craft hub (`jobjab-portfolio`), unifying his 6 live Full-Stack Interactive Flagship apps and 10 Web3 / Zama FHEVM dApps in one navigable, link-out showcase with an integrated Gemini AI portfolio assistant. Success means a studio founder or engineering lead immediately experiences Jobjab's craft level in the first viewport, explores live deployed builds across multiple stacks, and reaches out directly via email, GitHub, X/Twitter, or Telegram.
+Serve as Jobjab's flagship personal portfolio and interactive proof-of-craft hub (`jobjab-portfolio`), unifying 37 production systems across four engineering tracks: 6 Flagship Interactive Web Runtimes, 11 Algorithmic Quant & Perp DEX Python Trading Bots, 10 SaaS/Fintech/AI Platforms, and 10 Web3 / Zama FHEVM dApps in one navigable showcase with an integrated Gemini AI portfolio assistant. Success means a studio founder or engineering lead immediately experiences Jobjab's craft level in the first viewport, explores all four tracks transparently (including clear private-repository demo requests vs. direct public links), and reaches out via email, GitHub, X/Twitter, or Telegram.
 
 ## Positioning
 
-**Creative Technologist & Design Engineer** bridging high-craft interactive browser engineering (real-time SSE/optimistic UI, native Web Audio DSP, custom CSS-matrix infinite canvases, virtualized 60fps telemetry radars, Astro SSR View Transitions, spring physics commerce) with production confidential cryptography (Zama FHEVM, Monad, Morph L2, Solidity).
+**Creative Technologist, Quant Systems & Design Engineer** bridging high-craft interactive browser engineering (real-time SSE/optimistic UI, native Web Audio DSP, custom CSS-matrix infinite canvases, virtualized 60fps telemetry radars, Astro SSR View Transitions, spring physics commerce), Python async WebSocket trading infrastructure (Hyperliquid, GRVT, Polymarket, Lighter, Aster, Nado, Apex Omni, Paradex, Backpack, Pacifica, ActiveLP), production SaaS/AI/Fintech systems (JVAULT, POSkub, Poskub Pay, FastCaption, Nudrub, BOND, PaoPay, TikTok AI Pipeline, TryOn, Dukira Trellis 3D API), and confidential cryptography (Zama FHEVM, Monad, Morph L2, Solidity).
 
 ## Operating Context
 
@@ -25,8 +25,8 @@ Evaluated primarily on desktop monitors by design/engineering founders and techn
 ## Capabilities and Constraints
 
 - Existing Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4, Framer Motion, and Gemini AI (`@google/generative-ai`) codebase in `c:\Users\Acer\jobjab\17-ui-template\jobjab-portfolio`.
-- Must preserve all 5 routes: `/` (Home showcase), `/projects` (complete 16-project interactive archive filterable across Full-Stack Flagship & Web3/FHEVM tracks and technologies), `/about` (biography, full unified multi-stack expertise), `/awards` (Zama $5,000 Monthly Bounty Winner), and `/contact` (direct outreach channels with corrected `mailto:peejabh@gmail.com`).
-- Must preserve and upgrade the Gemini AI Assistant (`app/api/chat/route.ts`, `ChatContext`, `ChatWidget`, `HomeChatInput`) backed by a unified `lib/portfolio-data.ts` containing all 16 live projects and full unified tech stacks.
+- Must preserve all 5 routes: `/` (Home showcase), `/projects` (complete 37-project interactive archive filterable across Flagship, Quant Trading Bots, SaaS/Fintech/AI, and Web3/FHEVM tracks and technologies), `/about` (biography, full unified multi-stack expertise), `/awards` (Zama $5,000 Monthly Bounty Winner), and `/contact` (direct outreach channels with corrected `mailto:peejabh@gmail.com`).
+- Must preserve and upgrade the Gemini AI Assistant (`app/api/chat/route.ts`, `ChatContext`, `ChatWidget`) backed by a unified `lib/portfolio-data.ts` containing all 37 projects and full unified tech stacks.
 - Retire the incumbent `PriceTicker` and `StarBackground` components completely.
 - Full redesign: incumbent cosmic-void purple/cyan/yellow glassmorphism look is strictly anti-reference and must be replaced wholesale across all routes.
 - Upon verification and finish review, commit and push changes to `https://github.com/jobjab-dev/jobjab-portfolio` and deploy live to Vercel.
@@ -46,8 +46,12 @@ Evaluated primarily on desktop monitors by design/engineering founders and techn
   4. `VECTRA OPS` (`04-telemetry-logistics-radar`) — Vite 8, React 19, `@tanstack/react-virtual`, 56-unit real-time polar/maritime fleet radar, sparkline inspector, 1,450–6,000+ virtualized rows | Demo: `https://04-telemetry-logistics-radar.vercel.app` | Repo: `https://github.com/jobjab-dev/flagship-04-telemetry-radar`
   5. `PRESS 09` (`05-indie-zine-paywall`) — Astro 7 SSR (`@astrojs/vercel`), `<ClientRouter />` View Transitions, React Islands (progress, typography, quote clipper), Cookie + `localStorage` Metered Paywall | Demo: `https://05-indie-zine-paywall.vercel.app` | Repo: `https://github.com/jobjab-dev/flagship-05-indie-zine`
   6. `ATELIER KINETA` (`06-kinetic-commerce`) — Next.js 16, Framer Motion `layoutId` shared-element transitions, `useScroll`/`useTransform` kinetic hero, 3D tilt cards, URL-synced filters, spring cart + `/api/checkout` | Demo: `https://06-kinetic-commerce.vercel.app` | Repo: `https://github.com/jobjab-dev/flagship-06-kinetic-commerce`
-- **10 Shipped Web3 / Zama FHEVM Projects** (from existing `app/projects/page.tsx` & `lib/portfolio-data.ts`):
-  `fhevm-react-template`, `Monad World`, `Zadiction`, `Click on chain`, `Paylink`, `Private Vote`, `hello-fhevm-tutorial`, `Zameme.fun`, `FHEVM Example Hub`, `ZipherLaunch` (all with live demo URLs and GitHub repos).
+- **11 Algorithmic Quant & Perp DEX Python Trading Bots** (Tracks `07–17`):
+  `Hyperliquid Trading Bot`, `GRVT BotV2`, `Polymarket Market Making Bot`, `Lighter Perp Trading Bot`, `Aster Trading Bot (VEGA)`, `Nado Volume Maker & Link Signer` (`https://nado-link-signer.vercel.app`), `Apex Omni Volume Maker`, `Paradex Volume Maker`, `Backpack Volume Bot`, `Pacifica Volume Maker`, and `ActiveLP Liquidity Engine`.
+- **10 Production SaaS, Fintech & AI Platforms** (Tracks `18–27`):
+  `JVAULT` (`https://jobjab-vault-landing.vercel.app`, `https://jobjab-vault-docs.vercel.app`), `POSkub & SM POS` (`https://poskub-landing.vercel.app`, `https://suchada-three.vercel.app`), `Poskub Pay (paykub)` (`https://github.com/jobjab-dev/paykub`), `FastCaption` (`https://fastcaption-app.vercel.app`), `Nudrub Marketplace` (`https://nudrub.vercel.app`), `BOND Limit Orders` (`https://bond-black.vercel.app`), `PaoPay`, `TikTok AI Content Pipeline`, `TryOn System`, and `Dukira Trellis 3D API`.
+- **10 Shipped Web3 / Zama FHEVM Projects** (Tracks `28–37`, from existing `app/projects/page.tsx` & `lib/portfolio-data.ts`):
+  `fhevm-react-template`, `ZipherLaunch`, `Monad World`, `Zadiction`, `Paylink`, `Private Vote`, `FHEVM Example Hub`, `Zameme.fun`, `hello-fhevm-tutorial`, `Click on chain` (all with live demo URLs and GitHub repos).
 - **Award:** 1st Place ($5,000 Prize) — Zama Monthly Bounty Winner (October 2025) for `fhevm-react-template`.
 - **No unverified claims:** Do not invent client logos, fake testimonials, or unverified metrics.
 

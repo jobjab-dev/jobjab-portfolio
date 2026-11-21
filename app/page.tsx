@@ -6,9 +6,13 @@ import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import { ArrowRight, ArrowUpRight, Award, Github, Menu, X } from "lucide-react";
 import { useChat } from "@/context/ChatContext";
 import { Footer } from "@/components/layout/Footer";
+import { QuantBotCard } from "@/components/projects/QuantBotCard";
+import { PlatformProjectCard } from "@/components/projects/PlatformProjectCard";
 import {
   awardsData,
   flagshipProjects,
+  platformProjects,
+  quantBotProjects,
   techMatrix,
   web3Projects,
 } from "@/lib/portfolio-data";
@@ -523,7 +527,7 @@ export default function Home() {
             {mobileMenuOpen && (
               <nav className="mt-3 flex flex-col gap-1 border-t border-[#141311]/15 pt-2 text-sm text-[#120c0b]">
                 <Link href="/" onClick={() => setMobileMenuOpen(false)} className="py-1 font-medium text-[#ea681d]">Home</Link>
-                <Link href="/projects" onClick={() => setMobileMenuOpen(false)} className="py-1">Projects (16)</Link>
+                <Link href="/projects" onClick={() => setMobileMenuOpen(false)} className="py-1">Projects (37)</Link>
                 <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="py-1">About &amp; Stack</Link>
                 <Link href="/awards" onClick={() => setMobileMenuOpen(false)} className="py-1">Awards</Link>
                 <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="py-1">Contact</Link>
@@ -553,7 +557,7 @@ export default function Home() {
           </header>
 
           <div className="space-y-4 p-4">
-            <article className="proof-shadow border border-[#141311]/15 bg-[#f2eee6] p-4">
+            <article className="proof-shadow bg-[#f2eee6] p-4">
               <div className="flex items-start gap-2.5 text-2xl leading-tight text-[#0a0a0a]">
                 <span className="shrink-0">{activeProject.index}</span>
                 <span>{activeProject.title} — {activeProject.shortLabel.split("·")[1]?.trim() || activeProject.shortLabel}</span>
@@ -638,7 +642,7 @@ export default function Home() {
         </section>
 
         {/* ============================================================
-            BELOW THE FOLD: FULL 16-PROJECT STUDIO CATALOGUE & UNIFIED TECH
+            BELOW THE FOLD: FULL 37-SYSTEM STUDIO CATALOGUE & UNIFIED TECH
            ============================================================ */}
         <main className="flex-1">
           {/* Section 1: 6 Flagship Interactive Systems Detailed Breakdown */}
@@ -656,7 +660,7 @@ export default function Home() {
                 href="/projects"
                 className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.12em] text-[#171837] underline underline-offset-4 hover:text-[#ea681d]"
               >
-                <span>Open Full Filterable Archive (16)</span>
+                <span>Open Full Filterable Archive (37)</span>
                 <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>
             </div>
@@ -741,13 +745,67 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Section 2: Complete Confidential Web3 & Zama FHEVM Ledger (All 10 Projects) */}
+          {/* Section 2: 11 Algorithmic Trading & Perp DEX Market-Making Engines */}
+          <section className="mx-auto max-w-[1440px] border-t border-[#141311]/20 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div className="mb-10 flex flex-col justify-between gap-4 border-b border-[#141311]/30 pb-6 md:flex-row md:items-end">
+              <div>
+                <h2 className="text-3xl font-normal tracking-tight text-[#0a0a0a] sm:text-4xl">
+                  Algorithmic Trading &amp; Market-Making Engines (07–17)
+                </h2>
+                <p className="mt-2 max-w-2xl text-sm text-[#433e37]">
+                  Asynchronous Python WebSocket trading bots, multi-level ladder market makers, and automated concentrated-liquidity engines across 11 Perp DEXs, CLOBs, and AMMs.
+                </p>
+              </div>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.12em] text-[#171837] underline underline-offset-4 hover:text-[#ea681d]"
+              >
+                <span>Filter 11 Quant Bots</span>
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {quantBotProjects.map((proj) => (
+                <QuantBotCard key={proj.id} proj={proj} />
+              ))}
+            </div>
+          </section>
+
+          {/* Section 3: 10 Production SaaS, Fintech & AI Platforms */}
+          <section className="mx-auto max-w-[1440px] border-t border-[#141311]/20 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div className="mb-10 flex flex-col justify-between gap-4 border-b border-[#141311]/30 pb-6 md:flex-row md:items-end">
+              <div>
+                <h2 className="text-3xl font-normal tracking-tight text-[#0a0a0a] sm:text-4xl">
+                  Production SaaS, Fintech &amp; AI Platforms (18–27)
+                </h2>
+                <p className="mt-2 max-w-2xl text-sm text-[#433e37]">
+                  Commercial full-stack systems spanning DeFi liquidity vaults, cloud/offline multi-store POS, crypto payment rails, FFmpeg WASM captioning, GPU 3D reconstruction, and automated AI pipelines.
+                </p>
+              </div>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-[0.12em] text-[#171837] underline underline-offset-4 hover:text-[#ea681d]"
+              >
+                <span>Filter 10 SaaS &amp; AI Builds</span>
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </Link>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {platformProjects.map((proj) => (
+                <PlatformProjectCard key={proj.id} proj={proj} />
+              ))}
+            </div>
+          </section>
+
+          {/* Section 4: Complete Confidential Web3 & Zama FHEVM Ledger (All 10 Projects) */}
           <section className="border-y border-[#e8e3dd]/20 bg-[#171837] py-16 text-[#eeeef5] lg:py-20">
             <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
               <div className="mb-10 flex flex-col justify-between gap-4 border-b border-[#e8e3dd]/20 pb-6 md:flex-row md:items-end">
                 <div>
                   <h2 className="text-3xl font-normal tracking-tight text-[#f6f2eb] sm:text-4xl">
-                    Ten Live On-Chain Privacy &amp; Layer-2 Protocols (07–16)
+                    Ten Live On-Chain Privacy &amp; Layer-2 Protocols (28–37)
                   </h2>
                   <p className="mt-2 max-w-2xl text-sm text-[#c6c7d6]">
                     Confidential smart contract protocols powered by Zama FHEVM, Monad, and Morph Layer 2.
