@@ -907,7 +907,7 @@ export function Jobjab3DWorld({
       if (finePointer && !reducedRef.current) {
         const nx = (e.clientX / window.innerWidth - 0.5) * 2;
         const ny = (e.clientY / window.innerHeight - 0.5) * 2;
-        targetYaw = -nx * 0.11;
+        targetYaw = nx * 0.09;
         targetPitch = -ny * 0.06;
       }
     };
@@ -1038,7 +1038,7 @@ export function Jobjab3DWorld({
         curYaw += (targetYaw - curYaw) * lookDamp;
         curPitch += (targetPitch - curPitch) * lookDamp;
 
-        splineLook.x += Math.sin(curYaw) * 8.0;
+        splineLook.x += Math.sin(curYaw) * 6.0;
         splineLook.y += curPitch * 5.0 + 0.18;
 
         const returnDamp = 1 - Math.exp(-dt * 9);
@@ -1121,6 +1121,7 @@ export function Jobjab3DWorld({
       petals.instanceMatrix.needsUpdate = true;
 
       canvas.dataset.cameraZ = camera.position.z.toFixed(1);
+      canvas.dataset.lookX = currentLookAt.x.toFixed(2);
       canvas.dataset.worldProgress = effectiveP.toFixed(3);
       canvas.dataset.focusedBillboard = focusedId ?? "";
 
