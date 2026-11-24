@@ -1,321 +1,226 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-21T05:32:00.000Z",
-  "title": "Design System: Jobjab Portfolio — Phosphor Unix Terminal",
+  "generatedAt": "2026-11-24T08:05:00.000Z",
+  "title": "Design System: Jobjab Portfolio — Autumn Horizon Reel",
   "extensions": {
     "colorMeta": {
-      "phosphor-green": {
+      "maple-amber": {
         "role": "primary",
-        "displayName": "Phosphor Green",
-        "canonical": "#39ff7a",
+        "displayName": "Maple Amber",
+        "canonical": "#ec7a26",
         "tonalRamp": [
-          "oklch(22% 0.08 148)",
-          "oklch(34% 0.13 148)",
-          "oklch(48% 0.17 148)",
-          "oklch(62% 0.21 148)",
-          "oklch(75% 0.23 148)",
-          "oklch(87% 0.24 148)",
-          "oklch(92% 0.14 148)",
-          "oklch(96% 0.06 148)"
+          "oklch(24% 0.07 46)",
+          "oklch(35% 0.11 46)",
+          "oklch(47% 0.14 46)",
+          "oklch(58% 0.165 46)",
+          "oklch(68% 0.17 46)",
+          "oklch(77% 0.14 46)",
+          "oklch(86% 0.09 46)",
+          "oklch(94% 0.04 46)"
         ]
       },
-      "phosphor-green-hover": {
+      "maple-amber-hover": {
         "role": "primary",
-        "displayName": "Phosphor Green Hover",
-        "canonical": "#22e563",
+        "displayName": "Maple Amber Hover",
+        "canonical": "#d86919",
         "tonalRamp": [
-          "oklch(20% 0.08 148)",
-          "oklch(32% 0.13 148)",
-          "oklch(45% 0.17 148)",
-          "oklch(58% 0.20 148)",
-          "oklch(70% 0.21 148)",
-          "oklch(80% 0.21 148)",
-          "oklch(89% 0.12 148)",
-          "oklch(95% 0.05 148)"
+          "oklch(22% 0.07 44)",
+          "oklch(33% 0.11 44)",
+          "oklch(44% 0.14 44)",
+          "oklch(54% 0.165 44)",
+          "oklch(62% 0.165 44)",
+          "oklch(72% 0.13 44)",
+          "oklch(84% 0.08 44)",
+          "oklch(93% 0.03 44)"
         ]
       },
-      "phosphor-green-ink": {
+      "maple-ink": {
         "role": "neutral",
-        "displayName": "Phosphor Green Ink",
-        "canonical": "#041108",
+        "displayName": "Maple Ink",
+        "canonical": "#120d08",
         "tonalRamp": [
-          "oklch(14% 0.025 148)",
-          "oklch(24% 0.03 148)",
-          "oklch(36% 0.032 148)",
-          "oklch(48% 0.032 148)",
-          "oklch(60% 0.03 148)",
-          "oklch(72% 0.025 148)",
-          "oklch(84% 0.018 148)",
-          "oklch(94% 0.01 148)"
-        ]
-      },
-      "phosphor-amber": {
-        "role": "secondary",
-        "displayName": "Phosphor Amber",
-        "canonical": "#ffb000",
-        "tonalRamp": [
-          "oklch(24% 0.06 78)",
-          "oklch(36% 0.09 78)",
-          "oklch(48% 0.12 78)",
-          "oklch(60% 0.145 78)",
-          "oklch(72% 0.165 78)",
-          "oklch(80% 0.17 78)",
-          "oklch(88% 0.11 78)",
-          "oklch(95% 0.05 78)"
-        ]
-      },
-      "phosphor-amber-hover": {
-        "role": "secondary",
-        "displayName": "Phosphor Amber Hover",
-        "canonical": "#e59e00",
-        "tonalRamp": [
-          "oklch(22% 0.06 78)",
-          "oklch(34% 0.09 78)",
-          "oklch(46% 0.12 78)",
-          "oklch(58% 0.14 78)",
-          "oklch(68% 0.155 78)",
-          "oklch(75% 0.16 78)",
-          "oklch(86% 0.10 78)",
-          "oklch(94% 0.04 78)"
-        ]
-      },
-      "phosphor-cyan": {
-        "role": "secondary",
-        "displayName": "Phosphor Cyan",
-        "canonical": "#46e8c8",
-        "tonalRamp": [
-          "oklch(22% 0.05 178)",
-          "oklch(34% 0.08 178)",
-          "oklch(48% 0.11 178)",
-          "oklch(60% 0.13 178)",
-          "oklch(72% 0.145 178)",
-          "oklch(84% 0.15 178)",
-          "oklch(90% 0.09 178)",
-          "oklch(95% 0.04 178)"
-        ]
-      },
-      "term-void": {
-        "role": "neutral",
-        "displayName": "Term Void",
-        "canonical": "#050a07",
-        "tonalRamp": [
-          "oklch(12% 0.015 152)",
-          "oklch(22% 0.02 152)",
-          "oklch(34% 0.024 152)",
-          "oklch(46% 0.025 152)",
-          "oklch(60% 0.024 152)",
-          "oklch(74% 0.02 152)",
-          "oklch(86% 0.014 152)",
-          "oklch(94% 0.008 152)"
-        ]
-      },
-      "term-sub": {
-        "role": "neutral",
-        "displayName": "Term Sub",
-        "canonical": "#060f0b",
-        "tonalRamp": [
-          "oklch(14% 0.02 152)",
-          "oklch(24% 0.024 152)",
-          "oklch(36% 0.028 152)",
-          "oklch(48% 0.028 152)",
-          "oklch(61% 0.026 152)",
-          "oklch(75% 0.022 152)",
-          "oklch(87% 0.015 152)",
-          "oklch(95% 0.008 152)"
-        ]
-      },
-      "term-pane": {
-        "role": "neutral",
-        "displayName": "Term Pane",
-        "canonical": "#08120c",
-        "tonalRamp": [
-          "oklch(16% 0.024 152)",
-          "oklch(26% 0.028 152)",
-          "oklch(38% 0.032 152)",
-          "oklch(50% 0.032 152)",
-          "oklch(63% 0.03 152)",
-          "oklch(76% 0.025 152)",
-          "oklch(88% 0.016 152)",
-          "oklch(95% 0.008 152)"
-        ]
-      },
-      "term-pane-bar": {
-        "role": "neutral",
-        "displayName": "Term Pane Bar",
-        "canonical": "#0c1911",
-        "tonalRamp": [
-          "oklch(19% 0.028 152)",
-          "oklch(29% 0.032 152)",
-          "oklch(41% 0.035 152)",
-          "oklch(53% 0.035 152)",
-          "oklch(66% 0.032 152)",
-          "oklch(78% 0.026 152)",
-          "oklch(89% 0.017 152)",
-          "oklch(95% 0.008 152)"
-        ]
-      },
-      "term-pane-alt": {
-        "role": "neutral",
-        "displayName": "Term Pane Alt",
-        "canonical": "#0d1c13",
-        "tonalRamp": [
-          "oklch(20% 0.032 152)",
-          "oklch(30% 0.036 152)",
-          "oklch(42% 0.038 152)",
-          "oklch(55% 0.038 152)",
-          "oklch(67% 0.034 152)",
-          "oklch(79% 0.028 152)",
-          "oklch(89% 0.018 152)",
-          "oklch(95% 0.009 152)"
-        ]
-      },
-      "term-border": {
-        "role": "neutral",
-        "displayName": "Term Border",
-        "canonical": "#193826",
-        "tonalRamp": [
-          "oklch(22% 0.04 152)",
-          "oklch(31% 0.052 152)",
-          "oklch(42% 0.055 152)",
-          "oklch(55% 0.055 152)",
-          "oklch(67% 0.048 152)",
-          "oklch(79% 0.038 152)",
-          "oklch(89% 0.024 152)",
-          "oklch(95% 0.012 152)"
-        ]
-      },
-      "term-border-bright": {
-        "role": "neutral",
-        "displayName": "Term Border Bright",
-        "canonical": "#2f7d4d",
-        "tonalRamp": [
-          "oklch(24% 0.055 152)",
-          "oklch(36% 0.075 152)",
-          "oklch(51% 0.105 152)",
-          "oklch(63% 0.105 152)",
-          "oklch(74% 0.09 152)",
-          "oklch(84% 0.065 152)",
-          "oklch(91% 0.04 152)",
-          "oklch(96% 0.018 152)"
+          "oklch(16% 0.02 52)",
+          "oklch(26% 0.024 52)",
+          "oklch(38% 0.026 52)",
+          "oklch(50% 0.026 52)",
+          "oklch(62% 0.024 52)",
+          "oklch(74% 0.02 52)",
+          "oklch(86% 0.014 52)",
+          "oklch(95% 0.008 52)"
         ]
       },
       "amber-tint": {
         "role": "secondary",
         "displayName": "Amber Tint",
-        "canonical": "#191205",
+        "canonical": "#23170d",
         "tonalRamp": [
-          "oklch(17% 0.032 78)",
-          "oklch(27% 0.04 78)",
-          "oklch(39% 0.045 78)",
-          "oklch(52% 0.045 78)",
-          "oklch(65% 0.042 78)",
-          "oklch(78% 0.035 78)",
-          "oklch(88% 0.022 78)",
-          "oklch(95% 0.01 78)"
+          "oklch(21% 0.036 52)",
+          "oklch(31% 0.045 52)",
+          "oklch(43% 0.05 52)",
+          "oklch(55% 0.05 52)",
+          "oklch(67% 0.045 52)",
+          "oklch(79% 0.035 52)",
+          "oklch(89% 0.022 52)",
+          "oklch(95% 0.01 52)"
         ]
       },
-      "term-ink-bright": {
-        "role": "neutral",
-        "displayName": "Term Ink Bright",
-        "canonical": "#ebfff2",
+      "sky-cerulean": {
+        "role": "secondary",
+        "displayName": "Sky Cerulean",
+        "canonical": "#82c4e6",
         "tonalRamp": [
-          "oklch(20% 0.015 150)",
-          "oklch(32% 0.018 150)",
-          "oklch(45% 0.022 150)",
-          "oklch(58% 0.024 150)",
-          "oklch(71% 0.024 150)",
-          "oklch(83% 0.022 150)",
-          "oklch(91% 0.02 150)",
-          "oklch(97% 0.018 150)"
+          "oklch(22% 0.04 228)",
+          "oklch(34% 0.065 228)",
+          "oklch(47% 0.085 228)",
+          "oklch(60% 0.095 228)",
+          "oklch(72% 0.095 228)",
+          "oklch(79% 0.085 228)",
+          "oklch(88% 0.055 228)",
+          "oklch(95% 0.025 228)"
         ]
       },
-      "term-ink": {
+      "cinema-void": {
         "role": "neutral",
-        "displayName": "Term Ink",
-        "canonical": "#c9eed6",
+        "displayName": "Cinema Void",
+        "canonical": "#0b0e13",
         "tonalRamp": [
-          "oklch(19% 0.024 150)",
-          "oklch(31% 0.032 150)",
-          "oklch(44% 0.04 150)",
-          "oklch(57% 0.045 150)",
-          "oklch(70% 0.048 150)",
-          "oklch(82% 0.05 150)",
-          "oklch(90% 0.045 150)",
-          "oklch(95% 0.025 150)"
+          "oklch(16% 0.012 255)",
+          "oklch(26% 0.016 255)",
+          "oklch(38% 0.018 255)",
+          "oklch(50% 0.018 255)",
+          "oklch(63% 0.016 255)",
+          "oklch(75% 0.014 255)",
+          "oklch(87% 0.01 255)",
+          "oklch(95% 0.006 255)"
         ]
       },
-      "term-ink-soft": {
+      "cinema-frame": {
         "role": "neutral",
-        "displayName": "Term Ink Soft",
-        "canonical": "#9dc4ac",
+        "displayName": "Cinema Frame",
+        "canonical": "#11151e",
         "tonalRamp": [
-          "oklch(18% 0.022 150)",
-          "oklch(30% 0.03 150)",
-          "oklch(42% 0.038 150)",
-          "oklch(55% 0.042 150)",
-          "oklch(68% 0.044 150)",
-          "oklch(78% 0.042 150)",
-          "oklch(88% 0.03 150)",
-          "oklch(95% 0.015 150)"
+          "oklch(19% 0.018 258)",
+          "oklch(29% 0.022 258)",
+          "oklch(41% 0.024 258)",
+          "oklch(53% 0.024 258)",
+          "oklch(66% 0.022 258)",
+          "oklch(78% 0.018 258)",
+          "oklch(89% 0.012 258)",
+          "oklch(95% 0.006 258)"
         ]
       },
-      "term-ink-muted": {
+      "cinema-elevated": {
         "role": "neutral",
-        "displayName": "Term Ink Muted",
-        "canonical": "#6ca380",
+        "displayName": "Cinema Elevated",
+        "canonical": "#171d29",
         "tonalRamp": [
-          "oklch(18% 0.025 150)",
-          "oklch(29% 0.035 150)",
-          "oklch(41% 0.045 150)",
-          "oklch(54% 0.054 150)",
-          "oklch(66% 0.058 150)",
-          "oklch(78% 0.048 150)",
-          "oklch(88% 0.03 150)",
-          "oklch(95% 0.015 150)"
+          "oklch(23% 0.022 258)",
+          "oklch(33% 0.026 258)",
+          "oklch(45% 0.028 258)",
+          "oklch(57% 0.028 258)",
+          "oklch(69% 0.024 258)",
+          "oklch(80% 0.018 258)",
+          "oklch(90% 0.012 258)",
+          "oklch(95% 0.006 258)"
+        ]
+      },
+      "slate-thumb": {
+        "role": "neutral",
+        "displayName": "Slate Thumb",
+        "canonical": "#2d3546",
+        "tonalRamp": [
+          "oklch(21% 0.024 258)",
+          "oklch(33% 0.03 258)",
+          "oklch(45% 0.032 258)",
+          "oklch(57% 0.032 258)",
+          "oklch(69% 0.028 258)",
+          "oklch(80% 0.022 258)",
+          "oklch(89% 0.014 258)",
+          "oklch(95% 0.008 258)"
+        ]
+      },
+      "ivory-bright": {
+        "role": "neutral",
+        "displayName": "Ivory Bright",
+        "canonical": "#f8f1e3",
+        "tonalRamp": [
+          "oklch(18% 0.012 78)",
+          "oklch(30% 0.016 78)",
+          "oklch(44% 0.018 78)",
+          "oklch(58% 0.02 78)",
+          "oklch(72% 0.02 78)",
+          "oklch(84% 0.018 78)",
+          "oklch(92% 0.016 78)",
+          "oklch(96% 0.016 78)"
+        ]
+      },
+      "ivory-warm": {
+        "role": "neutral",
+        "displayName": "Ivory Warm",
+        "canonical": "#f3ead8",
+        "tonalRamp": [
+          "oklch(18% 0.014 78)",
+          "oklch(30% 0.018 78)",
+          "oklch(44% 0.02 78)",
+          "oklch(58% 0.022 78)",
+          "oklch(72% 0.022 78)",
+          "oklch(83% 0.02 78)",
+          "oklch(91% 0.018 78)",
+          "oklch(95% 0.018 78)"
+        ]
+      },
+      "ivory-body": {
+        "role": "neutral",
+        "displayName": "Ivory Body",
+        "canonical": "#dfd7c8",
+        "tonalRamp": [
+          "oklch(18% 0.012 78)",
+          "oklch(30% 0.015 78)",
+          "oklch(44% 0.018 78)",
+          "oklch(58% 0.02 78)",
+          "oklch(72% 0.02 78)",
+          "oklch(87% 0.02 78)",
+          "oklch(92% 0.015 78)",
+          "oklch(96% 0.01 78)"
+        ]
+      },
+      "cloud-muted": {
+        "role": "neutral",
+        "displayName": "Cloud Muted",
+        "canonical": "#9da4b4",
+        "tonalRamp": [
+          "oklch(18% 0.015 262)",
+          "oklch(30% 0.018 262)",
+          "oklch(44% 0.022 262)",
+          "oklch(58% 0.024 262)",
+          "oklch(71% 0.024 262)",
+          "oklch(81% 0.02 262)",
+          "oklch(89% 0.014 262)",
+          "oklch(95% 0.008 262)"
         ]
       }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "Subpage primary console headlines."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Major track headings across home workstation sections."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Proof Monitor active project title and numbered project card titles."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Descriptions, capability bullets, and zsh transcript lines."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Buttons, tmux nav tabs, and track headers."
-      },
-      "caption": {
-        "displayName": "Caption",
-        "purpose": "Dependency chips, venue lines, and quick-command buttons."
-      },
-      "micro": {
-        "displayName": "Micro",
-        "purpose": "PRIVATE_REPO status badges and selector indices."
-      }
+      "display": { "displayName": "Display", "purpose": "Opening cinema hero thesis headline." },
+      "headline": { "displayName": "Headline", "purpose": "Painted chapter titles and subpage titles." },
+      "title": { "displayName": "Title", "purpose": "Project card headings and award banner titles." },
+      "body": { "displayName": "Body", "purpose": "Descriptions, studio narrative, and prose." },
+      "body-compact": { "displayName": "Body Compact", "purpose": "Compact card capability bullets and metadata." },
+      "label": { "displayName": "Label", "purpose": "Action controls, filter tabs, and navigation." },
+      "caption": { "displayName": "Caption", "purpose": "Stack tags and venue/strategy descriptors." },
+      "micro": { "displayName": "Micro", "purpose": "Timecode labels, locks, and vertical margin markers." }
     },
     "shadows": [],
     "motion": [
       {
-        "name": "proof-swap",
-        "value": "opacity 0->1 and y 6px->0 over 180ms cubic-bezier(0.22, 1, 0.36, 1)",
-        "purpose": "Transitioning Proof Monitor state when swapping Flagship items or running cat <index>."
+        "name": "hero-focus-pull",
+        "value": "blur(10px)->blur(0px) and y 10px->0 over 360ms cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Cinematic optical lens focus-pull reveal on the opening Newsreader display statement."
       },
       {
-        "name": "cursor-blink",
-        "value": "1.05s steps(2, start) infinite",
-        "purpose": "Authentic block cursor blink in the active zsh command prompt (disabled under reduced motion)."
+        "name": "leaf-drift",
+        "value": "16s-25s linear continuous diagonal float with rotation",
+        "purpose": "Ambient autumn maple leaf depth layers drifting silently across the opening frame."
       }
     ],
     "breakpoints": [
@@ -327,114 +232,84 @@
   },
   "components": [
     {
-      "name": "Phosphor Primary Button",
+      "name": "Cinema Primary CTA",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "High-contrast CRT Phosphor Green launch CTA for live deployments and EXEC shell submits.",
+      "description": "Solid Maple Amber action button for exploring works or launching deployed products.",
       "html": "<a href=\"#\" class=\"ds-btn-primary\"><span>Launch Live</span><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7\"/><path d=\"M7 7h10v10\"/></svg></a>",
-      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--phosphor-green, #39ff7a); color: var(--phosphor-green-ink, #041108); font-family: \"IBM Plex Mono\", monospace; font-size: 12px; font-weight: 600; padding: 8px 16px; border-radius: 0; text-decoration: none; cursor: pointer; transition: background-color 150ms ease; } .ds-btn-primary:hover { background: var(--phosphor-green-hover, #22e563); } .ds-btn-primary:focus-visible { outline: 1px solid #39ff7a; outline-offset: 2px; }"
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--maple-amber, #ec7a26); color: var(--maple-ink, #120d08); font-family: \"Hanken Grotesk\", sans-serif; font-size: 12px; font-weight: 500; padding: 8px 16px; border-radius: 0; text-decoration: none; cursor: pointer; transition: background-color 150ms ease; } .ds-btn-primary:hover { background: var(--maple-amber-hover, #d86919); }"
     },
     {
-      "name": "Terminal Secondary Button",
+      "name": "Cinema Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "Hairline-bordered secondary action button for public source repositories and studio links.",
-      "html": "<a href=\"#\" class=\"ds-btn-secondary\"><span>Source Repo</span></a>",
-      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--term-void, #050a07); color: var(--term-ink, #c9eed6); border: 1px solid var(--term-border-bright, #2f7d4d); font-family: \"IBM Plex Mono\", monospace; font-size: 12px; padding: 8px 12px; border-radius: 0; text-decoration: none; cursor: pointer; transition: border-color 150ms ease, color 150ms ease; } .ds-btn-secondary:hover { border-color: #39ff7a; color: #39ff7a; }"
+      "description": "Warm hairline-outlined secondary action on dark slate archive cards.",
+      "html": "<a href=\"#\" class=\"ds-btn-secondary\"><span>GitHub</span></a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--cinema-void, #0b0e13); color: var(--ivory-bright, #f8f1e3); border: 1px solid rgba(248, 241, 227, 0.2); font-family: \"Hanken Grotesk\", sans-serif; font-size: 12px; padding: 8px 12px; border-radius: 0; text-decoration: none; transition: border-color 150ms ease, color 150ms ease; } .ds-btn-secondary:hover { border-color: #ec7a26; color: #ec7a26; }"
     },
     {
       "name": "Private Repo Access Button",
       "kind": "button",
       "refersTo": "button-amber-access",
-      "description": "Amber-stroked request CTA for closed-source Quant Perp DEX bots and private SaaS backends.",
-      "html": "<a href=\"#\" class=\"ds-btn-amber\"><span>Request Access</span><svg viewBox=\"0 0 24 24\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 17 17 7\"/><path d=\"M7 7h10v10\"/></svg></a>",
-      "css": ".ds-btn-amber { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--amber-tint, #191205); color: var(--phosphor-amber, #ffb000); border: 1px solid rgba(255, 176, 0, 0.55); font-family: \"IBM Plex Mono\", monospace; font-size: 12px; font-weight: 500; padding: 8px 12px; border-radius: 0; text-decoration: none; cursor: pointer; transition: background-color 150ms ease, color 150ms ease; } .ds-btn-amber:hover { background: #ffb000; color: #041108; }"
+      "description": "Amber-tinted request button for closed-source Quant engines and SaaS backends.",
+      "html": "<a href=\"#\" class=\"ds-btn-amber\"><span>Request Access</span></a>",
+      "css": ".ds-btn-amber { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: var(--amber-tint, #23170d); color: var(--maple-amber, #ec7a26); border: 1px solid rgba(236, 122, 38, 0.45); font-family: \"Hanken Grotesk\", sans-serif; font-size: 12px; font-weight: 500; padding: 8px 12px; border-radius: 0; text-decoration: none; transition: background-color 150ms ease, color 150ms ease; } .ds-btn-amber:hover { background: #ec7a26; color: #120d08; }"
     },
     {
-      "name": "Interactive Zsh Command Prompt",
-      "kind": "input",
-      "refersTo": "input-cli",
-      "description": "Bottom shell prompt bar accepting typed commands with blinking block cursor.",
-      "html": "<form class=\"ds-input-cli\"><span class=\"ds-prompt\">jobjab@prod:~$</span><input type=\"text\" placeholder=\"type command (help, ls, bots, cat 07)...\" /><button type=\"submit\">EXEC</button></form>",
-      "css": ".ds-input-cli { display: flex; align-items: center; gap: 8px; height: 40px; border: 1px solid var(--term-border, #193826); background: var(--term-void, #050a07); padding: 0 12px; font-family: \"IBM Plex Mono\", monospace; } .ds-input-cli:focus-within { border-color: #39ff7a; } .ds-prompt { color: #39ff7a; font-size: 12px; font-weight: 600; white-space: nowrap; } .ds-input-cli input { flex: 1; min-width: 0; border: none; background: transparent; color: #ebfff2; font-size: 12px; outline: none; caret-color: #39ff7a; } .ds-input-cli input::placeholder { color: #6ca380; } .ds-input-cli button { background: #39ff7a; color: #041108; border: none; padding: 4px 10px; font-size: 11px; font-weight: 600; cursor: pointer; }"
-    },
-    {
-      "name": "Stack Dependency Chip",
+      "name": "Dependency Tag Chip",
       "kind": "chip",
       "refersTo": "chip-tag",
-      "description": "Sharp hairline chip displaying SDKs, runtimes, or blockchain protocol labels.",
-      "html": "<span class=\"ds-chip-tag\">hyperliquid-python-sdk</span>",
-      "css": ".ds-chip-tag { display: inline-block; border: 1px solid var(--term-border, #193826); background: var(--term-pane-alt, #0d1c13); color: var(--term-ink, #c9eed6); padding: 2px 8px; font-family: \"IBM Plex Mono\", monospace; font-size: 11px; border-radius: 0; }"
+      "description": "Sharp hairline chip showing runtime frameworks, Python SDKs, or protocols.",
+      "html": "<span class=\"ds-chip-tag\">Next.js 16</span>",
+      "css": ".ds-chip-tag { display: inline-block; border: 1px solid rgba(248, 241, 227, 0.12); background: var(--cinema-elevated, #171d29); color: var(--ivory-body, #dfd7c8); padding: 2px 8px; font-family: \"IBM Plex Mono\", monospace; font-size: 11px; border-radius: 0; }"
     },
     {
       "name": "Private Repo Lock Chip",
       "kind": "chip",
       "refersTo": "chip-private-lock",
-      "description": "Amber security status pill marking non-public GitHub source repositories.",
-      "html": "<span class=\"ds-chip-lock\">PRIVATE_REPO</span>",
-      "css": ".ds-chip-lock { display: inline-block; border: 1px solid rgba(255, 176, 0, 0.45); background: var(--amber-tint, #191205); color: var(--phosphor-amber, #ffb000); padding: 2px 8px; font-family: \"IBM Plex Mono\", monospace; font-size: 10px; letter-spacing: 0.08em; border-radius: 0; }"
+      "description": "Amber lock pill denoting proprietary repositories available via contact.",
+      "html": "<span class=\"ds-chip-lock\">Private Repo</span>",
+      "css": ".ds-chip-lock { display: inline-block; border: 1px solid rgba(236, 122, 38, 0.4); background: var(--amber-tint, #23170d); color: var(--maple-amber, #ec7a26); padding: 2px 8px; font-family: \"IBM Plex Mono\", monospace; font-size: 10px; letter-spacing: 0.08em; border-radius: 0; }"
     },
     {
-      "name": "Tmux Project Pane",
+      "name": "Cinema Archive Frame Card",
       "kind": "card",
-      "refersTo": "pane-card",
-      "description": "Flat 1px-bordered terminal pane housing project specs without drop shadows or kickers.",
-      "html": "<article class=\"ds-pane\"><h3>[07] Hyperliquid Trading Bot</h3><p class=\"ds-sub\">Hyperliquid Perp DEX // Liquidity Provider & Volume Mode</p><p class=\"ds-desc\">Asynchronous Python market maker built on the official SDK with WebSocket order-book streams.</p></article>",
-      "css": ".ds-pane { border: 1px solid var(--term-border, #193826); background: var(--term-pane, #08120c); color: var(--term-ink, #c9eed6); padding: 20px; border-radius: 0; transition: border-color 150ms ease; max-width: 400px; } .ds-pane:hover { border-color: var(--term-border-bright, #2f7d4d); } .ds-pane h3 { margin: 0; font-family: \"IBM Plex Mono\", monospace; font-size: 18px; font-weight: 600; color: #ebfff2; } .ds-sub { margin: 4px 0 0; font-family: \"IBM Plex Mono\", monospace; font-size: 11px; color: #ffb000; } .ds-desc { margin: 10px 0 0; font-family: \"IBM Plex Mono\", monospace; font-size: 12px; line-height: 1.625; color: #c9eed6; }"
+      "refersTo": "card-cinema-frame",
+      "description": "Flat 1px-bordered dark cinema frame uniting Newsreader titles and structured specs.",
+      "html": "<article class=\"ds-frame\"><h3>01 · HÄNSEL &amp; ROTH</h3><p class=\"ds-meta\">LIVE SSE AUCTION</p><p class=\"ds-copy\">Real-time collector auction house powered by Server-Sent Events and React 19.</p></article>",
+      "css": ".ds-frame { border: 1px solid rgba(248, 241, 227, 0.14); background: var(--cinema-frame, #11151e); color: var(--ivory-body, #dfd7c8); padding: 20px; border-radius: 0; transition: border-color 150ms ease; max-width: 380px; } .ds-frame:hover { border-color: rgba(236, 122, 38, 0.55); } .ds-frame h3 { margin: 0; font-family: \"Newsreader\", serif; font-size: 20px; font-weight: 500; color: #f8f1e3; } .ds-meta { margin: 4px 0 0; font-family: \"IBM Plex Mono\", monospace; font-size: 11px; color: #ec7a26; } .ds-copy { margin: 10px 0 0; font-family: \"Hanken Grotesk\", sans-serif; font-size: 12px; line-height: 1.625; color: #dfd7c8; }"
     }
   ],
   "narrative": {
-    "northStar": "Phosphor Unix Terminal",
-    "overview": "The entire portfolio operates as a high-craft Unix workstation session (`jobjab@prod:~/portfolio`) running inside flat, razor-edged `tmux` split panes. Deep obsidian-green void surfaces hold calm, legible mint-phosphor body prose, structured command bars, and crisp single-pixel hairline partitions without fuzzy neon glow or generic dark-mode glass.\n\nRather than treating terminal aesthetics as pure decoration, the primary viewport houses a live interactive zsh interpreter alongside a synchronized hardware Proof Monitor for the 6 Flagship interactive runtimes, a live track jump table across all 37 production systems, and direct access to the Gemini 2.5 Studio Desk daemon. Signal phosphor green owns active prompts, active tabs, and primary live launches, while signal amber highlights Zama bounty honors, Python Perp DEX trading engines, and private-repository access controls.",
-    "keyCharacteristics": [
-      "Flat `tmux` split-pane geometry with crisp single-pixel green hairlines (`1px solid #193826`) and zero soft blur drop shadows or glowing neon halos",
-      "Real interactive command shell (`help`, `ls`, `bots`, `saas`, `web3`, `cat <01-37>`, `open <01-37>`, `whoami`, `ai <query>`) driving live state directly in the hero viewport",
-      "Phosphor-tinted green neutrals replacing neutral gray text so dark terminal contrast remains crisp across every hierarchy tier",
-      "Dual-signal semantic encoding: Phosphor Green for public live execution; Phosphor Amber for Zama bounty achievements, Quant Perp DEX bots, and `[PRIVATE_REPO]` locks"
-    ],
+    "northStar": "Autumn Horizon Reel",
+    "overview": "Inspired by Makoto Shinkai and CoMix Wave animation cinematography, the portfolio opens on a single unbroken widescreen painted avenue bathed in warm autumn sunlight and azure clouds. Monumental `Newsreader` serif headlines emerge through a gentle optical focus pull over subtle atmospheric bottom glazes, while a floating studio masthead links projects, architecture tracks, and live SMPTE timecodes without enclosing bars.\n\nBeneath the full-viewport opening reel (`SC 01`), four painted horizon chapters anchor every track across 37 real engineering systems on dark obsidian-slate archive plates framed exclusively by crisp ivory hairlines.",
+    "keyCharacteristics": [],
     "rules": [
       {
-        "name": "The Zero-Halo Rule",
-        "body": "Never wrap panes, text, or buttons in multi-pixel fluorescent `box-shadow` or `text-shadow` neon blooms; terminal authority comes from exact contrast ratios and razor-sharp `1px` borders.",
+        "name": "The Glaze-Before-Ink Rule",
+        "body": "Every heading or paragraph layered over hand-painted artwork sits above a directional dark gradient glaze so text legibility never drops below readable contrast.",
         "section": "colors"
       },
       {
-        "name": "The Green-Tinted Neutral Rule",
-        "body": "Every muted caption and secondary description must come from phosphor-tinted green hues (`term-ink-muted`, `term-ink-soft`) rather than desaturating into cold neutral gray.",
+        "name": "The Zero-Ghost-Frame Rule",
+        "body": "Archive frames rely strictly on subtle ivory hairline borders (`rgba(248, 241, 227, 0.14)`) with zero drop shadows.",
         "section": "colors"
-      },
-      {
-        "name": "The Tabular Integrity Rule",
-        "body": "Enable `font-variant-numeric: tabular-nums` globally on `body` so numeric project indexes (`01` through `37`), pricing, and shell listings align in strict vertical columns.",
-        "section": "typography"
       },
       {
         "name": "The No-Kicker Rule",
-        "body": "Never stack an uppercase eyebrow label above any `h1`, `h2`, or `h3` heading; put venue, domain, or stack indicators directly beneath the heading or inside the pane's structural title bar.",
+        "body": "Never stack an uppercase eyebrow label above any heading; place scene indicators inline beside chapter controls or below headings.",
         "section": "typography"
-      },
-      {
-        "name": "The Flat-Tile Invariant Rule",
-        "body": "Borders alone carry containment; never add `box-shadow` or frosted `backdrop-filter` onto bordered terminal panes.",
-        "section": "elevation"
-      },
-      {
-        "name": "The Reduced-Motion Fidelity Rule",
-        "body": "Cursor blinking (`.term-cursor`) and subtle `4px` `.crt-scanlines` strictly yield under `prefers-reduced-motion: reduce`, while active proof monitor swaps animate cleanly over `180ms` using `MotionConfig reducedMotion=\"user\"`.",
-        "section": "elevation"
       }
     ],
     "dos": [
-      "Do preserve `0px` sharp corners across panes, buttons, tags, and terminal inputs so the layout stays faithful to a `tmux` window manager.",
-      "Do use phosphor-tinted green muted tokens (`#6ca380`, `#9dc4ac`) for secondary text and keep contrast well above `4.5:1`.",
-      "Do label private commercial bots and backends honestly with `[PRIVATE_REPO]` and `Request Access` routes rather than exposing dead 404 GitHub links.",
-      "Do bind interactive terminal commands cleanly to live React state (`activeFlagshipIdx`) and the global AI chat context."
+      "Do keep hero horizon paintings unobstructed in the upper center sky and stage editorial headings cleanly in the bottom-left and bottom-right corners.",
+      "Do disable continuous leaf drift animations cleanly under `prefers-reduced-motion: reduce`.",
+      "Do pair painted backgrounds with directional dark contrast scrims beneath overlaid text."
     ],
     "donts": [
-      "Don't apply `box-shadow` drop shadows or glowing neon halos (`box-shadow: 0 0 20px ...`) to cards, headings, or CRT text.",
-      "Don't place uppercase eyebrow kickers above any `h1`, `h2`, or `h3` heading.",
-      "Don't use cold gray (`#888`, `slate-400`) on obsidian-green panes or round pane containers to look like generic SaaS templates.",
-      "Don't fabricate trading PnL, volume metrics, win rates, or fake revenue statistics anywhere in copy, AI prompts, or CLI command outputs."
+      "Don't place uppercase eyebrow kickers above headings.",
+      "Don't combine `1px` borders with wide `box-shadow` drop shadows on archive cards.",
+      "Don't invent unverified trading PnL, APR, revenue, or client claims."
     ]
   }
 }

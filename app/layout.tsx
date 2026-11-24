@@ -4,9 +4,9 @@ import { ChatProvider } from "@/context/ChatContext";
 import ChatWidget from "@/components/ai/ChatWidget";
 
 export const metadata: Metadata = {
-  title: "jobjab@prod:~/portfolio — 37 Production Systems",
+  title: "Jobjab — Creative Technologist, Quant Systems & Web3 Studio",
   description:
-    "Phosphor Unix Terminal portfolio of Jobjab (jobjab-dev): 6 interactive full-stack runtimes, 11 Python Perp DEX trading bots, 10 SaaS/AI/Fintech platforms, and 10 confidential Web3 & Zama FHEVM protocols.",
+    "Hand-painted anime cinema portfolio of Jobjab (jobjab-dev): 37 production systems spanning 6 interactive web runtimes, 11 Python Perp DEX trading bots, 10 SaaS/Fintech/AI platforms, and 10 Zama FHEVM Web3 protocols.",
   keywords: [
     "Creative Technologist",
     "Design Engineer",
@@ -36,15 +36,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-[#050a07] text-[#c9eed6] antialiased">
+      <body className="bg-[#0b0e13] text-[#dfd7c8] antialiased">
         <ChatProvider>
           {children}
           <ChatWidget />
         </ChatProvider>
-        <div
-          aria-hidden="true"
-          className="crt-scanlines pointer-events-none fixed inset-0 z-50"
-        />
       </body>
     </html>
   );

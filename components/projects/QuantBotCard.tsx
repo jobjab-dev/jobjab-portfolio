@@ -4,42 +4,42 @@ import type { QuantBotProject } from "@/lib/portfolio-data";
 
 export function QuantBotCard({ proj }: { proj: QuantBotProject }) {
   return (
-    <article className="flex flex-col justify-between border border-[#193826] bg-[#08120c] p-5 transition-colors hover:border-[#2f7d4d]">
+    <article className="flex flex-col justify-between border border-[#f8f1e3]/14 bg-[#11151e] p-5 transition-colors hover:border-[#ec7a26]/55">
       <div>
         <div className="flex flex-wrap items-baseline justify-between gap-2">
-          <h3 className="text-lg font-semibold tracking-tight text-[#ebfff2]">
-            [{proj.index}] {proj.title}
+          <h3 className="font-editorial text-xl font-medium tracking-tight text-[#f8f1e3]">
+            {proj.index} · {proj.title}
           </h3>
           {proj.isPrivateRepo && (
-            <span className="inline-flex items-center gap-1 border border-[#ffb000]/45 bg-[#191205] px-2 py-0.5 text-[10px] uppercase tracking-[0.08em] text-[#ffb000]">
+            <span className="inline-flex items-center gap-1 border border-[#ec7a26]/40 bg-[#23170d] px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.08em] text-[#ec7a26]">
               <Lock className="h-3 w-3" />
-              <span>PRIVATE_REPO</span>
+              <span>Private Repo</span>
             </span>
           )}
         </div>
 
-        <p className="mt-1 text-[11px] uppercase tracking-[0.06em] text-[#ffb000]">
-          {proj.venue} // {proj.strategy}
+        <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.06em] text-[#ec7a26]">
+          {proj.venue} · {proj.strategy}
         </p>
 
-        <p className="mt-2.5 text-xs leading-relaxed text-[#c9eed6]">{proj.description}</p>
+        <p className="mt-2.5 text-xs leading-relaxed text-[#dfd7c8]">{proj.description}</p>
 
-        <ul className="mt-4 space-y-1.5 border-t border-[#193826] pt-3 text-xs leading-relaxed text-[#9dc4ac]">
+        <ul className="mt-4 space-y-1.5 border-t border-[#f8f1e3]/10 pt-3 text-xs leading-relaxed text-[#9da4b4]">
           {proj.capabilities.map((cap) => (
             <li key={cap} className="flex items-start gap-2">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 bg-[#ffb000]" />
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ec7a26]" />
               <span>{cap}</span>
             </li>
           ))}
         </ul>
       </div>
 
-      <div className="mt-5 border-t border-[#193826] pt-4">
+      <div className="mt-5 border-t border-[#f8f1e3]/10 pt-4">
         <div className="mb-4 flex flex-wrap gap-1.5">
           {proj.tags.map((tag) => (
             <span
               key={tag}
-              className="border border-[#193826] bg-[#0d1c13] px-2 py-0.5 text-[11px] text-[#c9eed6]"
+              className="border border-[#f8f1e3]/12 bg-[#171d29] px-2 py-0.5 font-mono text-[11px] text-[#dfd7c8]"
             >
               {tag}
             </span>
@@ -52,14 +52,14 @@ export function QuantBotCard({ proj }: { proj: QuantBotProject }) {
               href={proj.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-1.5 border border-[#2f7d4d] bg-[#050a07] px-3 py-2 text-xs text-[#c9eed6] transition-colors hover:border-[#39ff7a] hover:text-[#39ff7a]"
+              className="flex flex-1 items-center justify-center gap-1.5 border border-[#f8f1e3]/20 bg-[#0b0e13] px-3 py-2 text-xs text-[#f8f1e3] transition-colors hover:border-[#ec7a26] hover:text-[#ec7a26]"
             >
               <Github className="h-3.5 w-3.5" />
               <span>{proj.githubLabel || "GitHub"}</span>
             </a>
           ) : (
-            <span className="flex flex-1 items-center justify-center gap-1.5 border border-[#193826] bg-[#050a07] px-3 py-2 text-[11px] text-[#6ca380]">
-              <Lock className="h-3 w-3 text-[#ffb000]" />
+            <span className="flex flex-1 items-center justify-center gap-1.5 border border-[#f8f1e3]/12 bg-[#0b0e13] px-3 py-2 font-mono text-[11px] text-[#9da4b4]">
+              <Lock className="h-3 w-3 text-[#ec7a26]" />
               <span>Private Engine</span>
             </span>
           )}
@@ -69,7 +69,7 @@ export function QuantBotCard({ proj }: { proj: QuantBotProject }) {
               href={proj.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-1 items-center justify-center gap-1.5 bg-[#39ff7a] px-3 py-2 text-xs font-semibold text-[#041108] transition-colors hover:bg-[#22e563]"
+              className="flex flex-1 items-center justify-center gap-1.5 bg-[#ec7a26] px-3 py-2 text-xs font-medium text-[#120d08] transition-colors hover:bg-[#d86919]"
             >
               <span>{proj.liveLabel || "Launch Live"}</span>
               <ArrowUpRight className="h-3.5 w-3.5" />
@@ -77,7 +77,7 @@ export function QuantBotCard({ proj }: { proj: QuantBotProject }) {
           ) : (
             <Link
               href="/contact"
-              className="flex flex-1 items-center justify-center gap-1.5 border border-[#ffb000]/55 bg-[#191205] px-3 py-2 text-xs font-medium text-[#ffb000] transition-colors hover:bg-[#ffb000] hover:text-[#041108]"
+              className="flex flex-1 items-center justify-center gap-1.5 border border-[#ec7a26]/45 bg-[#23170d] px-3 py-2 text-xs font-medium text-[#ec7a26] transition-colors hover:bg-[#ec7a26] hover:text-[#120d08]"
             >
               <span>Request Access</span>
               <ArrowUpRight className="h-3.5 w-3.5" />
