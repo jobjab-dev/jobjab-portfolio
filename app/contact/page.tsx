@@ -3,6 +3,7 @@
 import { ArrowUpRight, Mail, MessageSquare } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ParallaxChapterBanner } from "@/components/cinema/ParallaxChapterBanner";
 import { contactChannels } from "@/lib/portfolio-data";
 import { useChat } from "@/context/ChatContext";
 import scene01Img from "@/assets/scenes/scene-01-avenue.jpg";
@@ -14,22 +15,19 @@ export default function ContactPage() {
     <div className="flex min-h-screen flex-col bg-[#0b0e13] text-[#dfd7c8]">
       <Header variant="solid" activeScene={{ code: "COMMS", label: "STUDIO INBOX" }} />
 
-      <div className="relative h-48 w-full overflow-hidden border-b border-[#f8f1e3]/14 sm:h-56">
-        <img
-          src={scene01Img.src}
-          alt="Sunlit autumn avenue panorama"
-          className="h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e13] via-[#0b0e13]/60 to-[#0b0e13]/30" />
-        <div className="relative mx-auto flex h-full max-w-[1440px] flex-col justify-end px-5 pb-7 sm:px-8 lg:px-10">
-          <h1 className="font-editorial text-4xl font-medium tracking-tight text-[#f8f1e3] sm:text-5xl">
-            Get in Touch
-          </h1>
-          <p className="mt-2 max-w-2xl text-xs leading-relaxed text-[#dfd7c8] sm:text-sm">
-            Open to product studio collaborations, Creative Technologist / Design Engineer roles, Perp DEX trading systems, full-stack SaaS architecture, and confidential Zama FHEVM engagements.
-          </p>
-        </div>
-      </div>
+      <ParallaxChapterBanner
+        imgSrc={scene01Img.src}
+        alt="Sunlit autumn avenue panorama"
+        heightClass="h-48 sm:h-56"
+        scrimClass="bg-gradient-to-t from-[#0b0e13] via-[#0b0e13]/60 to-[#0b0e13]/30"
+      >
+        <h1 className="font-editorial text-4xl font-medium tracking-tight text-[#f8f1e3] sm:text-5xl">
+          Get in Touch
+        </h1>
+        <p className="mt-2 max-w-2xl text-xs leading-relaxed text-[#dfd7c8] sm:text-sm">
+          Open to product studio collaborations, Creative Technologist / Design Engineer roles, Perp DEX trading systems, full-stack SaaS architecture, and confidential Zama FHEVM engagements.
+        </p>
+      </ParallaxChapterBanner>
 
       <main className="mx-auto w-full max-w-[1440px] flex-1 px-5 py-12 sm:px-8 lg:px-10">
         <div className="grid gap-5 md:grid-cols-2">

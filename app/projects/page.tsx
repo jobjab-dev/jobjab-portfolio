@@ -4,6 +4,7 @@ import React, { useMemo, useState } from "react";
 import { ArrowUpRight, Award, Github, Search } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ParallaxChapterBanner } from "@/components/cinema/ParallaxChapterBanner";
 import { QuantBotCard } from "@/components/projects/QuantBotCard";
 import { PlatformProjectCard } from "@/components/projects/PlatformProjectCard";
 import {
@@ -116,29 +117,26 @@ export default function ProjectsPage() {
       <Header variant="solid" activeScene={{ code: "ARCHIVE", label: "37 PRODUCTION SYSTEMS" }} />
 
       {/* Atmospheric Twilight Banner */}
-      <div className="relative h-48 w-full overflow-hidden border-b border-[#f8f1e3]/14 sm:h-56">
-        <img
-          src={scene03Img.src}
-          alt="Twilight bay panorama over city"
-          className="h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e13] via-[#0b0e13]/60 to-[#0b0e13]/30" />
-        <div className="relative mx-auto flex h-full max-w-[1440px] flex-col justify-end px-5 pb-7 sm:px-8 lg:px-10">
-          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <h1 className="font-editorial text-4xl font-medium tracking-tight text-[#f8f1e3] sm:text-5xl">
-                Shipped Proofing Index
-              </h1>
-              <p className="mt-2 max-w-3xl text-xs leading-relaxed text-[#dfd7c8] sm:text-sm">
-                37 production systems across four disciplines: six Flagship interactive browser runtimes, eleven Python Quant &amp; Perp DEX bots, ten SaaS/Fintech/AI platforms, and ten Zama FHEVM protocols.
-              </p>
-            </div>
-            <div className="shrink-0 border border-[#f8f1e3]/20 bg-[#11151e] px-3 py-1.5 font-mono text-xs text-[#ec7a26]">
-              Showing {totalVisible} / 37 builds
-            </div>
+      <ParallaxChapterBanner
+        imgSrc={scene03Img.src}
+        alt="Twilight bay panorama over city"
+        heightClass="h-48 sm:h-56"
+        scrimClass="bg-gradient-to-t from-[#0b0e13] via-[#0b0e13]/60 to-[#0b0e13]/30"
+      >
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <h1 className="font-editorial text-4xl font-medium tracking-tight text-[#f8f1e3] sm:text-5xl">
+              Shipped Proofing Index
+            </h1>
+            <p className="mt-2 max-w-3xl text-xs leading-relaxed text-[#dfd7c8] sm:text-sm">
+              37 production systems across four disciplines: six Flagship interactive browser runtimes, eleven Python Quant &amp; Perp DEX bots, ten SaaS/Fintech/AI platforms, and ten Zama FHEVM protocols.
+            </p>
+          </div>
+          <div className="shrink-0 border border-[#f8f1e3]/20 bg-[#11151e] px-3 py-1.5 font-mono text-xs text-[#ec7a26]">
+            Showing {totalVisible} / 37 builds
           </div>
         </div>
-      </div>
+      </ParallaxChapterBanner>
 
       <main className="mx-auto w-full max-w-[1440px] flex-1 px-5 py-10 sm:px-8 lg:px-10">
         {/* Category Tabs, Stack Filters, & Search */}

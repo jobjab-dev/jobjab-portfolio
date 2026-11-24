@@ -221,6 +221,21 @@
         "name": "leaf-drift",
         "value": "16s-25s linear continuous diagonal float with rotation",
         "purpose": "Ambient autumn maple leaf depth layers drifting silently across the opening frame."
+      },
+      {
+        "name": "scroll-dolly-horizon",
+        "value": "scale 1.0->1.18 and translateY 0%->-4% via sprung scrollYProgress [0,1]",
+        "purpose": "Continuous forward cinema camera dolly through the sticky 250vh horizon track."
+      },
+      {
+        "name": "cloud-veil-sweep",
+        "value": "horizontal radial mist sweep x -12%->12% and opacity 0->0.72->0 across [0.24,0.76]",
+        "purpose": "Atmospheric cumulus transition linking painted SC 01 avenue into SC 02 golden canopy."
+      },
+      {
+        "name": "chapter-window-parallax",
+        "value": "oversized backdrop y -9%->9% and scale 1.08->1.01 across viewport traversal",
+        "purpose": "Layered depth window effect across SC 02-04 and subpage cinema chapter banners."
       }
     ],
     "breakpoints": [

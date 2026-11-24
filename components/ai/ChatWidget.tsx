@@ -24,7 +24,12 @@ const ChatWidget: React.FC = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      setPastHero(window.scrollY > 420);
+      const heroReel = document.getElementById("hero-reel");
+      if (heroReel) {
+        setPastHero(heroReel.getBoundingClientRect().bottom <= window.innerHeight * 0.9);
+      } else {
+        setPastHero(window.scrollY > 420);
+      }
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });

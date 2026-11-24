@@ -4,6 +4,7 @@ import { ArrowUpRight, Award, Github } from "lucide-react";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ParallaxChapterBanner } from "@/components/cinema/ParallaxChapterBanner";
 import { awardsData } from "@/lib/portfolio-data";
 import scene04Img from "@/assets/scenes/scene-04-night.jpg";
 
@@ -12,22 +13,19 @@ export default function AwardsPage() {
     <div className="flex min-h-screen flex-col bg-[#0b0e13] text-[#dfd7c8]">
       <Header variant="solid" activeScene={{ code: "AWD", label: "HONORS & BOUNTIES" }} />
 
-      <div className="relative h-48 w-full overflow-hidden border-b border-[#f8f1e3]/14 sm:h-56">
-        <img
-          src={scene04Img.src}
-          alt="Midnight harbor skyline panorama"
-          className="h-full w-full object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0b0e13] via-[#0b0e13]/60 to-[#0b0e13]/30" />
-        <div className="relative mx-auto flex h-full max-w-[1440px] flex-col justify-end px-5 pb-7 sm:px-8 lg:px-10">
-          <h1 className="font-editorial text-4xl font-medium tracking-tight text-[#f8f1e3] sm:text-5xl">
-            Awards &amp; Recognition
-          </h1>
-          <p className="mt-2 max-w-2xl text-xs leading-relaxed text-[#dfd7c8] sm:text-sm">
-            Open-source cryptographic tooling and production dApp architecture recognized across the Ethereum and Zama FHEVM ecosystem.
-          </p>
-        </div>
-      </div>
+      <ParallaxChapterBanner
+        imgSrc={scene04Img.src}
+        alt="Midnight harbor skyline panorama"
+        heightClass="h-48 sm:h-56"
+        scrimClass="bg-gradient-to-t from-[#0b0e13] via-[#0b0e13]/60 to-[#0b0e13]/30"
+      >
+        <h1 className="font-editorial text-4xl font-medium tracking-tight text-[#f8f1e3] sm:text-5xl">
+          Awards &amp; Recognition
+        </h1>
+        <p className="mt-2 max-w-2xl text-xs leading-relaxed text-[#dfd7c8] sm:text-sm">
+          Open-source cryptographic tooling and production dApp architecture recognized across the Ethereum and Zama FHEVM ecosystem.
+        </p>
+      </ParallaxChapterBanner>
 
       <main className="mx-auto w-full max-w-[1440px] flex-1 px-5 py-12 sm:px-8 lg:px-10">
         <div className="space-y-8">

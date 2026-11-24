@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useMotionValueEvent, useScroll, type MotionValue } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useChat } from "@/context/ChatContext";
 import { StudioSeal } from "@/components/cinema/StudioSeal";
@@ -13,6 +14,7 @@ interface HeaderProps {
     code: string;
     label: string;
   };
+  scrollProgress?: MotionValue<number>;
 }
 
 function formatTimecode(seconds: number): string {
@@ -25,16 +27,26 @@ function formatTimecode(seconds: number): string {
 export function Header({
   variant = "solid",
   activeScene = { code: "SC 01", label: "ABOVE THE CITY" },
+  scrollProgress,
 }: HeaderProps) {
   const pathname = usePathname();
   const { setIsOpen } = useChat();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [tick, setTick] = useState(3889);
+  const [scrollSecondsOffset, setScrollSecondsOffset] = useState(0);
+  const { scrollYProgress: pageScrollY } = useScroll();
+  const activeProgress = scrollProgress ?? pageScrollY;
 
   useEffect(() => {
     const id = setInterval(() => setTick((t) => t + 1), 1000);
     return () => clearInterval(id);
   }, []);
+
+  useMotionValueEvent(activeProgress, "change", (v) => {
+    const clamped = Math.max(0, Math.min(1, v));
+    const next = Math.round(clamped * 240);
+    setScrollSecondsOffset((prev) => (prev === next ? prev : next));
+  });
 
   const isOverlay = variant === "overlay";
 
@@ -115,8 +127,11 @@ export function Header({
         {/* Top-Right SMPTE Scene Timecode + Start a project CTA */}
         <div className="hidden items-start gap-6 md:flex">
           <div className="hidden flex-col items-start lg:flex">
-            <span className="border border-[#f8f1e3]/40 bg-[#0b0e13]/75 px-2.5 py-0.5 font-mono text-[11px] tabular-nums tracking-[0.06em] text-[#f8f1e3]">
-              {formatTimecode(tick)}
+            <span
+              data-testid="smpte-timecode"
+              className="border border-[#f8f1e3]/40 bg-[#0b0e13]/75 px-2.5 py-0.5 font-mono text-[11px] tabular-nums tracking-[0.06em] text-[#f8f1e3]"
+            >
+              {formatTimecode(tick + scrollSecondsOffset)}
             </span>
             <span className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.14em] text-[#f8f1e3]">
               {activeScene.label}

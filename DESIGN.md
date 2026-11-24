@@ -164,8 +164,8 @@ A dusk-to-daylight palette pairing warm gouache autumn foliage tones against dee
 
 ## Layout
 
-- **Opening Hero (`SC 01`):** `100dvh` container (`min-height: 580px`, `max-height: 960px`) fitting cleanly above the fold on desktop, laptop, tablet, and mobile viewports.
-- **Below-the-Fold Grid:** Centered `max-width: 1440px` container spanning 3 columns on desktop for Flagship (`01` to `06`), Quant (`07` to `17`), and SaaS (`18` to `27`) tracks, and 2 columns for Confidential Web3 (`28` to `37`).
+- **Opening Hero (`SC 01`):** Sticky `100dvh` (`min-height: 580px`, `max-height: 960px`) frame inside a scroll-driven camera dolly track (`200vh` mobile / `250vh` desktop), with `useReducedMotion` static fallback.
+- **Below-the-Fold Grid:** Centered `max-width: 1440px` container anchored by scroll-parallax chapter banners and right-edge 4-scene progress rail across 37 systems (`01–37`).
 
 ## Elevation & Depth
 
