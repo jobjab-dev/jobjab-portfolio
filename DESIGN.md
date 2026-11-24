@@ -164,7 +164,7 @@ A dusk-to-daylight palette pairing warm gouache autumn foliage tones against dee
 
 ## Layout
 
-- **Opening Hero (`SC 01`):** Sticky `100dvh` (`min-height: 580px`, `max-height: 960px`) frame inside a scroll-driven camera dolly track (`200vh` mobile / `250vh` desktop), with `useReducedMotion` static fallback.
+- **Opening Hero (`SC 01–SC 06`):** Sticky `100dvh` (`min-height: 580px`, `max-height: 960px`) FPS camera frame inside a 6-chapter city walkthrough track (`460vh` mobile / `560vh` desktop), with `useReducedMotion` static fallback.
 - **Below-the-Fold Grid:** Centered `max-width: 1440px` container anchored by scroll-parallax chapter banners and right-edge 4-scene progress rail across 37 systems (`01–37`).
 
 ## Elevation & Depth

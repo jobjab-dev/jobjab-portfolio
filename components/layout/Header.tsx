@@ -44,7 +44,7 @@ export function Header({
 
   useMotionValueEvent(activeProgress, "change", (v) => {
     const clamped = Math.max(0, Math.min(1, v));
-    const next = Math.round(clamped * 240);
+    const next = Math.round(clamped * 840);
     setScrollSecondsOffset((prev) => (prev === next ? prev : next));
   });
 

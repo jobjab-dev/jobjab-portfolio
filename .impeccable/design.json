@@ -223,19 +223,24 @@
         "purpose": "Ambient autumn maple leaf depth layers drifting silently across the opening frame."
       },
       {
-        "name": "scroll-dolly-horizon",
-        "value": "scale 1.0->1.18 and translateY 0%->-4% via sprung scrollYProgress [0,1]",
-        "purpose": "Continuous forward cinema camera dolly through the sticky 250vh horizon track."
+        "name": "fps-walking-gait",
+        "value": "sin/cos scroll head-bob ±5.5px / ±4.5px / ±0.35deg + per-scene forward dolly scale 1.0->1.24 + 3D fine-pointer lookaround",
+        "purpose": "Simulates an eye-level first-person walk down the city avenue while keeping horizon framing seamless."
+      },
+      {
+        "name": "six-scene-dolly-walk",
+        "value": "560vh desktop / 460vh mobile sticky narrative walkthrough across SC 01-SC 06",
+        "purpose": "Reveals six sequential chapters introducing Jobjab's philosophy and 37 production systems as the user scrolls forward."
       },
       {
         "name": "cloud-veil-sweep",
-        "value": "horizontal radial mist sweep x -12%->12% and opacity 0->0.72->0 across [0.24,0.76]",
-        "purpose": "Atmospheric cumulus transition linking painted SC 01 avenue into SC 02 golden canopy."
+        "value": "horizontal radial mist seam pulses across transitions [1/6..5/6]",
+        "purpose": "Softly bridges transitions between daylight, canopy, twilight, harbor night, and studio overlook paintings."
       },
       {
         "name": "chapter-window-parallax",
         "value": "oversized backdrop y -9%->9% and scale 1.08->1.01 across viewport traversal",
-        "purpose": "Layered depth window effect across SC 02-04 and subpage cinema chapter banners."
+        "purpose": "Layered depth window effect across below-the-fold and subpage cinema chapter banners."
       }
     ],
     "breakpoints": [
