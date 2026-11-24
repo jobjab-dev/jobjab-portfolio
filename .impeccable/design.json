@@ -238,6 +238,16 @@
         "purpose": "Softly bridges transitions between daylight, canopy, twilight, harbor night, and studio overlook paintings."
       },
       {
+        "name": "three-js-cel-world",
+        "value": "Three.js WebGL2 CatmullRomCurve3 camera path Z=+10->-246 with GLSL morning-to-midnight sky dome, 6 real flagship gallery monoliths, 64 instanced orderbook bars, Zama FHEVM crystal bridge, and 260 maple particles",
+        "purpose": "Renders an unbroken 100% continuous 3D anime city walkthrough embodying Jobjab's real systems with zero hard cuts."
+      },
+      {
+        "name": "scroll-video-scrubber",
+        "value": "RAF video.currentTime scrub driven by NEXT_PUBLIC_CINEMA_VIDEO_URL",
+        "purpose": "Opt-in drop-in support for custom single-shot AI video files encoded for smooth bidirectional scrubbing."
+      },
+      {
         "name": "chapter-window-parallax",
         "value": "oversized backdrop y -9%->9% and scale 1.08->1.01 across viewport traversal",
         "purpose": "Layered depth window effect across below-the-fold and subpage cinema chapter banners."

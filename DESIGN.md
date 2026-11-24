@@ -164,7 +164,7 @@ A dusk-to-daylight palette pairing warm gouache autumn foliage tones against dee
 
 ## Layout
 
-- **Opening Hero (`SC 01–SC 06`):** Sticky `100dvh` (`min-height: 580px`, `max-height: 960px`) FPS camera frame inside a 6-chapter city walkthrough track (`460vh` mobile / `560vh` desktop), with `useReducedMotion` static fallback.
+- **Opening Hero (`SC 01–SC 06`):** Sticky `100dvh` (`min-height: 580px`, `max-height: 960px`) frame rendering an unbroken Three.js WebGL2 3D anime world of Jobjab's projects (plus opt-in MP4 video scrubbing via `NEXT_PUBLIC_CINEMA_VIDEO_URL`) along a `460vh` mobile / `560vh` desktop walkthrough track, with `useReducedMotion` static fallback.
 - **Below-the-Fold Grid:** Centered `max-width: 1440px` container anchored by scroll-parallax chapter banners and right-edge 4-scene progress rail across 37 systems (`01–37`).
 
 ## Elevation & Depth
