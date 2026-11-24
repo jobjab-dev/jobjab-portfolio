@@ -248,6 +248,11 @@
         "purpose": "Opt-in drop-in support for custom single-shot AI video files encoded for smooth bidirectional scrubbing."
       },
       {
+        "name": "billboard-focus-turn",
+        "value": "Three.js raycast hover highlight + exponential damped camera turn-in along billboard front normal + right-edge dossier drawer",
+        "purpose": "Allows visitors to hover and click any roadside anime digital billboard in 3D space to smoothly pivot the camera up to the sign."
+      },
+      {
         "name": "chapter-window-parallax",
         "value": "oversized backdrop y -9%->9% and scale 1.08->1.01 across viewport traversal",
         "purpose": "Layered depth window effect across below-the-fold and subpage cinema chapter banners."
